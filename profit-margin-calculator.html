@@ -203,76 +203,36 @@ while markup is based on cost. A 50% markup does not equal a 50% margin.
 
   </div>
 
-  <script>
-    function calculate() {
-      const revenue = parseFloat(document.getElementById("revenue").value);
-      const cost = parseFloat(document.getElementById("cost").value);
+ <script>
+  function calculate() {
+    const revenue = parseFloat(document.getElementById("revenue").value);
+    const cost = parseFloat(document.getElementById("cost").value);
 
-      if (!revenue || revenue <= 0 || cost < 0) {
-        alert("Please enter valid numbers.");
-        return;
-      }
-
-      const profit = revenue - cost;
-      const margin = profit / revenue;
-      const markup = cost === 0 ? 0 : profit / cost;
-
-      document.getElementById("profit").innerText = profit.toFixed(2);
-      document.getElementById("margin").innerText = (margin * 100).toFixed(2) + " %";
-      document.getElementById("markup").innerText = (markup * 100).toFixed(2) + " %";
-      document.getElementById("breakeven").innerText = cost.toFixed(2);
+    if (!Number.isFinite(revenue) || !Number.isFinite(cost) || revenue <= 0 || cost < 0) {
+      alert("Please enter valid numbers.");
+      return;
     }
 
-    function resetCalc() {
-      document.getElementById("revenue").value = "";
-      document.getElementById("cost").value = "";
-      document.getElementById("profit").innerText = "—";
-      document.getElementById("margin").innerText = "—";
-      document.getElementById("markup").innerText = "—";
-      document.getElementById("breakeven").innerText = "—";
-    }
+    const profit = revenue - cost;
+    const margin = profit / revenue;
+    const markup = cost === 0 ? 0 : profit / cost;
 
-    document.getElementById("year").innerText = new Date().getFullYear();
-  </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do you calculate profit margin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Profit margin is calculated as (Revenue - Cost) ÷ Revenue × 100. It shows how much profit you keep from each dollar of sales."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between margin and markup?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Margin is based on revenue: Profit ÷ Revenue. Markup is based on cost: Profit ÷ Cost. They are not the same percentage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a good profit margin for a small business?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A good profit margin depends on your industry, costs, and pricing strategy. Many small businesses aim to improve margin over time by increasing pricing power or lowering costs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you calculate gross profit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Gross profit is Revenue - Cost. It is the amount left after covering the direct cost of the product or service."
-      }
-    }
-  ]
-}
-</script>
+    document.getElementById("profit").innerText = profit.toFixed(2);
+    document.getElementById("margin").innerText = (margin * 100).toFixed(2) + " %";
+    document.getElementById("markup").innerText = (markup * 100).toFixed(2) + " %";
+    document.getElementById("breakeven").innerText = cost.toFixed(2);
+  }
+
+  function resetCalc() {
+    document.getElementById("revenue").value = "";
+    document.getElementById("cost").value = "";
+    document.getElementById("profit").innerText = "—";
+    document.getElementById("margin").innerText = "—";
+    document.getElementById("markup").innerText = "—";
+    document.getElementById("breakeven").innerText = "—";
+  }
+
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script> 
 </body>
 </html>
