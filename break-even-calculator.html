@@ -1,1 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Break-Even Calculator (Point in Units & Revenue) | Small Business Calculators</title>
+  <meta name="description" content="Free break-even calculator. Calculate break-even point in units and revenue using fixed costs, price per unit, and variable cost per unit." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.smallbusinesscalculators.com/break-even-calculator.html" />
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate break-even point?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Break-even point (units) = Fixed Costs ÷ (Price per Unit − Variable Cost per Unit). Break-even revenue = Break-even units × Price per Unit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are fixed costs and variable costs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fixed costs do not change with sales volume (e.g., rent, software subscriptions). Variable costs increase with each unit sold (e.g., materials, shipping, payment fees)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my price per unit equals my variable cost per unit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Then your contribution margin is zero and you cannot break even. You must raise price, reduce variable cost, or both."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fb;
+      color: #111;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
+
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .sub { color: #444; margin-bottom: 30px; line-height: 1.5; }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 800px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+    }
+
+    label { display:block; font-weight: 600; margin-bottom: 6px; }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+    .hint {
+      font-size: 13px;
+      color: #666;
+      margin-top: -10px;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .btnrow { display:flex; gap:10px; flex-wrap: wrap; }
+    button {
+      padding: 10px 16px;
+      font-size: 15px;
+      border-radius: 10px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button.secondary { background:#fff; color:#111; }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .value { font-weight: 700; }
+
+    hr.sep { margin: 40px 0; border: none; border-top: 1px solid #eee; }
+
+    h2 { margin: 0 0 10px; }
+    h3 { margin: 18px 0 8px; }
+    p, li { color:#222; line-height: 1.6; }
+    ul { margin-top: 8px; }
+
+    .note {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 14px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #666;
+    }
+    .inline-links a { font-weight: 700; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <p><a href="/">← Back to Small Business Calculators</a></p>
+
+    <h1>Break-Even Calculator</h1>
+    <p class="sub">
+      Calculate your <strong>break-even point</strong> in <strong>units</strong> and <strong>revenue</strong> using fixed costs, price per unit, and variable cost per unit.
+      <span class="inline-links">Related: <a href="/profit-margin-calculator.html">Profit Margin</a> • <a href="/markup-calculator.html">Markup</a></span>
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <label for="fixed">Fixed Costs</label>
+        <input type="number" id="fixed" inputmode="decimal" placeholder="e.g. 2000" />
+        <div class="hint">Costs that don’t change with volume (rent, software, insurance).</div>
+
+        <label for="price">Price per Unit</label>
+        <input type="number" id="price" inputmode="decimal" placeholder="e.g. 100" />
+        <div class="hint">Your selling price per unit.</div>
+
+        <label for="variable">Variable Cost per Unit</label>
+        <input type="number" id="variable" inputmode="decimal" placeholder="e.g. 60" />
+        <div class="hint">Cost per unit that scales with volume (materials, shipping, fees).</div>
+
+        <div class="btnrow">
+          <button type="button" onclick="calc()">Calculate</button>
+          <button type="button" class="secondary" onclick="resetCalc()">Reset</button>
+        </div>
+
+        <div class="note">
+          If your <strong>price ≤ variable cost</strong>, you cannot break even.
+          Increase price or reduce variable costs to create contribution margin.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Results</h3>
+
+        <div class="result-row">
+          <div>Contribution Margin (per unit)</div>
+          <div class="value" id="cm">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Break-Even Units</div>
+          <div class="value" id="units">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Break-Even Revenue</div>
+          <div class="value" id="revenue">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Contribution Margin %</div>
+          <div class="value" id="cmp">—</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <h2>Break-Even Point Explained</h2>
+    <p>
+      Your break-even point is where total revenue equals total costs. At break-even, profit is zero.
+      After that point, each additional unit sold contributes to profit.
+    </p>
+
+    <h3>Break-Even Formula</h3>
+    <p>
+      <strong>Break-even units</strong> = Fixed Costs ÷ (Price per Unit − Variable Cost per Unit)<br>
+      <strong>Break-even revenue</strong> = Break-even units × Price per Unit
+    </p>
+
+    <h3>Why Break-Even Matters</h3>
+    <ul>
+      <li>Set realistic sales targets</li>
+      <li>Understand pricing impact</li>
+      <li>See how cost changes affect profitability</li>
+      <li>Plan budgets and cash flow</li>
+    </ul>
+
+    <footer>
+      © <span id="year"></span> SmallBusinessCalculators
+    </footer>
+  </div>
+
+  <script>
+    function ok(x) { return typeof x === "number" && isFinite(x); }
+    function fmt2(x) { return x.toFixed(2); }
+
+    function calc() {
+      const fixed = parseFloat(document.getElementById("fixed").value);
+      const price = parseFloat(document.getElementById("price").value);
+      const variable = parseFloat(document.getElementById("variable").value);
+
+      if (!ok(fixed) || fixed < 0 || !ok(price) || price < 0 || !ok(variable) || variable < 0) {
+        alert("Please enter valid numbers (no negatives).");
+        return;
+      }
+
+      const contributionMargin = price - variable;
+
+      if (contributionMargin <= 0) {
+        document.getElementById("cm").innerText = fmt2(contributionMargin);
+        document.getElementById("units").innerText = "Not possible";
+        document.getElementById("revenue").innerText = "Not possible";
+        document.getElementById("cmp").innerText = "—";
+        return;
+      }
+
+      const breakEvenUnits = fixed / contributionMargin;
+      const breakEvenRevenue = breakEvenUnits * price;
+      const contributionMarginPct = price === 0 ? 0 : (contributionMargin / price) * 100;
+
+      document.getElementById("cm").innerText = fmt2(contributionMargin);
+      document.getElementById("units").innerText = breakEvenUnits.toFixed(2);
+      document.getElementById("revenue").innerText = fmt2(breakEvenRevenue);
+      document.getElementById("cmp").innerText = contributionMarginPct.toFixed(2) + " %";
+    }
+
+    function resetCalc() {
+      document.getElementById("fixed").value = "";
+      document.getElementById("price").value = "";
+      document.getElementById("variable").value = "";
+      document.getElementById("cm").innerText = "—";
+      document.getElementById("units").innerText = "—";
+      document.getElementById("revenue").innerText = "—";
+      document.getElementById("cmp").innerText = "—";
+    }
+
+    document.getElementById("year").innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
