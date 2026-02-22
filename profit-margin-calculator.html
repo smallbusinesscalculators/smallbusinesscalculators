@@ -1,143 +1,206 @@
 <!doctype html>
 <html lang="en">
 <head>
- <title>Profit Margin Calculator (Gross Margin & Markup) | Small Business Calculators</title>
-<meta name="description" content="Free profit margin calculator. Calculate gross profit, gross margin %, and markup % from revenue and cost instantly." />
-<link rel="canonical" href="https://smallbusinesscalculators.com/profit-margin-calculator.html" />
-<meta name="robots" content="index,follow" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- Open Graph (social sharing) -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Profit Margin Calculator (Gross Margin & Markup)" />
-<meta property="og:description" content="Calculate gross profit, gross margin %, and markup % from revenue and cost instantly." />
-<meta property="og:url" content="https://smallbusinesscalculators.com/profit-margin-calculator.html" />
+  <title>Profit Margin Calculator (Gross Margin & Markup) | Small Business Calculators</title>
+  <meta name="description" content="Free profit margin calculator. Calculate gross profit, gross margin %, and markup % instantly from revenue and cost." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/profit-margin-calculator.html" />
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Profit Margin Calculator (Gross Margin & Markup)" />
-<meta name="twitter:description" content="Calculate gross profit, gross margin %, and markup % from revenue and cost instantly." />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fb;
+      color: #111;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    .sub {
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 16px;
+      font-size: 15px;
+      border-radius: 10px;
+      border: 1px solid #111;
+      background: #111;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button.secondary {
+      background: white;
+      color: #111;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .value {
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
 </head>
 
 <body>
- <p><a href="/">← Back to Small Business Calculators</a></p>
   <div class="wrap">
-    <header>
-      <h1>Profit Margin Calculator</h1>
-      <p class="sub">Calculate <strong>gross profit</strong>, <strong>gross margin %</strong>, and <strong>markup %</strong> from revenue and cost.</p>
-    </header>
+
+    <p><a href="/">← Back to Small Business Calculators</a></p>
+
+    <h1>Profit Margin Calculator</h1>
+    <p class="sub">Calculate gross profit, gross margin %, and markup % from revenue and cost.</p>
 
     <div class="grid">
-      <section class="card">
-        <div class="row">
-          <div>
-            <label for="revenue">Revenue (Selling Price)</label>
-            <input id="revenue" inputmode="decimal" placeholder="e.g. 1000" />
-            <div class="tiny">Total sale amount (before tax if you prefer).</div>
-          </div>
-          <div>
-            <label for="cost">Cost</label>
-            <input id="cost" inputmode="decimal" placeholder="e.g. 650" />
-            <div class="tiny">Cost of goods/services for that sale.</div>
-          </div>
+
+      <div class="card">
+        <label>Revenue (Selling Price)</label>
+        <input type="number" id="revenue" placeholder="e.g. 1000" />
+
+        <label>Cost</label>
+        <input type="number" id="cost" placeholder="e.g. 650" />
+
+        <button onclick="calculate()">Calculate</button>
+        <button class="secondary" onclick="resetCalc()">Reset</button>
+      </div>
+
+      <div class="card">
+        <h3>Results</h3>
+
+        <div class="result-row">
+          <div>Gross Profit</div>
+          <div class="value" id="profit">—</div>
         </div>
 
-        <div class="btns">
-          <button id="calc">Calculate</button>
-          <button class="secondary" id="reset">Reset</button>
+        <div class="result-row">
+          <div>Gross Margin</div>
+          <div class="value" id="margin">—</div>
         </div>
 
-        <div class="err" id="err">Please enter valid numbers. Revenue must be greater than 0, and cost cannot be negative.</div>
+        <div class="result-row">
+          <div>Markup</div>
+          <div class="value" id="markup">—</div>
+        </div>
 
-        <p class="note">
-          <strong>Formulas:</strong>
-          Profit = Revenue − Cost · Margin % = Profit ÷ Revenue · Markup % = Profit ÷ Cost
-        </p>
-      </section>
+        <div class="result-row">
+          <div>Break-even Price</div>
+          <div class="value" id="breakeven">—</div>
+        </div>
+      </div>
 
-      <aside class="card results" aria-live="polite">
-        <h2>Results</h2>
-        <div class="stat"><div class="k">Gross Profit</div><div class="v" id="profit">—</div></div>
-        <div class="stat"><div class="k">Gross Margin</div><div class="v" id="margin">—</div></div>
-        <div class="stat"><div class="k">Markup</div><div class="v" id="markup">—</div></div>
-        <div class="stat"><div class="k">Break-even Price (at this cost)</div><div class="v" id="breakeven">—</div></div>
-
-        <p class="note tiny">
-          Tip: Margin is based on revenue; markup is based on cost.
-        </p>
-      </aside>
     </div>
 
     <footer>
-      <p>© <span id="y"></span> SmallBusinessCalculators · <a href="/privacy.html">Privacy</a> (coming soon)</p>
+      © <span id="year"></span> SmallBusinessCalculators
     </footer>
+
   </div>
 
   <script>
-    const $ = (id) => document.getElementById(id);
-
-    function parseNumber(val) {
-      if (typeof val !== "string") return NaN;
-      // allow both "," and "." decimals
-      const cleaned = val.trim().replace(/\s+/g, "").replace(",", ".");
-      if (cleaned === "") return NaN;
-      return Number(cleaned);
-    }
-
-    function fmtMoney(n) {
-      // keep it simple; currency symbol can be added later
-      return new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 }).format(n);
-    }
-
-    function fmtPct(n) {
-      return new Intl.NumberFormat(undefined, { style: "percent", maximumFractionDigits: 2 }).format(n);
-    }
-
-    function showError(show) {
-      $("err").style.display = show ? "block" : "none";
-    }
-
     function calculate() {
-      const revenue = parseNumber($("revenue").value);
-      const cost = parseNumber($("cost").value);
+      const revenue = parseFloat(document.getElementById("revenue").value);
+      const cost = parseFloat(document.getElementById("cost").value);
 
-      if (!Number.isFinite(revenue) || !Number.isFinite(cost) || revenue <= 0 || cost < 0) {
-        showError(true);
+      if (!revenue || revenue <= 0 || cost < 0) {
+        alert("Please enter valid numbers.");
         return;
       }
-      showError(false);
 
       const profit = revenue - cost;
       const margin = profit / revenue;
-      const markup = cost === 0 ? Infinity : profit / cost;
+      const markup = cost === 0 ? 0 : profit / cost;
 
-      $("profit").textContent = fmtMoney(profit);
-      $("margin").textContent = Number.isFinite(margin) ? fmtPct(margin) : "—";
-      $("markup").textContent = Number.isFinite(markup) ? fmtPct(markup) : (profit > 0 ? "∞" : "—");
-      $("breakeven").textContent = fmtMoney(cost);
+      document.getElementById("profit").innerText = profit.toFixed(2);
+      document.getElementById("margin").innerText = (margin * 100).toFixed(2) + " %";
+      document.getElementById("markup").innerText = (markup * 100).toFixed(2) + " %";
+      document.getElementById("breakeven").innerText = cost.toFixed(2);
     }
 
-    function reset() {
-      $("revenue").value = "";
-      $("cost").value = "";
-      $("profit").textContent = "—";
-      $("margin").textContent = "—";
-      $("markup").textContent = "—";
-      $("breakeven").textContent = "—";
-      showError(false);
-      $("revenue").focus();
+    function resetCalc() {
+      document.getElementById("revenue").value = "";
+      document.getElementById("cost").value = "";
+      document.getElementById("profit").innerText = "—";
+      document.getElementById("margin").innerText = "—";
+      document.getElementById("markup").innerText = "—";
+      document.getElementById("breakeven").innerText = "—";
     }
 
-    $("calc").addEventListener("click", calculate);
-    $("reset").addEventListener("click", reset);
-
-    // calculate on enter
-    ["revenue", "cost"].forEach(id => {
-      $(id).addEventListener("keydown", (e) => {
-        if (e.key === "Enter") calculate();
-      });
-    });
-
-    $("y").textContent = new Date().getFullYear();
+    document.getElementById("year").innerText = new Date().getFullYear();
   </script>
+
 </body>
 </html>
