@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Markup Calculator (Markup % & Selling Price) | Small Business Calculators</title>
+  <meta name="description" content="Free markup calculator. Calculate markup %, selling price from cost, and gross margin instantly." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/markup-calculator.html" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fb;
+      color: #111;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
+
+    h1 {
+      font-size: 36px;
+      margin: 8px 0 8px;
+    }
+    .sub {
+      color: #444;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 800px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+    .hint {
+      font-size: 13px;
+      color: #666;
+      margin-top: -10px;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .btnrow { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    button {
+      padding: 10px 16px;
+      font-size: 15px;
+      border-radius: 10px;
+      border: 1px solid #111;
+      background: #111;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button.secondary {
+      background: white;
+      color: #111;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .value { font-weight: 700; }
+
+    hr.sep {
+      margin: 40px 0;
+      border: none;
+      border-top: 1px solid #eee;
+    }
+
+    h2 { margin: 0 0 10px; }
+    h3 { margin: 18px 0 8px; }
+    p, li { color: #222; line-height: 1.6; }
+    ul { margin-top: 8px; }
+
+    .note {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 14px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .inline-links a { font-weight: 700; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <p><a href="/">← Back to Small Business Calculators</a></p>
+
+    <h1>Markup Calculator</h1>
+    <p class="sub">
+      Calculate <strong>markup %</strong>, <strong>selling price</strong> (from cost + markup), and see <strong>gross profit</strong> and <strong>gross margin</strong>.
+      <span class="inline-links">Also try: <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.</span>
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <label for="cost">Cost</label>
+        <input type="number" id="cost" inputmode="decimal" placeholder="e.g. 60" />
+        <div class="hint">Your cost of goods/services for the sale.</div>
+
+        <label for="markupPercent">Markup %</label>
+        <input type="number" id="markupPercent" inputmode="decimal" placeholder="e.g. 50" />
+        <div class="hint">Markup is based on cost. Example: 50% markup means price = cost × 1.5.</div>
+
+        <div class="btnrow">
+          <button type="button" onclick="calculateMarkup()">Calculate</button>
+          <button type="button" class="secondary" onclick="resetCalc()">Reset</button>
+        </div>
+
+        <div class="note">
+          Tip: If you know the <strong>selling price</strong> instead, use the
+          <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Results</h3>
+
+        <div class="result-row">
+          <div>Selling Price</div>
+          <div class="value" id="sellingPrice">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Gross Profit</div>
+          <div class="value" id="profit">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Gross Margin</div>
+          <div class="value" id="margin">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Markup</div>
+          <div class="value" id="markupOut">—</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <h2>What is Markup?</h2>
+    <p>
+      Markup is the percentage you add to your <strong>cost</strong> to get your <strong>selling price</strong>.
+      It’s common for pricing products and services when you start from costs.
+    </p>
+
+    <h3>Markup Formula</h3>
+    <p>
+      <strong>Selling Price</strong> = Cost × (1 + Markup %)<br>
+      <strong>Gross Profit</strong> = Selling Price − Cost<br>
+      <strong>Gross Margin %</strong> = Gross Profit ÷ Selling Price × 100
+    </p>
+
+    <h3>Markup vs Margin – What's the Difference?</h3>
+    <p>
+      Markup is based on cost, while margin is based on revenue (selling price).
+      A 50% markup is not the same as a 50% margin.
+    </p>
+
+    <footer>
+      © <span id="year"></span> SmallBusinessCalculators •
+      <a href="/privacy.html">Privacy</a> (coming soon)
+    </footer>
+
+  </div>
+
+  <script>
+    function n(v) {
+      return typeof v === "number" && isFinite(v);
+    }
+
+    function fmtMoney(x) {
+      return x.toFixed(2);
+    }
+
+    function calculateMarkup() {
+      const cost = parseFloat(document.getElementById("cost").value);
+      const markupPercent = parseFloat(document.getElementById("markupPercent").value);
+
+      if (!n(cost) || cost < 0 || !n(markupPercent) || markupPercent < 0) {
+        alert("Please enter valid numbers (cost ≥ 0, markup ≥ 0).");
+        return;
+      }
+
+      const markupRate = markupPercent / 100;
+      const sellingPrice = cost * (1 + markupRate);
+      const profit = sellingPrice - cost;
+
+      const marginRate = sellingPrice === 0 ? 0 : (profit / sellingPrice);
+      const markupOut = cost === 0 ? 0 : (profit / cost);
+
+      document.getElementById("sellingPrice").innerText = fmtMoney(sellingPrice);
+      document.getElementById("profit").innerText = fmtMoney(profit);
+      document.getElementById("margin").innerText = (marginRate * 100).toFixed(2) + " %";
+      document.getElementById("markupOut").innerText = (markupOut * 100).toFixed(2) + " %";
+    }
+
+    function resetCalc() {
+      document.getElementById("cost").value = "";
+      document.getElementById("markupPercent").value = "";
+      document.getElementById("sellingPrice").innerText = "—";
+      document.getElementById("profit").innerText = "—";
+      document.getElementById("margin").innerText = "—";
+      document.getElementById("markupOut").innerText = "—";
+    }
+
+    document.getElementById("year").innerText = new Date().getFullYear();
+  </script>
+
+  <!-- Structured data (FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markup is calculated as (Selling Price - Cost) ÷ Cost × 100. It shows how much you add on top of your cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate selling price from cost and markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Selling Price = Cost × (1 + Markup%). For example, cost 100 with 50% markup gives a selling price of 150."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between markup and margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markup is based on cost: Profit ÷ Cost. Margin is based on revenue: Profit ÷ Selling Price. They are not the same percentage."
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
