@@ -1,1 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+  <title>Profit Margin Calculator (Gross Margin) — SmallBusinessCalculators</title>
+  <meta name="description" content="Free Profit Margin Calculator. Enter revenue and cost to calculate gross profit, gross margin %, and markup %. Instant results." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Profit Margin Calculator (Gross Margin)" />
+  <meta property="og:description" content="Enter revenue and cost to calculate profit, margin %, and markup %. Free and instant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/" />
+
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.4; background:#fafafa; color:#111; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 28px 18px 60px; }
+    header { margin-bottom: 18px; }
+    h1 { font-size: 34px; margin: 0 0 6px; letter-spacing: -0.02em; }
+    .sub { color:#444; margin: 0; }
+
+    .card { background:#fff; border:1px solid #e7e7e7; border-radius: 14px; padding: 18px; box-shadow: 0 1px 10px rgba(0,0,0,.03); }
+    .grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+    @media (min-width: 840px){ .grid { grid-template-columns: 1.1fr .9fr; } }
+
+    label { display:block; font-weight: 600; margin-bottom: 6px; }
+    input {
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 10px;
+      border:1px solid #d8d8d8;
+      font-size: 16px;
+      outline: none;
+    }
+    input:focus { border-color:#111; }
+    .row { display:grid; gap: 12px; grid-template-columns: 1fr; }
+    @media (min-width: 520px){ .row { grid-template-columns: 1fr 1fr; } }
+
+    .btns { display:flex; gap:10px; margin-top: 10px; flex-wrap: wrap; }
+    button {
+      border: 1px solid #111;
+      background:#111;
+      color:#fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button.secondary { background:#fff; color:#111; }
+    button:active { transform: translateY(1px); }
+
+    .results h2 { margin:0 0 10px; font-size: 18px; }
+    .stat { display:flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px dashed #e6e6e6; }
+    .stat:last-child { border-bottom:0; }
+    .k { color:#444; }
+    .v { font-variant-numeric: tabular-nums; font-weight: 800; }
+    .note { margin-top: 10px; color:#555; font-size: 14px; }
+
+    footer { margin-top: 18px; color:#666; font-size: 13px; }
+    a { color: inherit; }
+    .err { color:#b00020; font-weight: 700; margin-top: 10px; display:none; }
+    .tiny { font-size: 12px; color:#666; }
+  </style>
+
+  <!-- Minimal JSON-LD (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Profit Margin Calculator (Gross Margin)",
+    "url": "https://smallbusinesscalculators.com/",
+    "description": "Free Profit Margin Calculator. Enter revenue and cost to calculate gross profit, gross margin %, and markup %."
+  }
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Profit Margin Calculator</h1>
+      <p class="sub">Calculate <strong>gross profit</strong>, <strong>gross margin %</strong>, and <strong>markup %</strong> from revenue and cost.</p>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <div class="row">
+          <div>
+            <label for="revenue">Revenue (Selling Price)</label>
+            <input id="revenue" inputmode="decimal" placeholder="e.g. 1000" />
+            <div class="tiny">Total sale amount (before tax if you prefer).</div>
+          </div>
+          <div>
+            <label for="cost">Cost</label>
+            <input id="cost" inputmode="decimal" placeholder="e.g. 650" />
+            <div class="tiny">Cost of goods/services for that sale.</div>
+          </div>
+        </div>
+
+        <div class="btns">
+          <button id="calc">Calculate</button>
+          <button class="secondary" id="reset">Reset</button>
+        </div>
+
+        <div class="err" id="err">Please enter valid numbers. Revenue must be greater than 0, and cost cannot be negative.</div>
+
+        <p class="note">
+          <strong>Formulas:</strong>
+          Profit = Revenue − Cost · Margin % = Profit ÷ Revenue · Markup % = Profit ÷ Cost
+        </p>
+      </section>
+
+      <aside class="card results" aria-live="polite">
+        <h2>Results</h2>
+        <div class="stat"><div class="k">Gross Profit</div><div class="v" id="profit">—</div></div>
+        <div class="stat"><div class="k">Gross Margin</div><div class="v" id="margin">—</div></div>
+        <div class="stat"><div class="k">Markup</div><div class="v" id="markup">—</div></div>
+        <div class="stat"><div class="k">Break-even Price (at this cost)</div><div class="v" id="breakeven">—</div></div>
+
+        <p class="note tiny">
+          Tip: Margin is based on revenue; markup is based on cost.
+        </p>
+      </aside>
+    </div>
+
+    <footer>
+      <p>© <span id="y"></span> SmallBusinessCalculators · <a href="/privacy.html">Privacy</a> (coming soon)</p>
+    </footer>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    function parseNumber(val) {
+      if (typeof val !== "string") return NaN;
+      // allow both "," and "." decimals
+      const cleaned = val.trim().replace(/\s+/g, "").replace(",", ".");
+      if (cleaned === "") return NaN;
+      return Number(cleaned);
+    }
+
+    function fmtMoney(n) {
+      // keep it simple; currency symbol can be added later
+      return new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 }).format(n);
+    }
+
+    function fmtPct(n) {
+      return new Intl.NumberFormat(undefined, { style: "percent", maximumFractionDigits: 2 }).format(n);
+    }
+
+    function showError(show) {
+      $("err").style.display = show ? "block" : "none";
+    }
+
+    function calculate() {
+      const revenue = parseNumber($("revenue").value);
+      const cost = parseNumber($("cost").value);
+
+      if (!Number.isFinite(revenue) || !Number.isFinite(cost) || revenue <= 0 || cost < 0) {
+        showError(true);
+        return;
+      }
+      showError(false);
+
+      const profit = revenue - cost;
+      const margin = profit / revenue;
+      const markup = cost === 0 ? Infinity : profit / cost;
+
+      $("profit").textContent = fmtMoney(profit);
+      $("margin").textContent = Number.isFinite(margin) ? fmtPct(margin) : "—";
+      $("markup").textContent = Number.isFinite(markup) ? fmtPct(markup) : (profit > 0 ? "∞" : "—");
+      $("breakeven").textContent = fmtMoney(cost);
+    }
+
+    function reset() {
+      $("revenue").value = "";
+      $("cost").value = "";
+      $("profit").textContent = "—";
+      $("margin").textContent = "—";
+      $("markup").textContent = "—";
+      $("breakeven").textContent = "—";
+      showError(false);
+      $("revenue").focus();
+    }
+
+    $("calc").addEventListener("click", calculate);
+    $("reset").addEventListener("click", reset);
+
+    // calculate on enter
+    ["revenue", "cost"].forEach(id => {
+      $(id).addEventListener("keydown", (e) => {
+        if (e.key === "Enter") calculate();
+      });
+    });
+
+    $("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
