@@ -1,1 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>ROI Calculator (Return on Investment) | Small Business Calculators</title>
+  <meta name="description" content="Free ROI calculator. Calculate return on investment (ROI %) from investment cost and return value. Includes net profit and payback insight." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.smallbusinesscalculators.com/roi-calculator.html" />
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ROI % = (Return − Investment Cost) ÷ Investment Cost × 100. It measures how much profit you earned relative to what you invested."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good ROI depends on your industry, risk, and alternatives. Compare ROI to your cost of capital and other opportunities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can ROI be negative?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If your return is less than your investment cost, ROI will be negative, meaning you lost money on the investment."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fb;
+      color: #111;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
+
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .sub { color: #444; margin-bottom: 30px; line-height: 1.5; }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 800px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+    }
+
+    label { display:block; font-weight: 600; margin-bottom: 6px; }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+    .hint {
+      font-size: 13px;
+      color: #666;
+      margin-top: -10px;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .btnrow { display:flex; gap:10px; flex-wrap: wrap; }
+    button {
+      padding: 10px 16px;
+      font-size: 15px;
+      border-radius: 10px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button.secondary { background:#fff; color:#111; }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .value { font-weight: 700; }
+
+    hr.sep { margin: 40px 0; border: none; border-top: 1px solid #eee; }
+
+    h2 { margin: 0 0 10px; }
+    h3 { margin: 18px 0 8px; }
+    p, li { color:#222; line-height: 1.6; }
+    ul { margin-top: 8px; }
+
+    .note {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 14px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #666;
+    }
+    .inline-links a { font-weight: 700; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <p><a href="/">← Back to Small Business Calculators</a></p>
+
+    <h1>ROI Calculator</h1>
+    <p class="sub">
+      Calculate <strong>Return on Investment (ROI %)</strong> from investment cost and return value.
+      <span class="inline-links">Related: <a href="/profit-margin-calculator.html">Profit Margin</a> • <a href="/break-even-calculator.html">Break-Even</a></span>
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <label for="investment">Investment Cost</label>
+        <input type="number" id="investment" inputmode="decimal" placeholder="e.g. 5000" />
+        <div class="hint">Your initial cost (ad spend, equipment, project cost, etc.).</div>
+
+        <label for="returnValue">Return Value</label>
+        <input type="number" id="returnValue" inputmode="decimal" placeholder="e.g. 8000" />
+        <div class="hint">Total value returned (revenue or final value). Use the same currency.</div>
+
+        <div class="btnrow">
+          <button type="button" onclick="calc()">Calculate</button>
+          <button type="button" class="secondary" onclick="resetCalc()">Reset</button>
+        </div>
+
+        <div class="note">
+          ROI measures performance, but don’t ignore <strong>time</strong> and <strong>risk</strong>.
+          A 30% ROI in 1 month is not the same as 30% ROI in 3 years.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Results</h3>
+
+        <div class="result-row">
+          <div>Net Profit</div>
+          <div class="value" id="profit">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>ROI</div>
+          <div class="value" id="roi">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Return / Investment</div>
+          <div class="value" id="multiple">—</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <h2>What is ROI?</h2>
+    <p>
+      ROI (Return on Investment) shows how much profit you earned relative to what you invested.
+      It’s a simple way to compare projects, marketing campaigns, equipment purchases, and other business decisions.
+    </p>
+
+    <h3>ROI Formula</h3>
+    <p>
+      <strong>Net Profit</strong> = Return − Investment Cost<br>
+      <strong>ROI %</strong> = (Net Profit ÷ Investment Cost) × 100
+    </p>
+
+    <h3>How to Use ROI in a Small Business</h3>
+    <ul>
+      <li>Compare marketing channels (ads, SEO, referrals)</li>
+      <li>Evaluate new equipment or software purchases</li>
+      <li>Prioritize projects with higher expected returns</li>
+      <li>Track performance over time</li>
+    </ul>
+
+    <footer>
+      © <span id="year"></span> SmallBusinessCalculators
+    </footer>
+  </div>
+
+  <script>
+    function ok(x) { return typeof x === "number" && isFinite(x); }
+    function fmt2(x) { return x.toFixed(2); }
+
+    function calc() {
+      const investment = parseFloat(document.getElementById("investment").value);
+      const ret = parseFloat(document.getElementById("returnValue").value);
+
+      if (!ok(investment) || investment <= 0 || !ok(ret) || ret < 0) {
+        alert("Please enter valid numbers (investment > 0, return ≥ 0).");
+        return;
+      }
+
+      const profit = ret - investment;
+      const roi = (profit / investment) * 100;
+      const multiple = ret / investment;
+
+      document.getElementById("profit").innerText = fmt2(profit);
+      document.getElementById("roi").innerText = roi.toFixed(2) + " %";
+      document.getElementById("multiple").innerText = multiple.toFixed(2) + "×";
+    }
+
+    function resetCalc() {
+      document.getElementById("investment").value = "";
+      document.getElementById("returnValue").value = "";
+      document.getElementById("profit").innerText = "—";
+      document.getElementById("roi").innerText = "—";
+      document.getElementById("multiple").innerText = "—";
+    }
+
+    document.getElementById("year").innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
