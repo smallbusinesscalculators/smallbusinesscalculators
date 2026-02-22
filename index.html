@@ -1,138 +1,280 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="nJgF4smF3PVzvs3HWPIXZB5vw7CLcnxqFI9ca4Ae4o0" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Small Business Calculators – Free Online Tools</title>
-  <meta name="description" content="Free online business calculators including profit margin, markup, ROI and more. Simple, fast and accurate tools for small businesses." />
-  <link rel="canonical" href="https://smallbusinesscalculators.com/" />
+  <title>Small Business Calculators | Profit Margin, Markup, Break-Even & ROI</title>
+  <meta name="description" content="Free, simple small business calculators. Calculate profit margin, markup, break-even point and ROI in seconds with clean, accurate tools." />
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Small Business Calculators" />
+  <meta property="og:description" content="Free calculators for profit margin, markup, break-even and ROI." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Small Business Calculators" />
+  <meta name="twitter:description" content="Free calculators for profit margin, markup, break-even and ROI." />
 
   <style>
-    body {
-      margin: 0;
+    :root{
+      --bg:#fafafa;
+      --text:#111;
+      --muted:#444;
+      --card:#fff;
+      --border:#e5e5e5;
+    }
+    body{
+      margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #fafafa;
-      color: #111;
+      background:var(--bg);
+      color:var(--text);
     }
-
-    .wrap {
-      max-width: 900px;
+    .wrap{
+      max-width: 980px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 44px 20px 70px;
     }
-
-    h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+    header{
+      margin-bottom: 22px;
+    }
+    h1{
+      font-size: 44px;
+      margin: 0 0 10px;
       letter-spacing: -0.02em;
+      line-height: 1.05;
     }
-
-    p {
-      color: #444;
+    .lead{
       font-size: 18px;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.55;
+      margin: 0;
     }
-
-    .grid {
-      margin-top: 40px;
+    .grid{
+      margin-top: 26px;
       display: grid;
-      gap: 20px;
+      gap: 18px;
       grid-template-columns: 1fr;
     }
-
-    @media (min-width: 700px) {
-      .grid {
-        grid-template-columns: 1fr 1fr;
-      }
+    @media (min-width: 820px){
+      .grid{ grid-template-columns: 1fr 1fr; }
     }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 14px;
-      border: 1px solid #e5e5e5;
-      text-decoration: none;
+    .card{
+      display:block;
+      background:var(--card);
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
       color: inherit;
-      transition: 0.15s ease;
+      text-decoration: none;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-
-    .card:hover {
+    .card:hover{
       transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 26px rgba(0,0,0,.07);
     }
-
-    .card h2 {
-      margin: 0 0 8px;
+    .card h2{
       font-size: 22px;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
     }
-
-    footer {
-      margin-top: 50px;
+    .card p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    .meta{
       font-size: 14px;
       color: #666;
     }
+
+    .section{
+      margin-top: 42px;
+    }
+    .section h2{
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+    .section p, .section li{
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .bullets{
+      margin: 10px 0 0 18px;
+    }
+    .faq{
+      margin-top: 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+    }
+    .faq details{
+      padding: 10px 0;
+      border-top: 1px solid #eee;
+    }
+    .faq details:first-child{
+      border-top: none;
+    }
+    .faq summary{
+      cursor: pointer;
+      font-weight: 650;
+      color: var(--text);
+      list-style: none;
+    }
+    .faq summary::-webkit-details-marker{ display:none; }
+
+    footer{
+      margin-top: 50px;
+      color:#666;
+      font-size:14px;
+    }
+    footer a{
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover{ text-decoration: underline; }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <h1>Small Business Calculators</h1>
+    <header>
+      <h1>Small Business Calculators</h1>
+      <p class="lead">
+        Free online calculators built for small business owners, entrepreneurs, and freelancers.
+        Quickly calculate <strong>profit margin</strong>, <strong>markup</strong>, <strong>break-even</strong>, and <strong>ROI</strong> using simple, accurate tools.
+      </p>
+    </header>
 
-    <p>
-      Free online business calculators for small business owners, entrepreneurs, and freelancers.
-      Calculate profit margin, markup, break-even point, ROI and more using simple, accurate tools.
-    </p>
+    <main>
+      <div class="grid">
+        <a class="card" href="/profit-margin-calculator.html">
+          <h2>Profit Margin Calculator</h2>
+          <p>Calculate gross profit, gross margin %, markup %, and break-even price from revenue and cost.</p>
+          <div class="meta">Best for: pricing, profitability checks, quick margin math</div>
+        </a>
 
-    <h2>Business & Profitability Calculators</h2>
+        <a class="card" href="/markup-calculator.html">
+          <h2>Markup Calculator</h2>
+          <p>Calculate markup %, selling price from cost, and understand the difference between markup and margin.</p>
+          <div class="meta">Best for: setting selling prices from cost</div>
+        </a>
 
-    <div class="grid">
-      <a class="card" href="/profit-margin-calculator.html">
-        <h3>Profit Margin Calculator</h3>
-        <p>Calculate gross profit, gross margin %, and markup % instantly.</p>
-      </a>
+        <a class="card" href="/break-even-calculator.html">
+          <h2>Break-Even Calculator</h2>
+          <p>Calculate break-even point in units and revenue so you know what it takes to cover your costs.</p>
+          <div class="meta">Best for: forecasting, sales targets, fixed-cost planning</div>
+        </a>
 
-      <a class="card" href="/markup-calculator.html">
-        <h3>Markup Calculator</h3>
-        <p>Calculate markup %, selling price from cost, and margin.</p>
-      </a>
+        <a class="card" href="/roi-calculator.html">
+          <h2>ROI Calculator</h2>
+          <p>Calculate ROI % and net profit to evaluate investments, ads, equipment, or any business project.</p>
+          <div class="meta">Best for: marketing ROI, investment decisions, comparing options</div>
+        </a>
+      </div>
 
-      <a class="card" href="/break-even-calculator.html">
-        <h3>Break-Even Calculator</h3>
-        <p>Calculate break-even point in units and revenue.</p>
-      </a>
+      <div class="section">
+        <h2>How to use these calculators</h2>
+        <p>
+          Pick a calculator above, enter your numbers, and you’ll instantly get the results.
+          Use profit margin and markup for pricing, break-even for targets, and ROI for deciding what’s worth investing in.
+        </p>
+        <ul class="bullets">
+          <li><strong>Profit Margin</strong> is based on revenue (selling price).</li>
+          <li><strong>Markup</strong> is based on cost.</li>
+          <li><strong>Break-even</strong> tells you when you cover total costs.</li>
+          <li><strong>ROI</strong> compares profit to investment cost.</li>
+        </ul>
+      </div>
 
-      <a class="card" href="/roi-calculator.html">
-        <h3>ROI Calculator</h3>
-        <p>Calculate return on investment (ROI %) and net profit.</p>
-      </a>
-    </div>
+      <div class="section">
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>What’s the difference between margin and markup?</summary>
+            <p>Margin is profit divided by revenue. Markup is profit divided by cost. They are not the same percentage.</p>
+          </details>
 
-    <hr style="margin:40px 0; border:none; border-top:1px solid #eee;">
+          <details>
+            <summary>Which calculator should I use for pricing?</summary>
+            <p>Start with Profit Margin if you have a selling price, or Markup if you want to set a selling price from your cost.</p>
+          </details>
 
-    <h2>Why Use Our Business Calculators?</h2>
-    <p>
-      Our calculators are designed specifically for small business decision-making.
-      Whether you're pricing products, evaluating marketing ROI, or calculating
-      break-even points, these tools help you make data-driven decisions quickly.
-    </p>
-
-    <h2>What Can You Calculate?</h2>
-    <ul>
-      <li>Gross profit and margin percentages</li>
-      <li>Markup pricing strategies</li>
-      <li>Break-even sales targets</li>
-      <li>Return on investment (ROI)</li>
-    </ul>
+          <details>
+            <summary>Can I use these for taxes or accounting?</summary>
+            <p>These tools are for quick business math and planning. For taxes/accounting, confirm figures with your accountant.</p>
+          </details>
+        </div>
+      </div>
+    </main>
 
     <footer>
       © <span id="year"></span> SmallBusinessCalculators
+      · <a href="/sitemap.xml">Sitemap</a>
+      · <a href="/robots.txt">Robots</a>
     </footer>
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Structured data: WebSite + ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Small Business Calculators",
+    "url": "https://smallbusinesscalculators.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://smallbusinesscalculators.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Small Business Calculators",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Profit Margin Calculator",
+        "url": "https://smallbusinesscalculators.com/profit-margin-calculator.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Markup Calculator",
+        "url": "https://smallbusinesscalculators.com/markup-calculator.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Break-Even Calculator",
+        "url": "https://smallbusinesscalculators.com/break-even-calculator.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "ROI Calculator",
+        "url": "https://smallbusinesscalculators.com/roi-calculator.html"
+      }
+    ]
+  }
   </script>
 </body>
 </html>
