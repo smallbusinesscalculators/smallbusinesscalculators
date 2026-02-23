@@ -9,6 +9,40 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/markup-calculator.html" />
 
+    <!-- Structured data (FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markup is calculated as (Selling Price - Cost) ÷ Cost × 100. It shows how much you add on top of your cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate selling price from cost and markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Selling Price = Cost × (1 + Markup%). For example, cost 100 with 50% markup gives a selling price of 150."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between markup and margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markup is based on cost: Profit ÷ Cost. Margin is based on revenue: Profit ÷ Selling Price. They are not the same percentage."
+        }
+      }
+    ]
+  }
+  </script>
+  
   <style>
     body {
       margin: 0;
@@ -140,6 +174,10 @@
 
     <p><a href="/">← Back to Small Business Calculators</a></p>
 
+    <nav style="font-size:14px; margin-bottom:10px; color:#666;">
+  <a href="/">Home</a> › Markup Calculator
+</nav>
+
     <h1>Markup Calculator</h1>
     <p class="sub">
       Calculate <strong>markup %</strong>, <strong>selling price</strong> (from cost + markup), and see <strong>gross profit</strong> and <strong>gross margin</strong>.
@@ -213,6 +251,15 @@
       A 50% markup is not the same as a 50% margin.
     </p>
 
+    <hr class="sep">
+
+<h2>Related Calculators</h2>
+<ul>
+  <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+  <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+  <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+</ul>
+    
     <footer>
       © <span id="year"></span> SmallBusinessCalculators •
       <a href="/privacy.html">Privacy</a> (coming soon)
@@ -263,38 +310,6 @@
     document.getElementById("year").innerText = new Date().getFullYear();
   </script>
 
-  <!-- Structured data (FAQ) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do you calculate markup?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Markup is calculated as (Selling Price - Cost) ÷ Cost × 100. It shows how much you add on top of your cost."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do you calculate selling price from cost and markup?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Selling Price = Cost × (1 + Markup%). For example, cost 100 with 50% markup gives a selling price of 150."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between markup and margin?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Markup is based on cost: Profit ÷ Cost. Margin is based on revenue: Profit ÷ Selling Price. They are not the same percentage."
-        }
-      }
-    ]
-  }
-  </script>
+
 </body>
 </html>
