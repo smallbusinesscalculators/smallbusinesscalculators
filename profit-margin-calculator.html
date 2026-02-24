@@ -1,322 +1,319 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Profit Margin Calculator (Gross Margin & Markup %) – Free & Instant</title>
-<meta name="description" content="Use our free profit margin calculator to instantly calculate gross profit, gross margin %, markup %, and break-even price. Simple, fast and accurate." />
-<meta name="robots" content="index,follow" />
-<link rel="canonical" href="https://smallbusinesscalculators.com/profit-margin-calculator.html" />
+  <title>Profit Margin Calculator (Gross Margin & Markup %) – Free & Instant</title>
+  <meta name="description" content="Use our free profit margin calculator to instantly calculate gross profit, gross margin %, markup %, and break-even price. Simple, fast and accurate." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/profit-margin-calculator.html" />
 
-<!-- FAQ Schema (moved to HEAD for reliability) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do you calculate profit margin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Profit margin is calculated as (Revenue - Cost) ÷ Revenue × 100. It shows how much profit you keep from each dollar of sales."
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate profit margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Profit margin is calculated as (Revenue - Cost) ÷ Revenue × 100. It shows how much profit you keep from each dollar of sales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between margin and markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Margin is based on revenue: Profit ÷ Revenue. Markup is based on cost: Profit ÷ Cost. They are not the same percentage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good profit margin for a small business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good profit margin depends on your industry. As rough benchmarks: retail is often 5–20%, services 10–30%, ecommerce 10–30%, and SaaS/software can be 60–80%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate gross profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gross profit is Revenue minus Cost. It is the amount left after covering the direct cost of the product or service."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between margin and markup?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Margin is based on revenue: Profit ÷ Revenue. Markup is based on cost: Profit ÷ Cost. They are not the same percentage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a good profit margin for a small business?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A good profit margin depends on your industry. As rough benchmarks: retail is often 5–20%, services 10–30%, ecommerce 10–30%, and SaaS/software can be 60–80%."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you calculate gross profit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Gross profit is Revenue minus Cost. It is the amount left after covering the direct cost of the product or service."
-      }
-    }
-  ]
-}
-</script>
-
-<style>
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: #f8f9fb;
-  color: #111;
-}
-
-.wrap {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px 60px;
-}
-
-a {
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  font-size: 36px;
-  margin-bottom: 8px;
-}
-
-.sub {
-  color: #444;
-  margin-bottom: 30px;
-}
-
-.grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 800px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
+    ]
   }
-}
+  </script>
 
-.card {
-  background: white;
-  border-radius: 14px;
-  padding: 20px;
-  border: 1px solid #e5e5e5;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fb;
+      color: #111;
+      line-height: 1.6;
+    }
 
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
 
-input {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 15px;
-}
+    a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
 
-button {
-  padding: 10px 16px;
-  font-size: 15px;
-  border-radius: 10px;
-  border: 1px solid #111;
-  background: #111;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  margin-right: 10px;
-}
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .sub { color: #444; margin-bottom: 18px; }
 
-button.secondary {
-  background: white;
-  color: #111;
-}
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 800px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
 
-.result-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-}
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+    }
 
-.result-row:last-child {
-  border-bottom: none;
-}
+    label { display: block; font-weight: 600; margin-bottom: 6px; }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
 
-.value {
-  font-weight: 700;
-}
+    .btnrow { display:flex; gap:10px; flex-wrap: wrap; }
+    button {
+      padding: 10px 16px;
+      font-size: 15px;
+      border-radius: 10px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button.secondary { background:#fff; color:#111; }
 
-footer {
-  margin-top: 50px;
-  font-size: 14px;
-  color: #666;
-}
-</style>
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .result-row:last-child { border-bottom: none; }
+
+    .value { font-weight: 700; }
+
+    hr.sep { margin: 40px 0; border: none; border-top: 1px solid #eee; }
+
+    code { background: #f1f1f1; padding: 2px 6px; border-radius: 6px; }
+
+    footer { margin-top: 50px; font-size: 14px; color: #666; }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
+    <p><a href="/">← Back to Small Business Calculators</a></p>
 
-<p><a href="/">← Back to Small Business Calculators</a></p>
+    <nav style="font-size:14px; margin-bottom:10px; color:#666;">
+      <a href="/">Home</a> › Profit Margin Calculator
+    </nav>
 
-  <nav style="font-size:14px; margin-bottom:10px; color:#666;">
-  <a href="/">Home</a> › Profit Margin Calculator
-</nav>
+    <h1>Profit Margin Calculator</h1>
 
-<h1>Profit Margin Calculator</h1>
-<p class="sub">Calculate gross profit, gross margin %, and markup % from revenue and cost.</p>
+    <!-- Snippet-friendly definition block -->
+    <p><strong>Profit margin</strong> is calculated as:<br>
+      <code>(Revenue − Cost) / Revenue × 100</code>
+    </p>
+    <p class="sub">
+      Enter revenue and cost to calculate <strong>gross profit</strong>, <strong>gross margin %</strong>, and <strong>markup %</strong>.
+      Related: <a href="/gross-margin-calculator.html">Gross Margin</a> • <a href="/margin-vs-markup.html">Margin vs Markup</a>
+    </p>
 
-<div class="grid">
+    <div class="grid">
+      <div class="card">
+        <label for="revenue">Revenue (Selling Price)</label>
+        <input type="number" id="revenue" inputmode="decimal" min="0" step="0.01" placeholder="e.g. 1000" />
 
-<div class="card">
-<label>Revenue (Selling Price)</label>
-<input type="number" id="revenue" placeholder="e.g. 1000" />
+        <label for="cost">Cost</label>
+        <input type="number" id="cost" inputmode="decimal" min="0" step="0.01" placeholder="e.g. 650" />
 
-<label>Cost</label>
-<input type="number" id="cost" placeholder="e.g. 650" />
+        <div class="btnrow">
+          <button type="button" id="btnCalc">Calculate</button>
+          <button type="button" class="secondary" id="btnReset">Reset</button>
+        </div>
+      </div>
 
-<button onclick="calculate()">Calculate</button>
-<button class="secondary" onclick="resetCalc()">Reset</button>
-</div>
+      <div class="card">
+        <h3>Results</h3>
 
-<div class="card">
-<h3>Results</h3>
+        <div class="result-row">
+          <div>Gross Profit</div>
+          <div class="value" id="profit">—</div>
+        </div>
 
-<div class="result-row">
-<div>Gross Profit</div>
-<div class="value" id="profit">—</div>
-</div>
+        <div class="result-row">
+          <div>Gross Margin</div>
+          <div class="value" id="margin">—</div>
+        </div>
 
-<div class="result-row">
-<div>Gross Margin</div>
-<div class="value" id="margin">—</div>
-</div>
+        <div class="result-row">
+          <div>Markup</div>
+          <div class="value" id="markup">—</div>
+        </div>
 
-<div class="result-row">
-<div>Markup</div>
-<div class="value" id="markup">—</div>
-</div>
+        <div class="result-row">
+          <div>Break-even Price</div>
+          <div class="value" id="breakeven">—</div>
+        </div>
+      </div>
+    </div>
 
-<div class="result-row">
-<div>Break-even Price</div>
-<div class="value" id="breakeven">—</div>
-</div>
+    <hr class="sep">
 
-</div>
-</div>
+    <h2>What is profit margin?</h2>
+    <p>
+      Profit margin measures how much of your revenue remains as profit after covering costs.
+      It shows how efficiently you turn sales into profit.
+    </p>
 
-<hr style="margin:40px 0; border:none; border-top:1px solid #eee;">
+    <h3>Profit margin formulas</h3>
+    <p>
+      <strong>Profit</strong> = Revenue − Cost<br>
+      <strong>Gross Margin %</strong> = Profit ÷ Revenue × 100<br>
+      <strong>Markup %</strong> = Profit ÷ Cost × 100
+    </p>
 
-<h2>What is Profit Margin?</h2>
-<p>
-Profit margin measures how much of your revenue remains as profit after covering costs.
-It shows how efficiently you turn sales into profit.
-</p>
+    <h3>Margin vs markup</h3>
+    <p>
+      Margin is based on revenue. Markup is based on cost. A 50% markup does not equal a 50% margin.
+      Learn the difference in our guide: <a href="/margin-vs-markup.html">Margin vs Markup</a>.
+    </p>
 
-<h3>Profit Margin Formula</h3>
-<p>
-<strong>Profit</strong> = Revenue − Cost<br>
-<strong>Gross Margin %</strong> = Profit ÷ Revenue × 100<br>
-<strong>Markup %</strong> = Profit ÷ Cost × 100
-</p>
+    <h2>What is a good profit margin?</h2>
+    <p>
+      A good profit margin depends on your industry, cost structure, and pricing strategy.
+      Here are general benchmarks:
+    </p>
 
-<h3>Margin vs Markup – What's the Difference?</h3>
-<p>
-Margin is based on revenue. Markup is based on cost. A 50% markup does not equal a 50% margin.
-</p>
+    <ul>
+      <li><strong>Retail:</strong> 5–20%</li>
+      <li><strong>Service businesses:</strong> 10–30%</li>
+      <li><strong>SaaS / Software:</strong> 60–80%</li>
+      <li><strong>Ecommerce:</strong> 10–30%</li>
+    </ul>
 
-<h2>What Is a Good Profit Margin?</h2>
-<p>
-A good profit margin depends on your industry, cost structure, and pricing strategy.
-Here are general benchmarks:
-</p>
+    <h2>Example calculation</h2>
+    <p>If your revenue is $1,000 and your cost is $650:</p>
+    <ul>
+      <li>Profit = $350</li>
+      <li>Margin = 35%</li>
+      <li>Markup = 53.85%</li>
+    </ul>
 
-<ul>
-  <li><strong>Retail:</strong> 5–20%</li>
-  <li><strong>Service businesses:</strong> 10–30%</li>
-  <li><strong>SaaS / Software:</strong> 60–80%</li>
-  <li><strong>Ecommerce:</strong> 10–30%</li>
-</ul>
+    <hr class="sep">
 
-<p>
-Higher profit margins usually indicate better efficiency, stronger pricing power,
-or lower operating costs.
-</p>
+    <h2>Frequently Asked Questions</h2>
 
-<h2>How to Increase Your Profit Margin</h2>
-<ul>
-  <li>Increase prices strategically</li>
-  <li>Negotiate lower supplier costs</li>
-  <li>Reduce overhead and operational waste</li>
-  <li>Focus on higher-margin products</li>
-</ul>
+    <h3>How do you calculate profit margin?</h3>
+    <p>Profit margin (%) = (Revenue − Cost) ÷ Revenue × 100.</p>
 
-<h2>Example Calculation</h2>
-<p>
-If your revenue is $1,000 and your cost is $650:
-</p>
+    <h3>What is the difference between margin and markup?</h3>
+    <p>Margin uses revenue as the denominator. Markup uses cost as the denominator.</p>
 
-<ul>
-  <li>Profit = $350</li>
-  <li>Margin = 35%</li>
-  <li>Markup = 53.85%</li>
-</ul>
+    <h3>What is a good profit margin for a small business?</h3>
+    <p>It depends on industry. Retail often runs 5–20%, services 10–30%, ecommerce 10–30%, and SaaS can be higher.</p>
 
-<p>
-Notice how markup is always higher than margin when profit exists.
-</p>  
+    <h3>How do you calculate gross profit?</h3>
+    <p>Gross profit = Revenue − Cost.</p>
 
-  <hr style="margin:40px 0; border:none; border-top:1px solid #eee;">
+    <hr class="sep">
 
-<h2>Related Calculators</h2>
-<ul>
-  <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-  <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-  <li><a href="/roi-calculator.html">ROI Calculator</a></li>
-</ul>
-  
-<footer>
-© <span id="year"></span> SmallBusinessCalculators
-</footer>
+    <h2>Related calculators</h2>
+    <ul>
+      <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
+      <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+      <li><a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a></li>
+      <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+      <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+    </ul>
 
-</div>
+    <footer>
+      © <span id="year"></span> SmallBusinessCalculators
+    </footer>
+  </div>
 
-<script>
-function calculate() {
-  const revenue = parseFloat(document.getElementById("revenue").value);
-  const cost = parseFloat(document.getElementById("cost").value);
+  <script>
+    function ok(x) { return typeof x === "number" && isFinite(x); }
 
-  if (isNaN(revenue) || isNaN(cost) || revenue <= 0 || cost < 0) {
-    alert("Please enter valid numbers.");
-    return;
-  }
+    function fmtMoney(n) {
+      if (!ok(n)) return "—";
+      return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+    }
 
-  const profit = revenue - cost;
-  const margin = profit / revenue;
-  const markup = cost === 0 ? 0 : profit / cost;
+    function fmtPct(n) {
+      if (!ok(n)) return "—";
+      return (n * 100).toFixed(2) + " %";
+    }
 
-  document.getElementById("profit").innerText = profit.toFixed(2);
-  document.getElementById("margin").innerText = (margin * 100).toFixed(2) + " %";
-  document.getElementById("markup").innerText = (markup * 100).toFixed(2) + " %";
-  document.getElementById("breakeven").innerText = cost.toFixed(2);
-}
+    function calculate() {
+      const revenue = parseFloat(document.getElementById("revenue").value);
+      const cost = parseFloat(document.getElementById("cost").value);
 
-function resetCalc() {
-  document.getElementById("revenue").value = "";
-  document.getElementById("cost").value = "";
-  document.getElementById("profit").innerText = "—";
-  document.getElementById("margin").innerText = "—";
-  document.getElementById("markup").innerText = "—";
-  document.getElementById("breakeven").innerText = "—";
-}
+      if (!ok(revenue) || revenue <= 0 || !ok(cost) || cost < 0) {
+        alert("Please enter valid numbers (revenue > 0, cost ≥ 0).");
+        return;
+      }
 
-document.getElementById("year").innerText = new Date().getFullYear();
-</script>
+      const profit = revenue - cost;
+      const margin = profit / revenue;
+      const markup = cost === 0 ? 0 : profit / cost;
 
+      document.getElementById("profit").innerText = fmtMoney(profit);
+      document.getElementById("margin").innerText = fmtPct(margin);
+      document.getElementById("markup").innerText = fmtPct(markup);
+      document.getElementById("breakeven").innerText = fmtMoney(cost);
+    }
+
+    function resetCalc() {
+      document.getElementById("revenue").value = "";
+      document.getElementById("cost").value = "";
+      document.getElementById("profit").innerText = "—";
+      document.getElementById("margin").innerText = "—";
+      document.getElementById("markup").innerText = "—";
+      document.getElementById("breakeven").innerText = "—";
+    }
+
+    document.getElementById("btnCalc").addEventListener("click", calculate);
+    document.getElementById("btnReset").addEventListener("click", resetCalc);
+    document.getElementById("revenue").addEventListener("input", calculate);
+    document.getElementById("cost").addEventListener("input", calculate);
+
+    document.getElementById("year").innerText = new Date().getFullYear();
+  </script>
 </body>
 </html>
