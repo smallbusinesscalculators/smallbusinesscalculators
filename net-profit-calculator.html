@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Net Profit Calculator (Net Income & Net Margin %) – Free</title>
+<meta name="description" content="Free net profit calculator. Calculate net income and net profit margin from revenue and total expenses. Simple, accurate and instant." />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://smallbusinesscalculators.com/net-profit-calculator.html" />
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you calculate net profit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Net profit is calculated as Revenue minus Total Expenses. Net profit margin is Net Profit divided by Revenue × 100."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between gross profit and net profit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gross profit subtracts only cost of goods sold (COGS). Net profit subtracts all expenses including operating costs, taxes, interest, and overhead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good net profit margin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good net profit margin depends on industry. Many small businesses operate between 5% and 20%, while software businesses can be significantly higher."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #f8f9fb;
+  color: #111;
+}
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+a { text-decoration: none; color: #111; font-weight: 600; }
+a:hover { text-decoration: underline; }
+
+h1 { font-size: 36px; margin: 8px 0 8px; }
+.sub { color: #444; margin-bottom: 30px; line-height: 1.5; }
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 800px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+}
+
+label { display:block; font-weight:600; margin-bottom:6px; }
+input {
+  width:100%;
+  padding:12px;
+  font-size:16px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  margin-bottom:15px;
+  box-sizing:border-box;
+}
+
+.btnrow { display:flex; gap:10px; flex-wrap:wrap; }
+
+button {
+  padding:10px 16px;
+  font-size:15px;
+  border-radius:10px;
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+button.secondary {
+  background:#fff;
+  color:#111;
+}
+
+.result-row {
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid #eee;
+}
+.result-row:last-child { border-bottom:none; }
+.value { font-weight:700; }
+
+hr.sep {
+  margin:40px 0;
+  border:none;
+  border-top:1px solid #eee;
+}
+
+footer {
+  margin-top:50px;
+  font-size:14px;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<p><a href="/">← Back to Small Business Calculators</a></p>
+
+<nav style="font-size:14px; margin-bottom:10px; color:#666;">
+<a href="/">Home</a> › Net Profit Calculator
+</nav>
+
+<h1>Net Profit Calculator</h1>
+
+<p>
+<strong>Net profit</strong> is calculated as:<br>
+<code>Revenue − Total Expenses</code>
+</p>
+
+<p class="sub">
+Calculate your net income and net profit margin using total revenue and total expenses.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<label>Revenue</label>
+<input type="number" id="revenue" placeholder="e.g. 10000" />
+
+<label>Total Expenses</label>
+<input type="number" id="expenses" placeholder="e.g. 8500" />
+
+<div class="btnrow">
+<button onclick="calculate()">Calculate</button>
+<button class="secondary" onclick="resetCalc()">Reset</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Results</h3>
+
+<div class="result-row">
+<div>Net Profit</div>
+<div class="value" id="profit">—</div>
+</div>
+
+<div class="result-row">
+<div>Net Profit Margin</div>
+<div class="value" id="margin">—</div>
+</div>
+
+</div>
+</div>
+
+<hr class="sep">
+
+<h2>What Is Net Profit?</h2>
+<p>
+Net profit (also called net income) is the amount of money left after subtracting all business expenses from revenue.
+This includes operating expenses, taxes, interest, and overhead.
+</p>
+
+<h3>Net Profit Formula</h3>
+<p>
+Net Profit = Revenue − Total Expenses<br>
+Net Profit Margin = Net Profit ÷ Revenue × 100
+</p>
+
+<h3>Gross Profit vs Net Profit</h3>
+<p>
+Gross profit subtracts only cost of goods sold.
+Net profit subtracts all expenses.
+See also:
+<a href="/gross-margin-calculator.html">Gross Margin Calculator</a> and
+<a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
+</p>
+
+<hr class="sep">
+
+<h2>Related Calculators</h2>
+<ul>
+<li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
+<li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+<li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+<li><a href="/roi-calculator.html">ROI Calculator</a></li>
+</ul>
+
+<footer>
+© <span id="year"></span> SmallBusinessCalculators
+</footer>
+
+</div>
+
+<script>
+function fmtMoney(n) {
+  if (!isFinite(n)) return "—";
+  return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+}
+
+function calculate() {
+  const revenue = parseFloat(document.getElementById("revenue").value);
+  const expenses = parseFloat(document.getElementById("expenses").value);
+
+  if (isNaN(revenue) || isNaN(expenses) || revenue <= 0 || expenses < 0) {
+    alert("Please enter valid numbers.");
+    return;
+  }
+
+  const profit = revenue - expenses;
+  const margin = profit / revenue;
+
+  document.getElementById("profit").innerText = fmtMoney(profit);
+  document.getElementById("margin").innerText = (margin * 100).toFixed(2) + " %";
+}
+
+function resetCalc() {
+  document.getElementById("revenue").value = "";
+  document.getElementById("expenses").value = "";
+  document.getElementById("profit").innerText = "—";
+  document.getElementById("margin").innerText = "—";
+}
+
+document.getElementById("year").innerText = new Date().getFullYear();
+</script>
+
+</body>
+</html>
