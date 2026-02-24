@@ -20,6 +20,40 @@
 }
 </script>
 
+ <!-- FAQ structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is markup the same as margin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Markup is based on cost, while margin is based on revenue (selling price)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What markup equals a 50% margin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 50% margin equals a 100% markup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do people confuse margin and markup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because both are percentages related to profit, but they use different denominators: revenue for margin and cost for markup."
+      }
+    }
+  ]
+}
+</script> 
+
 <style>
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f8f9fb;color:#111}
 .wrap{max-width:900px;margin:0 auto;padding:40px 20px 60px}
@@ -170,8 +204,28 @@ That can produce a lower selling price than intended and reduce profitability.
   <li><a href="/roi-calculator.html">ROI Calculator</a></li>
 </ul>
 
+  <h2>Frequently Asked Questions</h2>
+
+<h3>Is markup the same as margin?</h3>
+<p>No. Markup is based on cost, while margin is based on revenue (selling price).</p>
+
+<h3>What markup equals a 50% margin?</h3>
+<p>A 50% margin means profit is half of revenue. That equals a 100% markup (profit equals cost).</p>
+
+<h3>Why do people confuse margin and markup?</h3>
+<p>Because both are percentages and both relate to profit, but they use different denominators (revenue vs cost).</p>
+
+<p>
+Related calculators: <a href="/markup-calculator.html">Markup Calculator</a> •
+<a href="/profit-margin-calculator.html">Profit Margin Calculator</a> •
+<a href="/gross-margin-calculator.html">Gross Margin Calculator</a>
+</p>  
+
+  <hr class="sep">
+  
 <footer>
 © <span id="year"></span> SmallBusinessCalculators
+  
 </footer>
 
 </div>
