@@ -179,6 +179,10 @@
 </nav>
 
     <h1>Markup Calculator</h1>
+    <p>
+<strong>Markup</strong> is calculated as:<br>
+<code>(Selling Price − Cost) / Cost × 100</code>
+</p>
     <p class="sub">
       Calculate <strong>markup %</strong>, <strong>selling price</strong> (from cost + markup), and see <strong>gross profit</strong> and <strong>gross margin</strong>.
       <span class="inline-links">Also try: <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.</span>
@@ -255,7 +259,9 @@
 
 <h2>Related Calculators</h2>
 <ul>
+  <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
   <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+  <li><a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a></li>
   <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
   <li><a href="/roi-calculator.html">ROI Calculator</a></li>
 </ul>
@@ -272,9 +278,10 @@
       return typeof v === "number" && isFinite(v);
     }
 
-    function fmtMoney(x) {
-      return x.toFixed(2);
-    }
+   function fmtMoney(n) {
+  if (!isFinite(n)) return "—";
+  return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+}
 
     function calculateMarkup() {
       const cost = parseFloat(document.getElementById("cost").value);
