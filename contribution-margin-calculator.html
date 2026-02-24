@@ -135,6 +135,10 @@ footer {
 </nav>
 
 <h1>Contribution Margin Calculator</h1>
+  <p>
+<strong>Contribution margin</strong> is calculated as:<br>
+<code>Price per Unit − Variable Cost per Unit</code>
+</p>
 <p class="sub">
 Calculate contribution margin per unit and contribution margin percentage from price and variable cost.
 </p>
@@ -175,7 +179,7 @@ Calculate contribution margin per unit and contribution margin percentage from p
 <h2>What Is Contribution Margin?</h2>
 <p>
 Contribution margin shows how much each sale contributes toward covering fixed costs and generating profit.
-It is a key metric used in break-even analysis and pricing decisions.
+It is a key metric used in <a href="/break-even-calculator.html">break-even analysis</a> and pricing decisions.
 </p>
 
 <h3>Contribution Margin Formula</h3>
@@ -196,9 +200,10 @@ Contribution Margin % = Contribution Margin ÷ Price × 100
 
 <h2>Related Calculators</h2>
 <ul>
-<li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+<li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
 <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
 <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+<li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
 <li><a href="/roi-calculator.html">ROI Calculator</a></li>
 </ul>
 
@@ -209,6 +214,12 @@ Contribution Margin % = Contribution Margin ÷ Price × 100
 </div>
 
 <script>
+  function fmtMoney(n) {
+  if (!isFinite(n)) return "—";
+  return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+}
+
+function calc() {
 function calc() {
   const price = parseFloat(document.getElementById("price").value);
   const variable = parseFloat(document.getElementById("variable").value);
@@ -221,7 +232,7 @@ function calc() {
   const cm = price - variable;
   const cmp = (cm / price) * 100;
 
-  document.getElementById("cm").innerText = cm.toFixed(2);
+  document.getElementById("cm").innerText = fmtMoney(cm);
   document.getElementById("cmp").innerText = cmp.toFixed(2) + " %";
 }
 
