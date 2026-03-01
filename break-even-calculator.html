@@ -4,10 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Break-Even Calculator (Point in Units & Revenue) | Small Business Calculators</title>
+  <title>Break-Even Calculator (Point in Units & Revenue) | SmallBusinessCalculators</title>
   <meta name="description" content="Free break-even calculator. Calculate break-even point in units and revenue using fixed costs, price per unit, and variable cost per unit." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/break-even-calculator.html" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Site-wide styles (header/footer + base) -->
+  <link rel="stylesheet" href="styles.css" />
 
   <!-- FAQ Schema -->
   <script type="application/ld+json">
@@ -43,6 +49,7 @@
   }
   </script>
 
+  <!-- Page-specific styles (keep for now) -->
   <style>
     body {
       margin: 0;
@@ -139,41 +146,49 @@
       font-size: 14px;
       line-height: 1.5;
     }
-
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #666;
-    }
     .inline-links a { font-weight: 700; }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER (site-wide) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="wrap">
     <p><a href="/">← Back to Small Business Calculators</a></p>
 
     <nav style="font-size:14px; margin-bottom:10px; color:#666;">
-  <a href="/">Home</a> › Break-Even Calculator
-</nav>
+      <a href="/">Home</a> › Break-Even Calculator
+    </nav>
 
     <h1>Break-Even Calculator</h1>
 
-<p>
-<strong>Break-even point</strong> is calculated as:<br>
-<code>Fixed Costs ÷ (Price per Unit − Variable Cost per Unit)</code>
-</p>
+    <p>
+      <strong>Break-even point</strong> is calculated as:<br>
+      <code>Fixed Costs ÷ (Price per Unit − Variable Cost per Unit)</code>
+    </p>
 
-<span class="inline-links">
-Related:
-<a href="/gross-margin-calculator.html">Gross Margin</a> •
-<a href="/profit-margin-calculator.html">Profit Margin</a> •
-<a href="/markup-calculator.html">Markup</a>
-</span>
+    <span class="inline-links">
+      Related:
+      <a href="/gross-margin-calculator.html">Gross Margin</a> •
+      <a href="/profit-margin-calculator.html">Profit Margin</a> •
+      <a href="/markup-calculator.html">Markup</a>
+    </span>
 
-<p class="sub">
-Calculate your <strong>break-even point</strong> in <strong>units</strong> and <strong>revenue</strong> using fixed costs, price per unit, and variable cost per unit.
-</p>
+    <p class="sub">
+      Calculate your <strong>break-even point</strong> in <strong>units</strong> and <strong>revenue</strong> using fixed costs, price per unit, and variable cost per unit.
+    </p>
 
     <div class="grid">
       <div class="card">
@@ -238,10 +253,11 @@ Calculate your <strong>break-even point</strong> in <strong>units</strong> and <
       <strong>Break-even units</strong> = Fixed Costs ÷ (Price per Unit − Variable Cost per Unit)<br>
       <strong>Break-even revenue</strong> = Break-even units × Price per Unit
     </p>
+
     <p>
-Want to see your contribution margin first? Use our
-<a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a>.
-</p>
+      Want to see your contribution margin first? Use our
+      <a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a>.
+    </p>
 
     <h3>Why Break-Even Matters</h3>
     <ul>
@@ -253,18 +269,54 @@ Want to see your contribution margin first? Use our
 
     <hr class="sep">
 
-<h2>Related Calculators</h2>
-<ul>
-  <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
-  <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-  <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-  <li><a href="/roi-calculator.html">ROI Calculator</a></li>
-</ul>
-
-    <footer>
-      © <span id="year"></span> SmallBusinessCalculators
-    </footer>
+    <h2>Related Calculators</h2>
+    <ul>
+      <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+      <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+      <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+      <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+    </ul>
   </div>
+
+  <!-- FOOTER (site-wide) -->
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Legal</div>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial advice.
+      </div>
+    </div>
+  </footer>
 
   <script>
     function ok(x) { return typeof x === "number" && isFinite(x); }
@@ -310,7 +362,11 @@ Want to see your contribution margin first? Use our
       document.getElementById("cmp").innerText = "—";
     }
 
-    document.getElementById("year").innerText = new Date().getFullYear();
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
   </script>
+
 </body>
 </html>
