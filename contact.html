@@ -1,22 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Contact | SmallBusinessCalculators</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact SmallBusinessCalculators.com for questions or suggestions about our business calculators." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/contact.html" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact | SmallBusinessCalculators" />
+  <meta property="og:description" content="Get in touch with SmallBusinessCalculators.com." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/contact.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact | SmallBusinessCalculators" />
+  <meta name="twitter:description" content="Get in touch with SmallBusinessCalculators.com." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-  <h1>Contact</h1>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
 
-  <p>
-    If you have any questions regarding our calculators or content,
-    feel free to reach out.
-  </p>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <p>
-    Email: contact@smallbusinesscalculators.com
-  </p>
+  <main class="wrap">
+    <h1>Contact</h1>
+
+    <p class="lead">
+      Have questions, feedback, or suggestions?
+    </p>
+
+    <div class="section">
+      <p>
+        You can reach us directly at:
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>What we can help with</h2>
+      <ul class="bullets">
+        <li>Suggestions for new calculators</li>
+        <li>Feedback on existing tools</li>
+        <li>Bug reports or technical issues</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Legal</div>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial advice.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
 
 </body>
 </html>
