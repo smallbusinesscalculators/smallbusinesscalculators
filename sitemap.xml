@@ -44,4 +44,28 @@
   <loc>https://smallbusinesscalculators.com/net-profit-calculator.html</loc>
 </url>
 
+<url>
+  <loc>https://smallbusinesscalculators.com/privacy-policy.html</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
+
+<url>
+  <loc>https://smallbusinesscalculators.com/contact.html</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
+
+<url>
+  <loc>https://smallbusinesscalculators.com/about.html</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
+
+<url>
+  <loc>https://smallbusinesscalculators.com/terms.html</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
+  
 </urlset>
