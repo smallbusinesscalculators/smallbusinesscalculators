@@ -106,21 +106,25 @@ p{ margin: 0 0 12px 0; color: var(--muted); }
 }
 
 /* =========================
-   CARDS / GRID (homepage)
+   HOMEPAGE GRID / CARDS
+   (isolated from calculators)
 ========================= */
-.grid{
+
+.home-grid{
   display: grid;
   gap: 14px;
   margin-top: 18px;
 }
 
-/* Homepage uses 3 columns on desktop */
 @media (min-width: 900px){
-  .grid{ grid-template-columns: repeat(3, 1fr); }
+  .home-grid{ grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Homepage + calculators use .card links/divs */
-.card{
+@media (max-width: 899px){
+  .home-grid{ grid-template-columns: 1fr; }
+}
+
+.home-card{
   border: 1px solid var(--border);
   background: #fff;
   border-radius: 16px;
@@ -129,23 +133,19 @@ p{ margin: 0 0 12px 0; color: var(--muted); }
   display: block;
 }
 
-.card:hover{
+.home-card:hover{
   background: var(--cardHover);
 }
 
-.card-title{
+.home-card-title{
   font-weight: 700;
   margin-bottom: 6px;
   color: var(--text);
 }
 
-.card-desc{
+.home-card-desc{
   color: var(--muted);
   font-size: 14px;
-}
-
-@media (max-width: 899px){
-  .grid{ grid-template-columns: 1fr; }
 }
 
 /* =========================
