@@ -141,3 +141,47 @@ p{ margin: 0 0 12px 0; color: var(--muted); }
   padding-left: 20px;
   padding-right: 20px;
 }
+
+/* Header */
+.site-header{
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  z-index: 50;
+}
+
+.header-inner{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand{
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.nav{
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.nav a{
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  opacity: .85;
+}
+
+.nav a:hover{
+  opacity: 1;
+  background: rgba(0,0,0,.05);
+}
