@@ -12,10 +12,6 @@
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <link rel="stylesheet" href="styles.css">
-
-<meta property="og:type" content="website" />
-
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Free Small Business Calculators – Margin, Markup, Break-Even & ROI" />
   <meta property="og:description" content="Free calculators for profit margin, markup, break-even, ROI and net profit." />
@@ -27,10 +23,24 @@
   <meta name="twitter:description" content="Free calculators for profit margin, markup, break-even, ROI and net profit." />
   <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
 
- 
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="wrap">
     <header>
       <h1>Small Business Calculators</h1>
@@ -42,7 +52,6 @@
     </header>
 
     <main>
-
       <div class="grid">
         <a class="card" href="/profit-margin-calculator.html">
           <h2>Profit Margin Calculator</h2>
@@ -83,22 +92,58 @@
 
       <section class="section">
         <h2>Business Guides</h2>
-        <ul>
+        <ul class="bullets">
           <li><a href="/margin-vs-markup.html">Margin vs Markup: What’s the Difference?</a></li>
         </ul>
       </section>
-
     </main>
-
-    <footer>
-      © <span id="year"></span> SmallBusinessCalculators · 
-      <a href="/sitemap.xml">Sitemap</a> · 
-      <a href="/robots.txt">Robots</a>
-    </footer>
   </div>
 
+  <!-- FOOTER -->
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Legal</div>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial advice.
+      </div>
+    </div>
+  </footer>
+
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
   </script>
 
   <script type="application/ld+json">
@@ -115,128 +160,6 @@
     ]
   }
   </script>
-<!-- FOOTER -->
-<footer class="sbc-footer">
-  <div class="sbc-footer__inner">
-    <div class="sbc-footer__brand">
-      <div class="sbc-footer__logo">SmallBusinessCalculators</div>
-      <p class="sbc-footer__tagline">
-        Fast, simple calculators for small business decisions.
-      </p>
 
-      <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
-        contact@smallbusinesscalculators.com
-      </a>
-    </div>
-
-    <nav class="sbc-footer__nav" aria-label="Footer">
-      <div class="sbc-footer__col">
-        <div class="sbc-footer__heading">Site</div>
-        <a href="/" class="sbc-footer__link">Home</a>
-        <a href="/about.html" class="sbc-footer__link">About</a>
-        <a href="/contact.html" class="sbc-footer__link">Contact</a>
-      </div>
-
-      <div class="sbc-footer__col">
-        <div class="sbc-footer__heading">Legal</div>
-        <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
-      
-        <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
-      </div>
-    </nav>
-  </div>
-
-  <div class="sbc-footer__bottom">
-    <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
-    <div class="sbc-footer__note">
-      Information provided is for educational purposes and does not constitute financial advice.
-    </div>
-  </div>
-</footer>
-
-<style>
-  .sbc-footer{
-    border-top: 1px solid rgba(0,0,0,.08);
-    margin-top: 48px;
-    padding: 28px 16px;
-    background: #fff;
-  }
-  .sbc-footer__inner{
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 28px;
-    align-items: start;
-  }
-  .sbc-footer__logo{
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: .2px;
-    margin-bottom: 6px;
-  }
-  .sbc-footer__tagline{
-    margin: 0 0 10px 0;
-    opacity: .8;
-    line-height: 1.4;
-  }
-  .sbc-footer__email{
-    display: inline-block;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(0,0,0,.2);
-    padding-bottom: 2px;
-  }
-  .sbc-footer__nav{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
-  .sbc-footer__heading{
-    font-weight: 600;
-    margin-bottom: 8px;
-    opacity: .9;
-  }
-  .sbc-footer__link{
-    display: inline-block;
-    margin: 6px 0;
-    text-decoration: none;
-    opacity: .85;
-  }
-  .sbc-footer__link:hover,
-  .sbc-footer__email:hover{
-    opacity: 1;
-  }
-  .sbc-footer__bottom{
-    max-width: 1100px;
-    margin: 18px auto 0 auto;
-    padding-top: 16px;
-    border-top: 1px solid rgba(0,0,0,.08);
-    display: grid;
-    gap: 8px;
-    opacity: .85;
-    font-size: 13px;
-    line-height: 1.35;
-  }
-  @media (max-width: 820px){
-    .sbc-footer__inner{
-      grid-template-columns: 1fr;
-    }
-    .sbc-footer__nav{
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (max-width: 520px){
-    .sbc-footer__nav{
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
-
-<script>
-  (function(){
-    var el = document.getElementById('sbcYear');
-    if (el) el.textContent = new Date().getFullYear();
-  })();
-</script>
 </body>
 </html>
