@@ -57,8 +57,112 @@
   }
   </script>
 
-  <!-- Page-specific styles (keep for now) -->
- 
+  <!-- Page-specific styles (IMPORTANT: avoids conflicts with .grid/.card in styles.css) -->
+  <style>
+    /* Keep page readable even if global p is muted */
+    .wrap p, .wrap li { color: rgba(0,0,0,.75); }
+    .wrap a { color: inherit; }
+
+    .sub{
+      margin-top: 6px;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .calc-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    @media (min-width: 900px){
+      .calc-grid{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .calc-card{
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.10);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .calc-card h3{
+      margin: 0 0 12px 0;
+      font-size: 18px;
+    }
+
+    label{
+      display: block;
+      font-weight: 650;
+      margin: 12px 0 6px;
+      color: rgba(0,0,0,.90);
+    }
+
+    input{
+      width: 100%;
+      padding: 12px 12px;
+      font-size: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.20);
+      background: #fff;
+      box-sizing: border-box;
+    }
+    input:focus{
+      outline: none;
+      border-color: rgba(0,0,0,.45);
+    }
+
+    .btnrow{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    button{
+      appearance: none;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    button.secondary{
+      background: #fff;
+      color: #111;
+    }
+
+    .result-row{
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      color: rgba(0,0,0,.85);
+    }
+    .result-row:last-child{ border-bottom: none; }
+
+    .value{
+      font-weight: 800;
+      color: rgba(0,0,0,.95);
+      white-space: nowrap;
+    }
+
+    hr.sep{
+      margin: 34px 0;
+      border: none;
+      border-top: 1px solid rgba(0,0,0,.10);
+    }
+
+    code{
+      background: rgba(0,0,0,.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 
 <body>
@@ -76,10 +180,10 @@
     </div>
   </header>
 
-  <div class="wrap">
+  <main class="wrap">
     <p><a href="/">← Back to Small Business Calculators</a></p>
 
-    <nav style="font-size:14px; margin-bottom:10px; color:#666;">
+    <nav style="font-size:14px; margin-bottom:10px; color:rgba(0,0,0,.60);">
       <a href="/">Home</a> › Profit Margin Calculator
     </nav>
 
@@ -88,13 +192,14 @@
     <p><strong>Profit margin</strong> is calculated as:<br>
       <code>(Revenue − Cost) / Revenue × 100</code>
     </p>
+
     <p class="sub">
       Enter revenue and cost to calculate <strong>gross profit</strong>, <strong>gross margin %</strong>, and <strong>markup %</strong>.
       Related: <a href="/gross-margin-calculator.html">Gross Margin</a> • <a href="/margin-vs-markup.html">Margin vs Markup</a>
     </p>
 
-    <div class="grid">
-      <div class="card">
+    <div class="calc-grid">
+      <section class="calc-card" aria-label="Inputs">
         <label for="revenue">Revenue (Selling Price)</label>
         <input type="number" id="revenue" inputmode="decimal" min="0" step="0.01" placeholder="e.g. 1000" />
 
@@ -105,9 +210,9 @@
           <button type="button" id="btnCalc">Calculate</button>
           <button type="button" class="secondary" id="btnReset">Reset</button>
         </div>
-      </div>
+      </section>
 
-      <div class="card">
+      <section class="calc-card" aria-label="Results">
         <h3>Results</h3>
 
         <div class="result-row">
@@ -129,7 +234,7 @@
           <div>Break-even Price</div>
           <div class="value" id="breakeven">—</div>
         </div>
-      </div>
+      </section>
     </div>
 
     <hr class="sep">
@@ -201,7 +306,7 @@
       <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
       <li><a href="/roi-calculator.html">ROI Calculator</a></li>
     </ul>
-  </div>
+  </main>
 
   <!-- FOOTER (site-wide) -->
   <footer class="sbc-footer">
