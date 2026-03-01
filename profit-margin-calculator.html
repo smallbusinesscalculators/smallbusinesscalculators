@@ -9,6 +9,12 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/profit-margin-calculator.html" />
 
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Site-wide styles (header/footer + base) -->
+  <link rel="stylesheet" href="styles.css" />
+
   <!-- FAQ Schema -->
   <script type="application/ld+json">
   {
@@ -51,6 +57,7 @@
   }
   </script>
 
+  <!-- Page-specific styles (keep for now) -->
   <style>
     body {
       margin: 0;
@@ -130,12 +137,24 @@
     hr.sep { margin: 40px 0; border: none; border-top: 1px solid #eee; }
 
     code { background: #f1f1f1; padding: 2px 6px; border-radius: 6px; }
-
-    footer { margin-top: 50px; font-size: 14px; color: #666; }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER (site-wide) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="wrap">
     <p><a href="/">← Back to Small Business Calculators</a></p>
 
@@ -145,7 +164,6 @@
 
     <h1>Profit Margin Calculator</h1>
 
-    <!-- Snippet-friendly definition block -->
     <p><strong>Profit margin</strong> is calculated as:<br>
       <code>(Revenue − Cost) / Revenue × 100</code>
     </p>
@@ -256,18 +274,53 @@
     <h2>Related calculators</h2>
     <ul>
       <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
-      <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
       <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
       <li><a href="/markup-calculator.html">Markup Calculator</a></li>
       <li><a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a></li>
       <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
       <li><a href="/roi-calculator.html">ROI Calculator</a></li>
     </ul>
-
-    <footer>
-      © <span id="year"></span> SmallBusinessCalculators
-    </footer>
   </div>
+
+  <!-- FOOTER (site-wide) -->
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Legal</div>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial advice.
+      </div>
+    </div>
+  </footer>
 
   <script>
     function ok(x) { return typeof x === "number" && isFinite(x); }
@@ -315,7 +368,11 @@
     document.getElementById("revenue").addEventListener("input", calculate);
     document.getElementById("cost").addEventListener("input", calculate);
 
-    document.getElementById("year").innerText = new Date().getFullYear();
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
   </script>
+
 </body>
 </html>
