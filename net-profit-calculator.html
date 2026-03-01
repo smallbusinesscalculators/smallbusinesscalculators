@@ -1,254 +1,308 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Net Profit Calculator (Net Income & Net Margin %) – Free</title>
-<meta name="description" content="Free net profit calculator. Calculate net income and net profit margin from revenue and total expenses. Simple, accurate and instant." />
-<meta name="robots" content="index,follow" />
-<link rel="canonical" href="https://smallbusinesscalculators.com/net-profit-calculator.html" />
+  <title>Net Profit Calculator (Net Income & Net Margin %) – Free</title>
+  <meta name="description" content="Free net profit calculator. Calculate net income and net profit margin from revenue and total expenses. Simple, accurate and instant." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/net-profit-calculator.html" />
 
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do you calculate net profit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Net profit is calculated as Revenue minus Total Expenses. Net profit margin is Net Profit divided by Revenue × 100."
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Site-wide styles (header/footer + base) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate net profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Net profit is calculated as Revenue minus Total Expenses. Net profit margin is Net Profit divided by Revenue × 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between gross profit and net profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gross profit subtracts only cost of goods sold (COGS). Net profit subtracts all expenses including operating costs, taxes, interest, and overhead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good net profit margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good net profit margin depends on industry. Many small businesses operate between 5% and 20%, while software businesses can be significantly higher."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between gross profit and net profit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Gross profit subtracts only cost of goods sold (COGS). Net profit subtracts all expenses including operating costs, taxes, interest, and overhead."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a good net profit margin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A good net profit margin depends on industry. Many small businesses operate between 5% and 20%, while software businesses can be significantly higher."
-      }
+    ]
+  }
+  </script>
+
+  <!-- Page-specific styles (keep for now) -->
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fb;
+      color: #111;
     }
-  ]
-}
-</script>
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    a { text-decoration: none; color: #111; font-weight: 600; }
+    a:hover { text-decoration: underline; }
 
-<style>
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: #f8f9fb;
-  color: #111;
-}
-.wrap {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px 60px;
-}
-a { text-decoration: none; color: #111; font-weight: 600; }
-a:hover { text-decoration: underline; }
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .sub { color: #444; margin-bottom: 30px; line-height: 1.5; }
 
-h1 { font-size: 36px; margin: 8px 0 8px; }
-.sub { color: #444; margin-bottom: 30px; line-height: 1.5; }
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 800px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
 
-.grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 800px) {
-  .grid { grid-template-columns: 1fr 1fr; }
-}
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+    }
 
-.card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 20px;
-  border: 1px solid #e5e5e5;
-}
+    label { display:block; font-weight:600; margin-bottom:6px; }
+    input {
+      width:100%;
+      padding:12px;
+      font-size:16px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      margin-bottom:15px;
+      box-sizing:border-box;
+    }
 
-label { display:block; font-weight:600; margin-bottom:6px; }
-input {
-  width:100%;
-  padding:12px;
-  font-size:16px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  margin-bottom:15px;
-  box-sizing:border-box;
-}
+    .btnrow { display:flex; gap:10px; flex-wrap:wrap; }
 
-.btnrow { display:flex; gap:10px; flex-wrap:wrap; }
+    button {
+      padding:10px 16px;
+      font-size:15px;
+      border-radius:10px;
+      border:1px solid #111;
+      background:#111;
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+    }
+    button.secondary {
+      background:#fff;
+      color:#111;
+    }
 
-button {
-  padding:10px 16px;
-  font-size:15px;
-  border-radius:10px;
-  border:1px solid #111;
-  background:#111;
-  color:#fff;
-  font-weight:600;
-  cursor:pointer;
-}
-button.secondary {
-  background:#fff;
-  color:#111;
-}
+    .result-row {
+      display:flex;
+      justify-content:space-between;
+      padding:10px 0;
+      border-bottom:1px solid #eee;
+    }
+    .result-row:last-child { border-bottom:none; }
+    .value { font-weight:700; }
 
-.result-row {
-  display:flex;
-  justify-content:space-between;
-  padding:10px 0;
-  border-bottom:1px solid #eee;
-}
-.result-row:last-child { border-bottom:none; }
-.value { font-weight:700; }
-
-hr.sep {
-  margin:40px 0;
-  border:none;
-  border-top:1px solid #eee;
-}
-
-footer {
-  margin-top:50px;
-  font-size:14px;
-  color:#666;
-}
-</style>
+    hr.sep {
+      margin:40px 0;
+      border:none;
+      border-top:1px solid #eee;
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
 
-<p><a href="/">← Back to Small Business Calculators</a></p>
+  <!-- HEADER (site-wide) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
 
-<nav style="font-size:14px; margin-bottom:10px; color:#666;">
-<a href="/">Home</a> › Net Profit Calculator
-</nav>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<h1>Net Profit Calculator</h1>
+  <div class="wrap">
 
-<p>
-<strong>Net profit</strong> is calculated as:<br>
-<code>Revenue − Total Expenses</code>
-</p>
+    <p><a href="/">← Back to Small Business Calculators</a></p>
 
-<p class="sub">
-Calculate your net income and net profit margin using total revenue and total expenses.
-</p>
+    <nav style="font-size:14px; margin-bottom:10px; color:#666;">
+      <a href="/">Home</a> › Net Profit Calculator
+    </nav>
 
-<div class="grid">
+    <h1>Net Profit Calculator</h1>
 
-<div class="card">
-<label>Revenue</label>
-<input type="number" id="revenue" placeholder="e.g. 10000" />
+    <p>
+      <strong>Net profit</strong> is calculated as:<br>
+      <code>Revenue − Total Expenses</code>
+    </p>
 
-<label>Total Expenses</label>
-<input type="number" id="expenses" placeholder="e.g. 8500" />
+    <p class="sub">
+      Calculate your net income and net profit margin using total revenue and total expenses.
+    </p>
 
-<div class="btnrow">
-<button onclick="calculate()">Calculate</button>
-<button class="secondary" onclick="resetCalc()">Reset</button>
-</div>
-</div>
+    <div class="grid">
 
-<div class="card">
-<h3>Results</h3>
+      <div class="card">
+        <label for="revenue">Revenue</label>
+        <input type="number" id="revenue" inputmode="decimal" placeholder="e.g. 10000" />
 
-<div class="result-row">
-<div>Net Profit</div>
-<div class="value" id="profit">—</div>
-</div>
+        <label for="expenses">Total Expenses</label>
+        <input type="number" id="expenses" inputmode="decimal" placeholder="e.g. 8500" />
 
-<div class="result-row">
-<div>Net Profit Margin</div>
-<div class="value" id="margin">—</div>
-</div>
+        <div class="btnrow">
+          <button type="button" onclick="calculate()">Calculate</button>
+          <button type="button" class="secondary" onclick="resetCalc()">Reset</button>
+        </div>
+      </div>
 
-</div>
-</div>
+      <div class="card">
+        <h3>Results</h3>
 
-<hr class="sep">
+        <div class="result-row">
+          <div>Net Profit</div>
+          <div class="value" id="profit">—</div>
+        </div>
 
-<h2>What Is Net Profit?</h2>
-<p>
-Net profit (also called net income) is the amount of money left after subtracting all business expenses from revenue.
-This includes operating expenses, taxes, interest, and overhead.
-</p>
+        <div class="result-row">
+          <div>Net Profit Margin</div>
+          <div class="value" id="margin">—</div>
+        </div>
 
-<h3>Net Profit Formula</h3>
-<p>
-Net Profit = Revenue − Total Expenses<br>
-Net Profit Margin = Net Profit ÷ Revenue × 100
-</p>
+      </div>
+    </div>
 
-<h3>Gross Profit vs Net Profit</h3>
-<p>
-Gross profit subtracts only cost of goods sold.
-Net profit subtracts all expenses.
-See also:
-<a href="/gross-margin-calculator.html">Gross Margin Calculator</a> and
-<a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
-</p>
+    <hr class="sep">
 
-<hr class="sep">
+    <h2>What Is Net Profit?</h2>
+    <p>
+      Net profit (also called net income) is the amount of money left after subtracting all business expenses from revenue.
+      This includes operating expenses, taxes, interest, and overhead.
+    </p>
 
-<h2>Related Calculators</h2>
-<ul>
-<li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
-<li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-<li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-<li><a href="/roi-calculator.html">ROI Calculator</a></li>
-</ul>
+    <h3>Net Profit Formula</h3>
+    <p>
+      Net Profit = Revenue − Total Expenses<br>
+      Net Profit Margin = Net Profit ÷ Revenue × 100
+    </p>
 
-<footer>
-© <span id="year"></span> SmallBusinessCalculators
-</footer>
+    <h3>Gross Profit vs Net Profit</h3>
+    <p>
+      Gross profit subtracts only cost of goods sold.
+      Net profit subtracts all expenses.
+      See also:
+      <a href="/gross-margin-calculator.html">Gross Margin Calculator</a> and
+      <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
+    </p>
 
-</div>
+    <hr class="sep">
 
-<script>
-function fmtMoney(n) {
-  if (!isFinite(n)) return "—";
-  return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
-}
+    <h2>Related Calculators</h2>
+    <ul>
+      <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
+      <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+      <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+      <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+    </ul>
 
-function calculate() {
-  const revenue = parseFloat(document.getElementById("revenue").value);
-  const expenses = parseFloat(document.getElementById("expenses").value);
+  </div>
 
-  if (isNaN(revenue) || isNaN(expenses) || revenue <= 0 || expenses < 0) {
-    alert("Please enter valid numbers.");
-    return;
-  }
+  <!-- FOOTER (site-wide) -->
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for small business decisions.
+        </p>
 
-  const profit = revenue - expenses;
-  const margin = profit / revenue;
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
 
-  document.getElementById("profit").innerText = fmtMoney(profit);
-  document.getElementById("margin").innerText = (margin * 100).toFixed(2) + " %";
-}
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
 
-function resetCalc() {
-  document.getElementById("revenue").value = "";
-  document.getElementById("expenses").value = "";
-  document.getElementById("profit").innerText = "—";
-  document.getElementById("margin").innerText = "—";
-}
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Legal</div>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
 
-document.getElementById("year").innerText = new Date().getFullYear();
-</script>
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial advice.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function fmtMoney(n) {
+      if (!isFinite(n)) return "—";
+      return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+    }
+
+    function calculate() {
+      const revenue = parseFloat(document.getElementById("revenue").value);
+      const expenses = parseFloat(document.getElementById("expenses").value);
+
+      if (isNaN(revenue) || isNaN(expenses) || revenue <= 0 || expenses < 0) {
+        alert("Please enter valid numbers (revenue > 0, expenses ≥ 0).");
+        return;
+      }
+
+      const profit = revenue - expenses;
+      const margin = profit / revenue;
+
+      document.getElementById("profit").innerText = fmtMoney(profit);
+      document.getElementById("margin").innerText = (margin * 100).toFixed(2) + " %";
+    }
+
+    function resetCalc() {
+      document.getElementById("revenue").value = "";
+      document.getElementById("expenses").value = "";
+      document.getElementById("profit").innerText = "—";
+      document.getElementById("margin").innerText = "—";
+    }
+
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
 
 </body>
 </html>
