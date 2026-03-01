@@ -1,26 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>About | SmallBusinessCalculators</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about SmallBusinessCalculators.com — simple, fast calculators for small business decisions." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/about.html" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About | SmallBusinessCalculators" />
+  <meta property="og:description" content="Simple, fast calculators for small business decisions." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/about.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About | SmallBusinessCalculators" />
+  <meta name="twitter:description" content="Simple, fast calculators for small business decisions." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-  <h1>About</h1>
+  <main class="wrap">
+    <h1>About</h1>
 
-  <p>
-    SmallBusinessCalculators.com provides simple and practical calculators
-    for small business owners and entrepreneurs.
-  </p>
+    <p class="lead">
+      SmallBusinessCalculators.com provides fast, practical calculators designed for small business owners,
+      entrepreneurs, and freelancers.
+    </p>
 
-  <p>
-    Our goal is to make financial decision-making easier through
-    clear, fast and easy-to-use tools.
-  </p>
+    <div class="section">
+      <h2>What this site offers</h2>
+      <ul class="bullets">
+        <li>Simple calculators for pricing, profitability, and planning.</li>
+        <li>Clear explanations so you understand the numbers you get.</li>
+        <li>Tools that work quickly on both desktop and mobile.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Our goal</h2>
+      <p>
+        We aim to make financial decision-making easier with clear, fast, and easy-to-use tools.
+        The calculators are meant to help you estimate and compare scenarios — not replace professional advice.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>
+        Questions or suggestions? Email us at
+        <a href="mailto:contact@smallbusinesscalculators.com">contact@smallbusinesscalculators.com</a>.
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Legal</div>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial advice.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
 
 </body>
-
-  <link rel="stylesheet" href="styles.css">
-  
 </html>
