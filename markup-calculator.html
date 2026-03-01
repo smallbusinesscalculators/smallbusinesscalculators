@@ -4,12 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Markup Calculator (Markup % & Selling Price) | Small Business Calculators</title>
+  <title>Markup Calculator (Markup % & Selling Price) | SmallBusinessCalculators</title>
   <meta name="description" content="Free markup calculator. Calculate markup %, selling price from cost, and gross margin instantly." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/markup-calculator.html" />
 
-    <!-- Structured data (FAQ) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Site-wide styles (header/footer + base) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured data (FAQ) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,7 +48,8 @@
     ]
   }
   </script>
-  
+
+  <!-- Page-specific styles (keep for now) -->
   <style>
     body {
       margin: 0;
@@ -159,30 +166,40 @@
       line-height: 1.5;
     }
 
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #666;
-    }
-
     .inline-links a { font-weight: 700; }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER (site-wide) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="wrap">
 
     <p><a href="/">← Back to Small Business Calculators</a></p>
 
     <nav style="font-size:14px; margin-bottom:10px; color:#666;">
-  <a href="/">Home</a> › Markup Calculator
-</nav>
+      <a href="/">Home</a> › Markup Calculator
+    </nav>
 
     <h1>Markup Calculator</h1>
+
     <p>
-<strong>Markup</strong> is calculated as:<br>
-<code>(Selling Price − Cost) / Cost × 100</code>
-</p>
+      <strong>Markup</strong> is calculated as:<br>
+      <code>(Selling Price − Cost) / Cost × 100</code>
+    </p>
+
     <p class="sub">
       Calculate <strong>markup %</strong>, <strong>selling price</strong> (from cost + markup), and see <strong>gross profit</strong> and <strong>gross margin</strong>.
       <span class="inline-links">Also try: <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.</span>
@@ -251,38 +268,73 @@
 
     <h3>Markup vs Margin – What's the Difference?</h3>
     <p>
-  Markup is based on cost, while margin is based on revenue (selling price).
-  A 50% markup is not the same as a 50% margin.
-  Read the full guide: <a href="/margin-vs-markup.html">Margin vs Markup</a>.
-</p>
+      Markup is based on cost, while margin is based on revenue (selling price).
+      A 50% markup is not the same as a 50% margin.
+      Read the full guide: <a href="/margin-vs-markup.html">Margin vs Markup</a>.
+    </p>
 
     <hr class="sep">
 
-<h2>Related Calculators</h2>
-<ul>
-  <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
-  <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-  <li><a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a></li>
-  <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-  <li><a href="/roi-calculator.html">ROI Calculator</a></li>
-</ul>
-    
-    <footer>
-      © <span id="year"></span> SmallBusinessCalculators •
-      <a href="/privacy.html">Privacy</a> (coming soon)
-    </footer>
+    <h2>Related Calculators</h2>
+    <ul>
+      <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
+      <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+      <li><a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a></li>
+      <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+      <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+    </ul>
 
   </div>
+
+  <!-- FOOTER (site-wide) -->
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Legal</div>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial advice.
+      </div>
+    </div>
+  </footer>
 
   <script>
     function n(v) {
       return typeof v === "number" && isFinite(v);
     }
 
-   function fmtMoney(n) {
-  if (!isFinite(n)) return "—";
-  return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
-}
+    function fmtMoney(x) {
+      if (!isFinite(x)) return "—";
+      return x.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+    }
 
     function calculateMarkup() {
       const cost = parseFloat(document.getElementById("cost").value);
@@ -315,9 +367,11 @@
       document.getElementById("markupOut").innerText = "—";
     }
 
-    document.getElementById("year").innerText = new Date().getFullYear();
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
   </script>
-
 
 </body>
 </html>
