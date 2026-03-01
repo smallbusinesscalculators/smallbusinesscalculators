@@ -36,6 +36,32 @@ header.site-header{
   z-index: 10;
 }
 
+/* Compatibility: existing homepage uses .wrap */
+.wrap{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 44px 20px 70px;
+}
+
+.lead{
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 70ch;
+}
+
+.meta{
+  font-size: 14px;
+  opacity: .75;
+}
+
+.section{
+  margin-top: 42px;
+}
+
+.bullets{
+  margin: 10px 0 0 18px;
+}
+
 .header-inner{
   height: 64px;
   display: flex;
