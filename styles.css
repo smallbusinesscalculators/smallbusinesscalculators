@@ -132,3 +132,12 @@ p{ margin: 0 0 12px 0; color: var(--muted); }
   .grid{ grid-template-columns: 1fr; }
   h1{ font-size: 30px; }
 }
+
+/* Center footer content same as main content */
+.sbc-footer__inner,
+.sbc-footer__bottom{
+  max-width: 980px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
