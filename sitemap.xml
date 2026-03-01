@@ -1,71 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://smallbusinesscalculators.com/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Pillar Guide -->
+  <url>
+    <loc>https://smallbusinesscalculators.com/profitability-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Core Calculators -->
   <url>
     <loc>https://smallbusinesscalculators.com/profit-margin-calculator.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://smallbusinesscalculators.com/markup-calculator.html</loc>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://smallbusinesscalculators.com/break-even-calculator.html</loc>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://smallbusinesscalculators.com/roi-calculator.html</loc>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <url>
-  <loc>https://smallbusinesscalculators.com/contribution-margin-calculator.html</loc>
-  <priority>0.8</priority>
-</url>
+    <loc>https://smallbusinesscalculators.com/contribution-margin-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
   <url>
-  <loc>https://smallbusinesscalculators.com/margin-vs-markup.html</loc>
-  <priority>0.7</priority>
-</url>
+    <loc>https://smallbusinesscalculators.com/net-profit-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
   <url>
-  <loc>https://smallbusinesscalculators.com/gross-margin-calculator.html</loc>
-</url>
+    <loc>https://smallbusinesscalculators.com/gross-margin-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Supporting Guide -->
+  <url>
+    <loc>https://smallbusinesscalculators.com/margin-vs-markup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Static Pages -->
+  <url>
+    <loc>https://smallbusinesscalculators.com/about.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
   <url>
-  <loc>https://smallbusinesscalculators.com/net-profit-calculator.html</loc>
-</url>
+    <loc>https://smallbusinesscalculators.com/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
-<url>
-  <loc>https://smallbusinesscalculators.com/privacy-policy.html</loc>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
+  <url>
+    <loc>https://smallbusinesscalculators.com/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
-<url>
-  <loc>https://smallbusinesscalculators.com/contact.html</loc>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
+  <url>
+    <loc>https://smallbusinesscalculators.com/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
-<url>
-  <loc>https://smallbusinesscalculators.com/about.html</loc>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
-
-<url>
-  <loc>https://smallbusinesscalculators.com/terms.html</loc>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
-  
 </urlset>
