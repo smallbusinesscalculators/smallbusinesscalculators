@@ -4,24 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Free Small Business Calculators – Profit Margin, Markup, Break-Even & ROI</title>
-  <meta name="description" content="Free small business calculators for profit margin, markup %, break-even point, ROI and net profit. Fast, simple tools for pricing, planning, and business decisions." />
+  <title>Free Profit Margin Calculator (Gross Profit, Margin & Markup)</title>
+  <meta name="description" content="Free profit margin calculator. Calculate gross profit, profit margin, markup, and break-even price from revenue and cost. Fast, simple, and accurate." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://smallbusinesscalculators.com/" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/profit-margin-calculator.html" />
 
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Free Small Business Calculators – Margin, Markup, Break-Even & ROI" />
-  <meta property="og:description" content="Free calculators for profit margin, markup, break-even, ROI and net profit." />
-  <meta property="og:url" content="https://smallbusinesscalculators.com/" />
-  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free Small Business Calculators – Margin, Markup, Break-Even & ROI" />
-  <meta name="twitter:description" content="Free calculators for profit margin, markup, break-even, ROI and net profit." />
-  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -32,7 +21,7 @@
   <div class="header-inner">
     <a href="/" class="brand">SmallBusinessCalculators</a>
 
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav">
       <a href="/">Home</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
@@ -41,101 +30,59 @@
 </header>
 
 <div class="wrap">
-  <header>
-    <h1>Free Small Business Calculators</h1>
 
-    <p class="lead">
-      Use our free online calculators to calculate <strong>profit margin</strong>, <strong>markup</strong>, <strong>break-even</strong>, <strong>ROI</strong>, and <strong>net profit</strong> quickly and accurately.
-    </p>
+  <p><a href="/">← Back to Small Business Calculators</a></p>
 
-    <p>
-      These tools help you convert margin to markup, calculate selling prices, and understand profitability for better business decisions.
-    </p>
-  </header>
+  <h1>Free Profit Margin Calculator</h1>
 
-  <main>
+  <p>
+    Use this free profit margin calculator to calculate gross profit, profit margin, markup, and break-even price from revenue and cost.
+  </p>
 
-    <section class="section">
-      <h2>New to Pricing & Profitability?</h2>
-      <p class="lead">
-        Learn how profit margin, markup, contribution margin, break-even and ROI work together in our complete guide for small business owners.
-      </p>
+  <div class="calc-card">
+    <label>Revenue (Selling Price)</label>
+    <input type="number" id="revenue" placeholder="e.g. 100" />
 
-      <a class="home-card" href="/profitability-guide.html">
-        <h2>Profitability Guide</h2>
-        <p>Understand margin, markup, contribution margin, break-even and ROI — clearly explained with practical examples.</p>
-        <div class="meta">Start here if you’re new to pricing</div>
-      </a>
-    </section>
+    <label>Cost</label>
+    <input type="number" id="cost" placeholder="e.g. 60" />
 
-    <section class="section">
-      <h2>Popular Calculators</h2>
-      <p>
-        Explore our most popular free calculators for pricing, profitability, planning, and business decision-making.
-      </p>
-    </section>
+    <button onclick="calculate()">Calculate</button>
 
-    <div class="home-grid">
-      <a class="home-card" href="/profit-margin-calculator.html">
-        <h2>Profit Margin Calculator</h2>
-        <p>Calculate gross profit, gross margin %, markup %, and break-even price from revenue and cost.</p>
-        <div class="meta">Best for: pricing, profitability checks</div>
-      </a>
+    <div id="result" class="result-box"></div>
+  </div>
 
-      <a class="home-card" href="/markup-calculator.html">
-        <h2>Markup Calculator</h2>
-        <p>Calculate markup %, selling price from cost, and understand the difference between markup and margin.</p>
-        <div class="meta">Best for: setting selling prices</div>
-      </a>
+  <h2>Profit Margin Formula</h2>
+  <p><strong>Profit = Revenue − Cost</strong></p>
+  <p><strong>Profit Margin % = Profit ÷ Revenue × 100</strong></p>
 
-      <a class="home-card" href="/break-even-calculator.html">
-        <h2>Break-Even Calculator</h2>
-        <p>Calculate break-even point in units and revenue to cover your costs.</p>
-        <div class="meta">Best for: forecasting & targets</div>
-      </a>
+  <p>
+    Example: Revenue $100 and cost $60 gives a profit of $40 and a margin of 40%.
+  </p>
 
-      <a class="home-card" href="/roi-calculator.html">
-        <h2>ROI Calculator</h2>
-        <p>Calculate ROI % and net profit to evaluate investments and marketing.</p>
-        <div class="meta">Best for: investment decisions</div>
-      </a>
+  <p>
+    Profit margin measures profitability based on revenue, while markup is based on cost.
+    Understanding both helps you price correctly and avoid losing profit.
+  </p>
 
-      <a class="home-card" href="/contribution-margin-calculator.html">
-        <h2>Contribution Margin Calculator</h2>
-        <p>Calculate contribution margin per unit and contribution margin %.</p>
-        <div class="meta">Best for: product profitability</div>
-      </a>
+  <p>
+    You can also compare margin vs markup using our 
+    <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.
+  </p>
 
-      <a class="home-card" href="/net-profit-calculator.html">
-        <h2>Net Profit Calculator</h2>
-        <p>Calculate net profit (net income) and net profit margin % from revenue and total expenses.</p>
-        <div class="meta">Best for: overall profitability</div>
-      </a>
+  <h2>Common Profit Margin Examples</h2>
+  <ul>
+    <li>$100 revenue, $60 cost = 40% margin</li>
+    <li>$200 revenue, $120 cost = 40% margin</li>
+    <li>$100 revenue, $50 cost = 50% margin</li>
+  </ul>
 
-      <a class="home-card" href="/margin-markup-calculator.html">
-        <h2>Free Margin vs Markup Calculator</h2>
-        <p>Convert margin to markup or markup to margin instantly.</p>
-        <div class="meta">Best for: margin vs markup conversion</div>
-      </a>
-    </div>
+  <h2>Related Calculators</h2>
+  <ul>
+    <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+    <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+    <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+  </ul>
 
-    <section class="section">
-      <h2>Business Guides</h2>
-      <ul class="bullets">
-        <li>
-          <a href="/profitability-guide.html">
-            Profit Margin, Markup & Break-Even Explained
-          </a>
-        </li>
-        <li>
-          <a href="/margin-vs-markup.html">
-            Margin vs Markup: What’s the Difference?
-          </a>
-        </li>
-      </ul>
-    </section>
-
-  </main>
 </div>
 
 <footer class="sbc-footer">
@@ -145,39 +92,34 @@
       <p class="sbc-footer__tagline">
         Fast, simple calculators for small business decisions.
       </p>
-
-      <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
-        contact@smallbusinesscalculators.com
-      </a>
     </div>
-
-    <nav class="sbc-footer__nav" aria-label="Footer">
-      <div class="sbc-footer__col">
-        <div class="sbc-footer__heading">Site</div>
-        <a href="/" class="sbc-footer__link">Home</a>
-        <a href="/about.html" class="sbc-footer__link">About</a>
-        <a href="/contact.html" class="sbc-footer__link">Contact</a>
-        <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
-        <a href="/robots.txt" class="sbc-footer__link">Robots</a>
-      </div>
-
-      <div class="sbc-footer__col">
-        <div class="sbc-footer__heading">Legal</div>
-        <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
-        <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
-      </div>
-    </nav>
   </div>
 
   <div class="sbc-footer__bottom">
-    <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
-    <div class="sbc-footer__note">
-      Information provided is for educational purposes and does not constitute financial advice.
-    </div>
+    © <span id="sbcYear"></span> SmallBusinessCalculators.com
   </div>
 </footer>
 
 <script>
+function calculate() {
+  const revenue = parseFloat(document.getElementById("revenue").value);
+  const cost = parseFloat(document.getElementById("cost").value);
+
+  if (isNaN(revenue) || isNaN(cost) || revenue <= 0) {
+    document.getElementById("result").innerHTML = "Enter valid values";
+    return;
+  }
+
+  const profit = revenue - cost;
+  const margin = (profit / revenue) * 100;
+  const markup = (profit / cost) * 100;
+
+  document.getElementById("result").innerHTML =
+    "Profit: $" + profit.toFixed(2) + "<br>" +
+    "Margin: " + margin.toFixed(2) + "%<br>" +
+    "Markup: " + markup.toFixed(2) + "%";
+}
+
 (function () {
   var el = document.getElementById("sbcYear");
   if (el) el.textContent = new Date().getFullYear();
