@@ -65,6 +65,12 @@
     <priority>0.75</priority>
   </url>
 
+  <url>
+  <loc>https://smallbusinesscalculators.com/margin-markup-calculator.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+
   <!-- Static Pages -->
   <url>
     <loc>https://smallbusinesscalculators.com/about.html</loc>
