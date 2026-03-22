@@ -13,118 +13,404 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate profit margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Profit margin is calculated as profit divided by revenue, multiplied by 100. Formula: Profit Margin % = (Revenue - Cost) ÷ Revenue × 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between profit margin and markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Profit margin is based on revenue, while markup is based on cost. They are related, but they are not the same percentage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is gross profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gross profit is the amount left after subtracting cost from revenue. Formula: Gross Profit = Revenue - Cost."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fb;
+      color: #111;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 8px 0 8px;
+    }
+
+    .sub {
+      color: #444;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    .hint {
+      font-size: 13px;
+      color: #666;
+      margin-top: -10px;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 10px 16px;
+      font-size: 15px;
+      border-radius: 10px;
+      border: 1px solid #111;
+      background: #111;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      background: white;
+      color: #111;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .value {
+      font-weight: 700;
+    }
+
+    hr.sep {
+      margin: 40px 0;
+      border: none;
+      border-top: 1px solid #eee;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+    }
+
+    p, li {
+      color: #222;
+      line-height: 1.6;
+    }
+
+    ul {
+      margin-top: 8px;
+    }
+
+    .note {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 14px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .inline-links a {
+      font-weight: 700;
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="brand">SmallBusinessCalculators</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
 
-    <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<div class="wrap">
-
-  <p><a href="/">← Back to Small Business Calculators</a></p>
-
-  <h1>Free Profit Margin Calculator</h1>
-
-  <p>
-    Use this free profit margin calculator to calculate gross profit, profit margin, markup, and break-even price from revenue and cost.
-  </p>
-
-  <div class="calc-card">
-    <label>Revenue (Selling Price)</label>
-    <input type="number" id="revenue" placeholder="e.g. 100" />
-
-    <label>Cost</label>
-    <input type="number" id="cost" placeholder="e.g. 60" />
-
-    <button onclick="calculate()">Calculate</button>
-
-    <div id="result" class="result-box"></div>
-  </div>
-
-  <h2>Profit Margin Formula</h2>
-  <p><strong>Profit = Revenue − Cost</strong></p>
-  <p><strong>Profit Margin % = Profit ÷ Revenue × 100</strong></p>
-
-  <p>
-    Example: Revenue $100 and cost $60 gives a profit of $40 and a margin of 40%.
-  </p>
-
-  <p>
-    Profit margin measures profitability based on revenue, while markup is based on cost.
-    Understanding both helps you price correctly and avoid losing profit.
-  </p>
-
-  <p>
-    You can also compare margin vs markup using our 
-    <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.
-  </p>
-
-  <h2>Common Profit Margin Examples</h2>
-  <ul>
-    <li>$100 revenue, $60 cost = 40% margin</li>
-    <li>$200 revenue, $120 cost = 40% margin</li>
-    <li>$100 revenue, $50 cost = 50% margin</li>
-  </ul>
-
-  <h2>Related Calculators</h2>
-  <ul>
-    <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-    <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-    <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
-  </ul>
-
-</div>
-
-<footer class="sbc-footer">
-  <div class="sbc-footer__inner">
-    <div class="sbc-footer__brand">
-      <div class="sbc-footer__logo">SmallBusinessCalculators</div>
-      <p class="sbc-footer__tagline">
-        Fast, simple calculators for small business decisions.
-      </p>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
+
+  <div class="wrap">
+
+    <p><a href="/">← Back to Small Business Calculators</a></p>
+
+    <nav style="font-size:14px; margin-bottom:10px; color:#666;">
+      <a href="/">Home</a> › Profit Margin Calculator
+    </nav>
+
+    <h1>Free Profit Margin Calculator</h1>
+
+    <p class="sub">
+      Use this free profit margin calculator to calculate <strong>gross profit</strong>, <strong>profit margin %</strong>, <strong>markup %</strong>, and <strong>break-even price</strong> from revenue and cost.
+      <span class="inline-links">Also compare percentages with our <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.</span>
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <label for="revenue">Revenue (Selling Price)</label>
+        <input type="number" id="revenue" inputmode="decimal" placeholder="e.g. 100" />
+        <div class="hint">The selling price or total revenue for the sale.</div>
+
+        <label for="cost">Cost</label>
+        <input type="number" id="cost" inputmode="decimal" placeholder="e.g. 60" />
+        <div class="hint">Your cost of goods or services for that sale.</div>
+
+        <div class="btnrow">
+          <button type="button" onclick="calculateProfitMargin()">Calculate</button>
+          <button type="button" class="secondary" onclick="resetCalc()">Reset</button>
+        </div>
+
+        <div class="note">
+          Tip: If you want to start from cost and calculate selling price, use the
+          <a href="/markup-calculator.html">Markup Calculator</a>.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Results</h3>
+
+        <div class="result-row">
+          <div>Gross Profit</div>
+          <div class="value" id="profit">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Profit Margin</div>
+          <div class="value" id="margin">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Markup</div>
+          <div class="value" id="markup">—</div>
+        </div>
+
+        <div class="result-row">
+          <div>Break-Even Price</div>
+          <div class="value" id="breakeven">—</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="sep">
+
+    <h2>Profit Margin Formula</h2>
+    <p>
+      <strong>Profit</strong> = Revenue − Cost<br>
+      <strong>Profit Margin %</strong> = Profit ÷ Revenue × 100<br>
+      <strong>Markup %</strong> = Profit ÷ Cost × 100
+    </p>
+
+    <p>
+      Example: Revenue $100 and cost $60 gives a profit of $40 and a profit margin of 40%.
+    </p>
+
+    <h3>Profit Margin vs Markup</h3>
+    <p>
+      Profit margin is based on revenue, while markup is based on cost.
+      That means the same numbers can produce different percentages.
+      Understanding both helps you price correctly and avoid losing profit.
+    </p>
+
+    <p>
+      You can also compare the two using our <a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a>.
+    </p>
+
+    <hr class="sep">
+
+    <h2>Common Profit Margin Examples</h2>
+    <ul>
+      <li>$100 revenue, $60 cost = 40% margin</li>
+      <li>$200 revenue, $120 cost = 40% margin</li>
+      <li>$100 revenue, $50 cost = 50% margin</li>
+      <li>$150 revenue, $90 cost = 40% margin</li>
+    </ul>
+
+    <hr class="sep">
+
+    <h2>Related Calculators</h2>
+    <ul>
+      <li><a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a></li>
+      <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+      <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+      <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+    </ul>
+
   </div>
 
-  <div class="sbc-footer__bottom">
-    © <span id="sbcYear"></span> SmallBusinessCalculators.com
-  </div>
-</footer>
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for small business decisions.
+        </p>
 
-<script>
-function calculate() {
-  const revenue = parseFloat(document.getElementById("revenue").value);
-  const cost = parseFloat(document.getElementById("cost").value);
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
 
-  if (isNaN(revenue) || isNaN(cost) || revenue <= 0) {
-    document.getElementById("result").innerHTML = "Enter valid values";
-    return;
-  }
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
 
-  const profit = revenue - cost;
-  const margin = (profit / revenue) * 100;
-  const markup = (profit / cost) * 100;
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Legal</div>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
 
-  document.getElementById("result").innerHTML =
-    "Profit: $" + profit.toFixed(2) + "<br>" +
-    "Margin: " + margin.toFixed(2) + "%<br>" +
-    "Markup: " + markup.toFixed(2) + "%";
-}
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial advice.
+      </div>
+    </div>
+  </footer>
 
-(function () {
-  var el = document.getElementById("sbcYear");
-  if (el) el.textContent = new Date().getFullYear();
-})();
-</script>
+  <script>
+    function n(v) {
+      return typeof v === "number" && isFinite(v);
+    }
+
+    function fmtMoney(x) {
+      if (!isFinite(x)) return "—";
+      return x.toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
+    }
+
+    function calculateProfitMargin() {
+      const revenue = parseFloat(document.getElementById("revenue").value);
+      const cost = parseFloat(document.getElementById("cost").value);
+
+      if (!n(revenue) || revenue <= 0 || !n(cost) || cost < 0) {
+        alert("Please enter valid numbers (revenue > 0, cost ≥ 0).");
+        return;
+      }
+
+      const profit = revenue - cost;
+      const marginRate = profit / revenue;
+      const markupRate = cost === 0 ? 0 : profit / cost;
+      const breakeven = cost;
+
+      document.getElementById("profit").innerText = fmtMoney(profit);
+      document.getElementById("margin").innerText = (marginRate * 100).toFixed(2) + " %";
+      document.getElementById("markup").innerText = (markupRate * 100).toFixed(2) + " %";
+      document.getElementById("breakeven").innerText = fmtMoney(breakeven);
+    }
+
+    function resetCalc() {
+      document.getElementById("revenue").value = "";
+      document.getElementById("cost").value = "";
+      document.getElementById("profit").innerText = "—";
+      document.getElementById("margin").innerText = "—";
+      document.getElementById("markup").innerText = "—";
+      document.getElementById("breakeven").innerText = "—";
+    }
+
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
 
 </body>
 </html>
