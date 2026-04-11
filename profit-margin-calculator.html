@@ -4,15 +4,191 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Free Profit Margin Calculator (Gross Profit, Margin & Markup)</title>
-  <meta name="description" content="Free profit margin calculator. Calculate gross profit, profit margin, markup, and break-even price from revenue and cost. Fast, simple, and accurate." />
+  <title>Profit Margin Calculator (Free) – Calculate Margin, Profit & Markup</title>
+  <meta name="description" content="Use this free profit margin calculator to calculate gross profit, profit margin %, markup %, and break-even price from revenue and cost. Fast and simple." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/profit-margin-calculator.html" />
 
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Profit Margin Calculator (Free) – Calculate Margin, Profit & Markup" />
+  <meta property="og:description" content="Calculate gross profit, profit margin %, markup %, and break-even price from revenue and cost with this free calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/profit-margin-calculator.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Profit Margin Calculator (Free) – Calculate Margin, Profit & Markup" />
+  <meta name="twitter:description" content="Calculate gross profit, profit margin %, markup %, and break-even price from revenue and cost with this free calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .calc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 800px) {
+      .calc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-card h2,
+    .calc-card h3 {
+      margin-top: 0;
+    }
+
+    .field-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: -8px;
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .secondary-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .secondary-btn:hover {
+      transform: translateY(-1px);
+      border-color: #bfd0ea;
+      text-decoration: none;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .result-value {
+      font-weight: 800;
+    }
+
+    .formula-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .section-link-list li + li {
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Profit Margin Calculator",
+    "url": "https://smallbusinesscalculators.com/profit-margin-calculator.html",
+    "description": "Free profit margin calculator to calculate gross profit, profit margin percentage, markup percentage, and break-even price."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use the profit margin calculator",
+    "description": "Enter revenue and cost to calculate gross profit, profit margin, markup, and break-even price.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter revenue",
+        "text": "Enter the selling price or total revenue."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enter cost",
+        "text": "Enter the cost of goods or services."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate results",
+        "text": "Click Calculate to see gross profit, profit margin percentage, markup percentage, and break-even price."
+      }
+    ]
+  }
+  </script>
 
   <script type="application/ld+json">
   {
@@ -42,165 +218,26 @@
           "@type": "Answer",
           "text": "Gross profit is the amount left after subtracting cost from revenue. Formula: Gross Profit = Revenue - Cost."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good profit margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good profit margin depends on the industry, business model, and operating costs. Some businesses work with low margins and high volume, while others require higher margins to stay profitable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this calculator for product pricing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This calculator helps you understand profit, margin, and markup so you can make better pricing decisions."
+        }
       }
     ]
   }
   </script>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #f8f9fb;
-      color: #111;
-    }
-
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #111;
-      font-weight: 600;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin: 8px 0 8px;
-    }
-
-    .sub {
-      color: #444;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-
-    .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 800px) {
-      .grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 20px;
-      border: 1px solid #e5e5e5;
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      margin-bottom: 15px;
-      box-sizing: border-box;
-    }
-
-    .hint {
-      font-size: 13px;
-      color: #666;
-      margin-top: -10px;
-      margin-bottom: 14px;
-      line-height: 1.4;
-    }
-
-    .btnrow {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    button {
-      padding: 10px 16px;
-      font-size: 15px;
-      border-radius: 10px;
-      border: 1px solid #111;
-      background: #111;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    button.secondary {
-      background: white;
-      color: #111;
-    }
-
-    .result-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .result-row:last-child {
-      border-bottom: none;
-    }
-
-    .value {
-      font-weight: 700;
-    }
-
-    hr.sep {
-      margin: 40px 0;
-      border: none;
-      border-top: 1px solid #eee;
-    }
-
-    h2 {
-      margin: 0 0 10px;
-    }
-
-    h3 {
-      margin: 18px 0 8px;
-    }
-
-    p, li {
-      color: #222;
-      line-height: 1.6;
-    }
-
-    ul {
-      margin-top: 8px;
-    }
-
-    .note {
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      border-radius: 12px;
-      padding: 14px;
-      margin-top: 14px;
-      color: #333;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .inline-links a {
-      font-weight: 700;
-    }
-  </style>
 </head>
 
 <body>
@@ -218,110 +255,252 @@
   </header>
 
   <div class="wrap">
+    <div class="calc-wrap">
 
-    <p><a href="/">← Back to Small Business Calculators</a></p>
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
 
-    <nav style="font-size:14px; margin-bottom:10px; color:#666;">
-      <a href="/">Home</a> › Profit Margin Calculator
-    </nav>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>Profit Margin Calculator</span>
+      </nav>
 
-    <h1>Free Profit Margin Calculator</h1>
+      <header class="section">
+        <h1>Profit Margin Calculator</h1>
 
-    <p class="sub">
-      Use this free profit margin calculator to calculate <strong>gross profit</strong>, <strong>profit margin %</strong>, <strong>markup %</strong>, and <strong>break-even price</strong> from revenue and cost.
-      <span class="inline-links">Also compare percentages with our <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.</span>
-    </p>
+        <p class="lead">
+          Use this free profit margin calculator to calculate <strong>gross profit</strong>, <strong>profit margin %</strong>,
+          <strong>markup %</strong>, and <strong>break-even price</strong> from revenue and cost.
+        </p>
 
-    <div class="grid">
-      <div class="card">
-        <label for="revenue">Revenue (Selling Price)</label>
-        <input type="number" id="revenue" inputmode="decimal" placeholder="e.g. 100" />
-        <div class="hint">The selling price or total revenue for the sale.</div>
+        <p>
+          This calculator is useful for small business owners, freelancers, ecommerce sellers, and anyone who needs to check
+          profitability quickly. Enter your selling price and cost to instantly see how much profit you make and what your
+          margin and markup percentages look like.
+        </p>
 
-        <label for="cost">Cost</label>
-        <input type="number" id="cost" inputmode="decimal" placeholder="e.g. 60" />
-        <div class="hint">Your cost of goods or services for that sale.</div>
+        <p>
+          If you also want to compare the difference between margin and markup directly, use our
+          <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.
+        </p>
+      </header>
 
-        <div class="btnrow">
-          <button type="button" onclick="calculateProfitMargin()">Calculate</button>
-          <button type="button" class="secondary" onclick="resetCalc()">Reset</button>
-        </div>
+      <main>
 
-        <div class="note">
-          Tip: If you want to start from cost and calculate selling price, use the
-          <a href="/markup-calculator.html">Markup Calculator</a>.
-        </div>
-      </div>
+        <section class="calc-grid" aria-label="Profit margin calculator">
+          <div class="calc-card">
+            <h2>Enter Your Numbers</h2>
 
-      <div class="card">
-        <h3>Results</h3>
+            <label for="revenue" class="field-label">Revenue (Selling Price)</label>
+            <input type="number" id="revenue" inputmode="decimal" placeholder="e.g. 100" />
+            <div class="field-hint">Enter the selling price or total revenue for the sale.</div>
 
-        <div class="result-row">
-          <div>Gross Profit</div>
-          <div class="value" id="profit">—</div>
-        </div>
+            <label for="cost" class="field-label">Cost</label>
+            <input type="number" id="cost" inputmode="decimal" placeholder="e.g. 60" />
+            <div class="field-hint">Enter your cost of goods sold or service cost.</div>
 
-        <div class="result-row">
-          <div>Profit Margin</div>
-          <div class="value" id="margin">—</div>
-        </div>
+            <div class="btnrow">
+              <button type="button" onclick="calculateProfitMargin()">Calculate</button>
+              <button type="button" class="secondary-btn" onclick="resetCalc()">Reset</button>
+            </div>
 
-        <div class="result-row">
-          <div>Markup</div>
-          <div class="value" id="markup">—</div>
-        </div>
+            <div class="note">
+              Tip: If you want to start from cost and work out a selling price, try the
+              <a href="/markup-calculator.html">Markup Calculator</a>.
+            </div>
+          </div>
 
-        <div class="result-row">
-          <div>Break-Even Price</div>
-          <div class="value" id="breakeven">—</div>
-        </div>
-      </div>
+          <div class="calc-card">
+            <h2>Results</h2>
+
+            <div class="result-row">
+              <div class="result-label">Gross Profit</div>
+              <div class="result-value" id="profit">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Profit Margin</div>
+              <div class="result-value" id="margin">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Markup</div>
+              <div class="result-value" id="markup">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Break-Even Price</div>
+              <div class="result-value" id="breakeven">—</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>How to Use This Profit Margin Calculator</h2>
+          <p>
+            Using the calculator is simple. Enter your selling price in the revenue field and your cost in the cost field.
+            Then click calculate to instantly see your gross profit, profit margin percentage, markup percentage, and break-even price.
+          </p>
+
+          <ol>
+            <li>Enter your revenue or selling price.</li>
+            <li>Enter your cost.</li>
+            <li>Click <strong>Calculate</strong>.</li>
+            <li>Review your profit, margin, markup, and break-even price.</li>
+          </ol>
+
+          <p>
+            This is especially useful when checking whether a product is priced high enough to stay profitable.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Profit Margin Formula</h2>
+
+          <div class="formula-box">
+            <strong>Profit</strong> = Revenue − Cost<br>
+            <strong>Profit Margin %</strong> = (Profit ÷ Revenue) × 100<br>
+            <strong>Markup %</strong> = (Profit ÷ Cost) × 100<br>
+            <strong>Break-Even Price</strong> = Cost
+          </div>
+
+          <p>
+            Profit margin shows how much of your revenue remains as profit after cost. Markup shows how much you added on top of cost.
+            Both are useful, but they answer different pricing questions.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Example Profit Margin Calculation</h2>
+          <p>
+            Imagine you sell a product for $100 and your cost is $60.
+          </p>
+
+          <ul>
+            <li><strong>Revenue:</strong> $100</li>
+            <li><strong>Cost:</strong> $60</li>
+            <li><strong>Gross Profit:</strong> $40</li>
+            <li><strong>Profit Margin:</strong> 40%</li>
+            <li><strong>Markup:</strong> 66.67%</li>
+            <li><strong>Break-Even Price:</strong> $60</li>
+          </ul>
+
+          <p>
+            This means you keep $40 in gross profit on a $100 sale, and your selling price is 66.67% above cost.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>What Is Profit Margin?</h2>
+          <p>
+            Profit margin is a percentage that shows how much profit you make from revenue after subtracting cost.
+            It is one of the most common business metrics used in pricing, budgeting, and profitability analysis.
+          </p>
+
+          <p>
+            A higher profit margin generally gives you more room to cover overhead, marketing, payroll, and unexpected expenses.
+            A lower margin can still work in some industries, but it often requires stronger volume and tighter cost control.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Profit Margin vs Markup</h2>
+          <p>
+            Profit margin and markup are closely related, but they are not the same thing.
+            Profit margin is based on revenue. Markup is based on cost.
+          </p>
+
+          <p>
+            That is why the same sale can show two different percentages. For example, a product sold for $100 that costs $60 has:
+          </p>
+
+          <ul>
+            <li><strong>40% profit margin</strong></li>
+            <li><strong>66.67% markup</strong></li>
+          </ul>
+
+          <p>
+            If you mix up these two numbers, you can easily underprice your products. For a direct comparison, use the
+            <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Tips for Using Profit Margin in Pricing</h2>
+          <ul>
+            <li>Always know both your direct cost and your target margin before setting a selling price.</li>
+            <li>Do not confuse margin with markup when pricing products.</li>
+            <li>Review your margins regularly if supplier costs or operating costs change.</li>
+            <li>Use margin together with break-even analysis to understand how much you need to sell.</li>
+            <li>Compare product margins to identify your most profitable offers.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Common Profit Margin Examples</h2>
+          <ul>
+            <li>$100 revenue, $60 cost = 40% margin</li>
+            <li>$200 revenue, $120 cost = 40% margin</li>
+            <li>$100 revenue, $50 cost = 50% margin</li>
+            <li>$150 revenue, $90 cost = 40% margin</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators and Guides</h2>
+          <ul class="section-link-list">
+            <li><a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a></li>
+            <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+            <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+            <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+            <li><a href="/profitability-guide.html">Profitability Guide</a></li>
+            <li><a href="/margin-vs-markup.html">Margin vs Markup Explained</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How do you calculate profit margin?</h3>
+            <p>
+              Profit margin is calculated as profit divided by revenue, multiplied by 100.
+              Formula: <strong>Profit Margin % = (Revenue − Cost) ÷ Revenue × 100</strong>.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the difference between profit margin and markup?</h3>
+            <p>
+              Profit margin is based on revenue, while markup is based on cost.
+              They are related, but they are not the same percentage.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is gross profit?</h3>
+            <p>
+              Gross profit is the amount left after subtracting cost from revenue.
+              Formula: <strong>Gross Profit = Revenue − Cost</strong>.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is a good profit margin?</h3>
+            <p>
+              A good profit margin depends on the industry, business model, and cost structure.
+              Some businesses work on lower margins and higher sales volume, while others need higher margins per sale.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I use this calculator for product pricing?</h3>
+            <p>
+              Yes. This calculator helps you understand gross profit, margin, and markup so you can make better pricing decisions.
+            </p>
+          </div>
+        </section>
+
+      </main>
     </div>
-
-    <hr class="sep">
-
-    <h2>Profit Margin Formula</h2>
-    <p>
-      <strong>Profit</strong> = Revenue − Cost<br>
-      <strong>Profit Margin %</strong> = Profit ÷ Revenue × 100<br>
-      <strong>Markup %</strong> = Profit ÷ Cost × 100
-    </p>
-
-    <p>
-      Example: Revenue $100 and cost $60 gives a profit of $40 and a profit margin of 40%.
-    </p>
-
-    <h3>Profit Margin vs Markup</h3>
-    <p>
-      Profit margin is based on revenue, while markup is based on cost.
-      That means the same numbers can produce different percentages.
-      Understanding both helps you price correctly and avoid losing profit.
-    </p>
-
-    <p>
-      You can also compare the two using our <a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a>.
-    </p>
-
-    <hr class="sep">
-
-    <h2>Common Profit Margin Examples</h2>
-    <ul>
-      <li>$100 revenue, $60 cost = 40% margin</li>
-      <li>$200 revenue, $120 cost = 40% margin</li>
-      <li>$100 revenue, $50 cost = 50% margin</li>
-      <li>$150 revenue, $90 cost = 40% margin</li>
-    </ul>
-
-    <hr class="sep">
-
-    <h2>Related Calculators</h2>
-    <ul>
-      <li><a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a></li>
-      <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-      <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-      <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
-    </ul>
-
   </div>
 
   <footer class="sbc-footer">
@@ -329,7 +508,7 @@
       <div class="sbc-footer__brand">
         <div class="sbc-footer__logo">SmallBusinessCalculators</div>
         <p class="sbc-footer__tagline">
-          Fast, simple calculators for small business decisions.
+          Fast, simple calculators for pricing, profit, and small business decisions.
         </p>
 
         <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
@@ -348,7 +527,20 @@
         </div>
 
         <div class="sbc-footer__col">
-          <div class="sbc-footer__heading">Legal</div>
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
           <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
           <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
         </div>
@@ -358,7 +550,7 @@
     <div class="sbc-footer__bottom">
       <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
       <div class="sbc-footer__note">
-        Information provided is for educational purposes and does not constitute financial advice.
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
       </div>
     </div>
   </footer>
