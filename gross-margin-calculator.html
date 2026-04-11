@@ -4,12 +4,192 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Gross Margin Calculator (Free) + Formula & Examples</title>
-  <meta name="description" content="Calculate gross margin and gross profit in seconds. Includes formula, examples, and a quick breakdown of gross margin vs markup." />
+  <title>Gross Margin Calculator (Free) – Calculate Gross Margin and Gross Profit</title>
+  <meta name="description" content="Use this free gross margin calculator to calculate gross margin and gross profit from revenue and cost of goods sold. Includes formula, examples, and explanations." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/gross-margin-calculator.html" />
 
-  <!-- FAQ structured data -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gross Margin Calculator (Free) – Calculate Gross Margin and Gross Profit" />
+  <meta property="og:description" content="Calculate gross margin and gross profit from revenue and cost of goods sold with this free gross margin calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/gross-margin-calculator.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gross Margin Calculator (Free) – Calculate Gross Margin and Gross Profit" />
+  <meta name="twitter:description" content="Calculate gross margin and gross profit from revenue and cost of goods sold with this free gross margin calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .calc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 800px) {
+      .calc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-card h2,
+    .calc-card h3 {
+      margin-top: 0;
+    }
+
+    .field-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: -8px;
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .secondary-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .secondary-btn:hover {
+      transform: translateY(-1px);
+      border-color: #bfd0ea;
+      text-decoration: none;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .result-value {
+      font-weight: 800;
+    }
+
+    .formula-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .section-link-list li + li {
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Gross Margin Calculator",
+    "url": "https://smallbusinesscalculators.com/gross-margin-calculator.html",
+    "description": "Free gross margin calculator to calculate gross margin and gross profit from revenue and cost of goods sold."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use the gross margin calculator",
+    "description": "Enter revenue and cost of goods sold to calculate gross profit and gross margin percentage.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter revenue",
+        "text": "Enter your total sales or revenue."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enter cost of goods sold",
+        "text": "Enter your total cost of goods sold."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate results",
+        "text": "Click Calculate to see gross profit and gross margin percentage."
+      }
+    ]
+  }
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -20,7 +200,7 @@
         "name": "How do you calculate gross margin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Gross margin (%) = (Revenue − Cost of Goods Sold) / Revenue × 100."
+          "text": "Gross margin percentage is calculated as (Revenue minus Cost of Goods Sold) divided by Revenue, multiplied by 100."
         }
       },
       {
@@ -28,7 +208,7 @@
         "name": "What is a good gross margin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A good gross margin depends on the industry. Many product-based businesses aim for 40–60%, while retail often operates at lower margins."
+          "text": "A good gross margin depends on the industry. Many product-based businesses aim for around 40 to 60 percent, while retail often operates at lower margins."
         }
       },
       {
@@ -36,145 +216,340 @@
         "name": "What is the difference between gross margin and profit margin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Gross margin includes only cost of goods sold (COGS). Profit margin includes all expenses, such as rent, salaries, marketing, and taxes."
+          "text": "Gross margin includes only cost of goods sold. Profit margin includes all business expenses such as rent, salaries, software, and taxes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is gross profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gross profit is revenue minus cost of goods sold. It shows how much money is left before operating expenses and overhead are subtracted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is gross margin important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gross margin is important because it shows whether your core pricing and product costs are healthy before overhead and other expenses are included."
         }
       }
     ]
   }
   </script>
-
-  <style>
-    :root { color-scheme: dark; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 24px 16px 64px; }
-    header { margin-bottom: 18px; }
-    h1 { font-size: 2rem; margin: 0 0 8px; }
-    p { margin: 0 0 12px; opacity: 0.92; }
-    .card { border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 16px; margin: 14px 0; background: rgba(255,255,255,0.03); }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
-    label { display: block; font-weight: 600; margin-bottom: 6px; }
-    input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.18); background: rgba(0,0,0,0.25); color: #fff; }
-    button { padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.08); color: #fff; cursor: pointer; }
-    button:hover { background: rgba(255,255,255,0.12); }
-    .result { font-size: 1.05rem; }
-    .muted { opacity: 0.8; }
-    nav a { color: inherit; opacity: 0.9; text-decoration: none; margin-right: 10px; }
-    nav a:hover { text-decoration: underline; }
-    code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px; }
-  </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <nav class="muted" aria-label="Primary">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
+
+      <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
-        <a href="/profit-margin-calculator.html">Profit Margin</a>
-        <a href="/markup-calculator.html">Markup</a>
-        <a href="/margin-vs-markup.html">Margin vs Markup</a>
-        <a href="/break-even-calculator.html">Break-Even</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="calc-wrap">
+
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>Gross Margin Calculator</span>
       </nav>
 
-      <h1>Gross Margin Calculator</h1>
+      <header class="section">
+        <h1>Gross Margin Calculator</h1>
 
-      <p><strong>Gross margin</strong> is calculated as:<br>
-      <code>(Revenue − COGS) / Revenue × 100</code></p>
+        <p class="lead">
+          Use this free gross margin calculator to calculate <strong>gross margin</strong> and <strong>gross profit</strong>
+          from revenue and cost of goods sold.
+        </p>
 
-      <p>
-        Gross margin shows the percentage of revenue remaining after deducting cost of goods sold (COGS).
-      </p>
+        <p>
+          Gross margin helps you understand how much revenue remains after subtracting direct product costs.
+          It is one of the most important pricing and profitability metrics for product-based businesses.
+        </p>
 
-      <p>
-        Enter your revenue and cost of goods sold (COGS) below to calculate your gross margin and gross profit.
-      </p>
-    </header>
+        <p>
+          If you also want to compare gross margin with markup or full profit margin, see the
+          <a href="/markup-calculator.html">Markup Calculator</a>,
+          <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>, and
+          <a href="/margin-vs-markup.html">Margin vs Markup Guide</a>.
+        </p>
+      </header>
 
-    <main>
-      <section class="card">
-        <h2>Calculator</h2>
+      <main>
 
-        <div class="grid">
-          <div>
-            <label for="revenue">Revenue (Sales)</label>
-            <input id="revenue" type="number" inputmode="decimal" min="0" step="0.01" placeholder="e.g., 10000" />
+        <section class="calc-grid" aria-label="Gross margin calculator">
+          <div class="calc-card">
+            <h2>Enter Your Numbers</h2>
+
+            <label for="revenue" class="field-label">Revenue (Sales)</label>
+            <input id="revenue" type="number" inputmode="decimal" min="0" step="0.01" placeholder="e.g. 10000" />
+            <div class="field-hint">Enter your total revenue or sales.</div>
+
+            <label for="cogs" class="field-label">COGS (Cost of Goods Sold)</label>
+            <input id="cogs" type="number" inputmode="decimal" min="0" step="0.01" placeholder="e.g. 6500" />
+            <div class="field-hint">Enter your total direct cost of goods sold.</div>
+
+            <div class="btnrow">
+              <button id="btnCalc" type="button">Calculate</button>
+              <button id="btnReset" type="button" class="secondary-btn">Reset</button>
+            </div>
+
+            <div class="note">
+              Tip: Gross margin looks only at direct costs. It does not include overhead, salaries, software, or taxes.
+            </div>
           </div>
-          <div>
-            <label for="cogs">COGS (Cost of Goods Sold)</label>
-            <input id="cogs" type="number" inputmode="decimal" min="0" step="0.01" placeholder="e.g., 6500" />
+
+          <div class="calc-card">
+            <h2>Results</h2>
+
+            <div class="result-row">
+              <div class="result-label">Gross Profit</div>
+              <div class="result-value" id="grossProfit">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Gross Margin</div>
+              <div class="result-value" id="grossMargin">—</div>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
-          <button id="btnCalc" type="button">Calculate</button>
-          <button id="btnReset" type="button">Reset</button>
-        </div>
+        <section class="section">
+          <h2>How to Use This Gross Margin Calculator</h2>
+          <p>
+            Enter your total revenue and your total cost of goods sold. Then click calculate to see your gross profit
+            and gross margin percentage.
+          </p>
 
-        <div class="card" style="margin-top:14px;">
-          <div class="result"><strong>Gross Profit:</strong> <span id="grossProfit">—</span></div>
-          <div class="result"><strong>Gross Margin:</strong> <span id="grossMargin">—</span></div>
-        </div>
-      </section>
+          <ol>
+            <li>Enter your revenue.</li>
+            <li>Enter your cost of goods sold.</li>
+            <li>Click <strong>Calculate</strong>.</li>
+            <li>Review your gross profit and gross margin.</li>
+          </ol>
 
-      <section class="card">
-        <h2>What is gross margin?</h2>
-        <p>
-          Gross margin is the percentage of revenue left after subtracting COGS.
-          It shows how efficiently you produce or deliver what you sell,
-          before operating expenses like rent, salaries, and marketing.
-        </p>
+          <p>
+            This is useful for checking whether your core pricing and product costs are healthy before other business expenses are considered.
+          </p>
+        </section>
 
-        <h3>Gross margin vs markup</h3>
-        <p>
-          Margin is based on <strong>revenue</strong>. Markup is based on <strong>cost</strong>.
-          Use our <a href="/markup-calculator.html">Markup Calculator</a> and the guide
-          <a href="/margin-vs-markup.html">Margin vs Markup</a>.
-        </p>
+        <section class="section">
+          <h2>Gross Margin Formula</h2>
 
-        <p>
-          If you want to analyze profit per unit instead of overall revenue,
-          see our <a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a>.
-        </p>
-      </section>
+          <div class="formula-box">
+            <strong>Gross Profit</strong> = Revenue − Cost of Goods Sold<br>
+            <strong>Gross Margin %</strong> = (Gross Profit ÷ Revenue) × 100
+          </div>
 
-      <section class="card">
-        <h2>Frequently Asked Questions</h2>
+          <p>
+            Gross margin shows the percentage of revenue left after subtracting direct costs.
+            It helps you understand the efficiency of your product pricing and delivery costs.
+          </p>
+        </section>
 
-        <h3>How do you calculate gross margin?</h3>
-        <p>Gross margin (%) = (Revenue − Cost of Goods Sold) / Revenue × 100.</p>
+        <section class="section">
+          <h2>Example Gross Margin Calculation</h2>
+          <p>
+            Imagine your revenue is $10,000 and your cost of goods sold is $6,500.
+          </p>
 
-        <h3>What is a good gross margin?</h3>
-        <p>A good gross margin depends on the industry. Many product-based businesses aim for 40–60%.</p>
+          <ul>
+            <li><strong>Revenue:</strong> $10,000</li>
+            <li><strong>COGS:</strong> $6,500</li>
+            <li><strong>Gross Profit:</strong> $3,500</li>
+            <li><strong>Gross Margin:</strong> 35%</li>
+          </ul>
 
-        <h3>What is the difference between gross margin and profit margin?</h3>
-        <p>Gross margin includes only COGS. Profit margin includes all operating expenses.</p>
-      </section>
+          <p>
+            This means 35% of your revenue remains after direct product costs are subtracted.
+          </p>
+        </section>
 
-      <section class="card">
-        <h2>Related calculators</h2>
-        <ul>
-          <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-          <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-          <li><a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a></li>
-          <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-        </ul>
-      </section>
-    </main>
+        <section class="section">
+          <h2>What Is Gross Margin?</h2>
+          <p>
+            Gross margin is the percentage of revenue left after subtracting cost of goods sold.
+            It is one of the clearest ways to see whether the core economics of what you sell are working.
+          </p>
 
-    <footer class="muted" style="margin-top:22px;">
-      <p>© SmallBusinessCalculators.com</p>
-    </footer>
+          <p>
+            Gross margin is especially useful for product-based businesses, ecommerce stores, wholesalers, manufacturers,
+            and any business where direct costs are a major part of the pricing model.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Gross Margin vs Profit Margin</h2>
+          <p>
+            Gross margin includes only direct costs or cost of goods sold.
+            Profit margin includes all business expenses, such as overhead, salaries, rent, software, and taxes.
+          </p>
+
+          <p>
+            That means a business can have a healthy gross margin but still poor overall profit if operating expenses are too high.
+            To compare overall profitability, use the
+            <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Gross Margin vs Markup</h2>
+          <p>
+            Gross margin is based on revenue, while markup is based on cost.
+            They are related, but they are not the same percentage.
+          </p>
+
+          <p>
+            For pricing decisions based on cost, use the
+            <a href="/markup-calculator.html">Markup Calculator</a> or read the
+            <a href="/margin-vs-markup.html">Margin vs Markup Guide</a>.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Why Gross Margin Matters</h2>
+          <ul>
+            <li>It shows whether your core pricing is strong enough.</li>
+            <li>It helps identify weak product profitability early.</li>
+            <li>It makes it easier to compare products or periods.</li>
+            <li>It supports better pricing and sourcing decisions.</li>
+            <li>It is a key part of overall profitability analysis.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators and Guides</h2>
+          <ul class="section-link-list">
+            <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+            <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+            <li><a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a></li>
+            <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+            <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+            <li><a href="/margin-vs-markup.html">Margin vs Markup Guide</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How do you calculate gross margin?</h3>
+            <p>
+              Gross margin is calculated as
+              <strong>(Revenue − Cost of Goods Sold) ÷ Revenue × 100</strong>.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is a good gross margin?</h3>
+            <p>
+              A good gross margin depends on the industry. Many product-based businesses aim for around 40–60%, while retail often operates at lower margins.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the difference between gross margin and profit margin?</h3>
+            <p>
+              Gross margin includes only cost of goods sold.
+              Profit margin includes all expenses such as rent, salaries, software, marketing, and taxes.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is gross profit?</h3>
+            <p>
+              Gross profit is revenue minus cost of goods sold.
+              It shows how much money remains before operating expenses are subtracted.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why is gross margin important?</h3>
+            <p>
+              Gross margin is important because it shows whether your product pricing and direct costs are healthy before overhead and other business expenses are included.
+            </p>
+          </div>
+        </section>
+
+      </main>
+    </div>
   </div>
+
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for pricing, profit, and small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/gross-margin-calculator.html" class="sbc-footer__link">Gross Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
+      </div>
+    </div>
+  </footer>
 
   <script>
     function fmtMoney(n) {
       if (!isFinite(n)) return "—";
-      return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+      return n.toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
     }
 
     function fmtPct(n) {
       if (!isFinite(n)) return "—";
-      return (n * 100).toFixed(2) + "%";
+      return (n * 100).toFixed(2) + " %";
     }
 
     function calculate() {
@@ -194,7 +569,7 @@
       document.getElementById("grossMargin").textContent = fmtPct(grossMargin);
     }
 
-    function reset() {
+    function resetCalc() {
       document.getElementById("revenue").value = "";
       document.getElementById("cogs").value = "";
       document.getElementById("grossProfit").textContent = "—";
@@ -202,9 +577,15 @@
     }
 
     document.getElementById("btnCalc").addEventListener("click", calculate);
-    document.getElementById("btnReset").addEventListener("click", reset);
+    document.getElementById("btnReset").addEventListener("click", resetCalc);
     document.getElementById("revenue").addEventListener("input", calculate);
     document.getElementById("cogs").addEventListener("input", calculate);
+
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
   </script>
+
 </body>
 </html>
