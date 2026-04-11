@@ -4,18 +4,192 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>ROI Calculator (Return on Investment) | SmallBusinessCalculators</title>
-  <meta name="description" content="Free ROI calculator. Calculate return on investment (ROI %) from investment cost and return value. Includes net profit and payback insight." />
+  <title>ROI Calculator (Free) – Calculate Return on Investment</title>
+  <meta name="description" content="Use this free ROI calculator to calculate return on investment (ROI %), net profit, and return multiple from investment cost and return value." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/roi-calculator.html" />
 
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Site-wide styles (header/footer + base) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ROI Calculator (Free) – Calculate Return on Investment" />
+  <meta property="og:description" content="Calculate ROI %, net profit, and return multiple from investment cost and return value with this free ROI calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/roi-calculator.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ROI Calculator (Free) – Calculate Return on Investment" />
+  <meta name="twitter:description" content="Calculate ROI %, net profit, and return multiple from investment cost and return value with this free ROI calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- FAQ Schema -->
+  <style>
+    .calc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 800px) {
+      .calc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-card h2,
+    .calc-card h3 {
+      margin-top: 0;
+    }
+
+    .field-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: -8px;
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .secondary-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .secondary-btn:hover {
+      transform: translateY(-1px);
+      border-color: #bfd0ea;
+      text-decoration: none;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .result-value {
+      font-weight: 800;
+    }
+
+    .formula-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .section-link-list li + li {
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ROI Calculator",
+    "url": "https://smallbusinesscalculators.com/roi-calculator.html",
+    "description": "Free ROI calculator to calculate return on investment, net profit, and return multiple from investment cost and return value."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use the ROI calculator",
+    "description": "Enter investment cost and return value to calculate ROI percentage, net profit, and return multiple.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter investment cost",
+        "text": "Enter your total investment cost such as ad spend, equipment cost, or project cost."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enter return value",
+        "text": "Enter the total return or final value produced by the investment."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate results",
+        "text": "Click Calculate to see net profit, ROI percentage, and return multiple."
+      }
+    ]
+  }
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -26,7 +200,7 @@
         "name": "How do you calculate ROI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ROI % = (Return − Investment Cost) ÷ Investment Cost × 100. It measures how much profit you earned relative to what you invested."
+          "text": "ROI % is calculated as (Return − Investment Cost) ÷ Investment Cost × 100. It measures profit relative to the amount invested."
         }
       },
       {
@@ -34,7 +208,7 @@
         "name": "What is a good ROI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A good ROI depends on your industry, risk, and alternatives. Compare ROI to your cost of capital and other opportunities."
+          "text": "A good ROI depends on your industry, risk level, time period, and alternative investment opportunities. Higher ROI is generally better, but time and risk matter too."
         }
       },
       {
@@ -42,118 +216,32 @@
         "name": "Can ROI be negative?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. If your return is less than your investment cost, ROI will be negative, meaning you lost money on the investment."
+          "text": "Yes. If your return is lower than your investment cost, your ROI will be negative, meaning the investment lost money."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does ROI tell you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ROI tells you how efficiently an investment generated profit compared to its cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use ROI for marketing campaigns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ROI is commonly used to evaluate marketing campaigns, software purchases, equipment investments, and business projects."
         }
       }
     ]
   }
   </script>
-
-  <!-- Page-specific styles (keep for now) -->
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #f8f9fb;
-      color: #111;
-    }
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-    }
-    a {
-      text-decoration: none;
-      color: #111;
-      font-weight: 600;
-    }
-    a:hover { text-decoration: underline; }
-
-    h1 { font-size: 36px; margin: 8px 0 8px; }
-    .sub { color: #444; margin-bottom: 30px; line-height: 1.5; }
-
-    .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 800px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 20px;
-      border: 1px solid #e5e5e5;
-    }
-
-    label { display:block; font-weight: 600; margin-bottom: 6px; }
-    input {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      margin-bottom: 15px;
-      box-sizing: border-box;
-    }
-    .hint {
-      font-size: 13px;
-      color: #666;
-      margin-top: -10px;
-      margin-bottom: 14px;
-      line-height: 1.4;
-    }
-
-    .btnrow { display:flex; gap:10px; flex-wrap: wrap; }
-    button {
-      padding: 10px 16px;
-      font-size: 15px;
-      border-radius: 10px;
-      border: 1px solid #111;
-      background: #111;
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    button.secondary { background:#fff; color:#111; }
-
-    .result-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-    .result-row:last-child { border-bottom: none; }
-    .value { font-weight: 700; }
-
-    hr.sep { margin: 40px 0; border: none; border-top: 1px solid #eee; }
-
-    h2 { margin: 0 0 10px; }
-    h3 { margin: 18px 0 8px; }
-    p, li { color:#222; line-height: 1.6; }
-    ul { margin-top: 8px; }
-
-    .note {
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      border-radius: 12px;
-      padding: 14px;
-      margin-top: 14px;
-      color: #333;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .inline-links a { font-weight: 700; }
-  </style>
 </head>
 
 <body>
 
-  <!-- HEADER (site-wide) -->
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="brand">SmallBusinessCalculators</a>
@@ -167,98 +255,243 @@
   </header>
 
   <div class="wrap">
-    <p><a href="/">← Back to Small Business Calculators</a></p>
+    <div class="calc-wrap">
 
-    <nav style="font-size:14px; margin-bottom:10px; color:#666;">
-      <a href="/">Home</a> › ROI Calculator
-    </nav>
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
 
-    <h1>ROI Calculator</h1>
-    <p class="sub">
-      Calculate <strong>Return on Investment (ROI %)</strong> from investment cost and return value.
-      <span class="inline-links">Related: <a href="/profit-margin-calculator.html">Profit Margin</a> • <a href="/break-even-calculator.html">Break-Even</a></span>
-    </p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>ROI Calculator</span>
+      </nav>
 
-    <div class="grid">
-      <div class="card">
-        <label for="investment">Investment Cost</label>
-        <input type="number" id="investment" inputmode="decimal" placeholder="e.g. 5000" />
-        <div class="hint">Your initial cost (ad spend, equipment, project cost, etc.).</div>
+      <header class="section">
+        <h1>ROI Calculator</h1>
 
-        <label for="returnValue">Return Value</label>
-        <input type="number" id="returnValue" inputmode="decimal" placeholder="e.g. 8000" />
-        <div class="hint">Total value returned (revenue or final value). Use the same currency.</div>
+        <p class="lead">
+          Use this free ROI calculator to calculate <strong>Return on Investment (ROI %)</strong>,
+          <strong>net profit</strong>, and <strong>return multiple</strong> from investment cost and return value.
+        </p>
 
-        <div class="btnrow">
-          <button type="button" onclick="calc()">Calculate</button>
-          <button type="button" class="secondary" onclick="resetCalc()">Reset</button>
-        </div>
+        <p>
+          ROI is one of the most common business metrics for evaluating whether an investment was worth it.
+          You can use it to compare marketing campaigns, software subscriptions, equipment purchases, projects, or other business decisions.
+        </p>
 
-        <div class="note">
-          ROI measures performance, but don’t ignore <strong>time</strong> and <strong>risk</strong>.
-          A 30% ROI in 1 month is not the same as 30% ROI in 3 years.
-        </div>
-      </div>
+        <p>
+          If you also want to review pricing and profitability, see the
+          <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>,
+          <a href="/break-even-calculator.html">Break-Even Calculator</a>, and
+          <a href="/net-profit-calculator.html">Net Profit Calculator</a>.
+        </p>
+      </header>
 
-      <div class="card">
-        <h3>Results</h3>
+      <main>
 
-        <div class="result-row">
-          <div>Net Profit</div>
-          <div class="value" id="profit">—</div>
-        </div>
+        <section class="calc-grid" aria-label="ROI calculator">
+          <div class="calc-card">
+            <h2>Enter Your Numbers</h2>
 
-        <div class="result-row">
-          <div>ROI</div>
-          <div class="value" id="roi">—</div>
-        </div>
+            <label for="investment" class="field-label">Investment Cost</label>
+            <input type="number" id="investment" inputmode="decimal" placeholder="e.g. 5000" />
+            <div class="field-hint">Enter your initial investment cost, such as ad spend, equipment cost, or project cost.</div>
 
-        <div class="result-row">
-          <div>Return / Investment</div>
-          <div class="value" id="multiple">—</div>
-        </div>
-      </div>
+            <label for="returnValue" class="field-label">Return Value</label>
+            <input type="number" id="returnValue" inputmode="decimal" placeholder="e.g. 8000" />
+            <div class="field-hint">Enter the total value returned by the investment. Use the same currency for both fields.</div>
+
+            <div class="btnrow">
+              <button type="button" onclick="calc()">Calculate</button>
+              <button type="button" class="secondary-btn" onclick="resetCalc()">Reset</button>
+            </div>
+
+            <div class="note">
+              ROI is useful, but always consider <strong>time</strong>, <strong>risk</strong>, and <strong>cash flow</strong>.
+              A 30% ROI in one month is very different from a 30% ROI over three years.
+            </div>
+          </div>
+
+          <div class="calc-card">
+            <h2>Results</h2>
+
+            <div class="result-row">
+              <div class="result-label">Net Profit</div>
+              <div class="result-value" id="profit">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">ROI</div>
+              <div class="result-value" id="roi">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Return / Investment</div>
+              <div class="result-value" id="multiple">—</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>How to Use This ROI Calculator</h2>
+          <p>
+            Enter your investment cost in the first field and the total return value in the second field.
+            Then click calculate to see your net profit, ROI percentage, and return multiple.
+          </p>
+
+          <ol>
+            <li>Enter the total investment cost.</li>
+            <li>Enter the total return value.</li>
+            <li>Click <strong>Calculate</strong>.</li>
+            <li>Review the net profit, ROI percentage, and return multiple.</li>
+          </ol>
+
+          <p>
+            This is useful for comparing which investments, campaigns, or projects generated the best return.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>ROI Formula</h2>
+
+          <div class="formula-box">
+            <strong>Net Profit</strong> = Return Value − Investment Cost<br>
+            <strong>ROI %</strong> = (Net Profit ÷ Investment Cost) × 100<br>
+            <strong>Return Multiple</strong> = Return Value ÷ Investment Cost
+          </div>
+
+          <p>
+            ROI shows how efficiently an investment created profit relative to the money spent.
+            It is simple, widely used, and useful for comparing different opportunities.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Example ROI Calculation</h2>
+          <p>
+            Imagine you invest $5,000 in a campaign and generate $8,000 in return.
+          </p>
+
+          <ul>
+            <li><strong>Investment Cost:</strong> $5,000</li>
+            <li><strong>Return Value:</strong> $8,000</li>
+            <li><strong>Net Profit:</strong> $3,000</li>
+            <li><strong>ROI:</strong> 60%</li>
+            <li><strong>Return Multiple:</strong> 1.60×</li>
+          </ul>
+
+          <p>
+            This means the investment generated $3,000 in profit and returned 1.6 times the original amount invested.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>What Is ROI?</h2>
+          <p>
+            ROI stands for Return on Investment. It measures how much profit an investment generated relative to its cost.
+            Businesses use ROI to compare projects, marketing channels, equipment purchases, software investments, and many other decisions.
+          </p>
+
+          <p>
+            ROI is popular because it is simple and easy to compare across options. However, it should not be the only number you use,
+            because it does not automatically reflect timing, risk, or cash flow.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Why ROI Matters in a Small Business</h2>
+          <ul>
+            <li>It helps you compare marketing channels and campaigns.</li>
+            <li>It helps you evaluate equipment and software purchases.</li>
+            <li>It helps you prioritize projects with stronger expected returns.</li>
+            <li>It makes decision-making more measurable and less emotional.</li>
+            <li>It helps you track performance over time.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>ROI vs Profit</h2>
+          <p>
+            Profit tells you how much money you made in absolute terms. ROI tells you how efficient the investment was relative to its cost.
+          </p>
+
+          <p>
+            For example, one project may produce more total profit, while another delivers a higher ROI because it required much less investment.
+            Looking at both numbers gives a better picture of performance.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Tips for Using ROI Correctly</h2>
+          <ul>
+            <li>Always use the same currency and time frame when comparing investments.</li>
+            <li>Consider risk, cash flow, and payback time in addition to ROI.</li>
+            <li>Use ROI together with profit and break-even analysis for better decisions.</li>
+            <li>Be careful when comparing short-term and long-term investments directly.</li>
+            <li>Track actual results over time instead of relying only on estimates.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators and Guides</h2>
+          <ul class="section-link-list">
+            <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+            <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+            <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+            <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+            <li><a href="/profitability-guide.html">Profitability Guide</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How do you calculate ROI?</h3>
+            <p>
+              ROI is calculated as
+              <strong>(Return Value − Investment Cost) ÷ Investment Cost × 100</strong>.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is a good ROI?</h3>
+            <p>
+              A good ROI depends on your industry, risk, time period, and other available opportunities.
+              Higher ROI is generally better, but it should always be viewed in context.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can ROI be negative?</h3>
+            <p>
+              Yes. If your return value is lower than your investment cost, your ROI will be negative,
+              which means the investment lost money.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What does ROI tell you?</h3>
+            <p>
+              ROI tells you how efficiently an investment produced profit compared to the amount you invested.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I use ROI for marketing campaigns?</h3>
+            <p>
+              Yes. ROI is often used to measure the performance of ads, SEO, email campaigns, software tools, and other business investments.
+            </p>
+          </div>
+        </section>
+
+      </main>
     </div>
-
-    <hr class="sep">
-
-    <h2>What is ROI?</h2>
-    <p>
-      ROI (Return on Investment) shows how much profit you earned relative to what you invested.
-      It’s a simple way to compare projects, marketing campaigns, equipment purchases, and other business decisions.
-    </p>
-
-    <h3>ROI Formula</h3>
-    <p>
-      <strong>Net Profit</strong> = Return − Investment Cost<br>
-      <strong>ROI %</strong> = (Net Profit ÷ Investment Cost) × 100
-    </p>
-
-    <h3>How to Use ROI in a Small Business</h3>
-    <ul>
-      <li>Compare marketing channels (ads, SEO, referrals)</li>
-      <li>Evaluate new equipment or software purchases</li>
-      <li>Prioritize projects with higher expected returns</li>
-      <li>Track performance over time</li>
-    </ul>
-
-    <hr class="sep">
-
-    <h2>Related Calculators</h2>
-    <ul>
-      <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-      <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-      <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-    </ul>
   </div>
 
-  <!-- FOOTER (site-wide) -->
   <footer class="sbc-footer">
     <div class="sbc-footer__inner">
       <div class="sbc-footer__brand">
         <div class="sbc-footer__logo">SmallBusinessCalculators</div>
         <p class="sbc-footer__tagline">
-          Fast, simple calculators for small business decisions.
+          Fast, simple calculators for pricing, profit, and small business decisions.
         </p>
 
         <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
@@ -277,7 +510,20 @@
         </div>
 
         <div class="sbc-footer__col">
-          <div class="sbc-footer__heading">Legal</div>
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
           <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
           <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
         </div>
@@ -287,14 +533,24 @@
     <div class="sbc-footer__bottom">
       <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
       <div class="sbc-footer__note">
-        Information provided is for educational purposes and does not constitute financial advice.
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
       </div>
     </div>
   </footer>
 
   <script>
-    function ok(x) { return typeof x === "number" && isFinite(x); }
-    function fmt2(x) { return x.toFixed(2); }
+    function ok(x) {
+      return typeof x === "number" && isFinite(x);
+    }
+
+    function fmtMoney(x) {
+      if (!isFinite(x)) return "—";
+      return x.toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
+    }
 
     function calc() {
       const investment = parseFloat(document.getElementById("investment").value);
@@ -309,7 +565,7 @@
       const roi = (profit / investment) * 100;
       const multiple = ret / investment;
 
-      document.getElementById("profit").innerText = fmt2(profit);
+      document.getElementById("profit").innerText = fmtMoney(profit);
       document.getElementById("roi").innerText = roi.toFixed(2) + " %";
       document.getElementById("multiple").innerText = multiple.toFixed(2) + "×";
     }
