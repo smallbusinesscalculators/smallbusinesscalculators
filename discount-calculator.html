@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Discount Calculator (Free) – Calculate Sale Price and Savings</title>
+  <meta name="description" content="Use this free discount calculator to calculate discount amount, final price, and percentage savings. Fast, simple, and accurate." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/discount-calculator.html" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Discount Calculator (Free) – Calculate Sale Price and Savings" />
+  <meta property="og:description" content="Calculate discount amount, final price, and savings percentage with this free discount calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/discount-calculator.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Discount Calculator (Free) – Calculate Sale Price and Savings" />
+  <meta name="twitter:description" content="Calculate discount amount, final price, and savings percentage with this free discount calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .calc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 800px) {
+      .calc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-card h2,
+    .calc-card h3 {
+      margin-top: 0;
+    }
+
+    .field-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: -8px;
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .secondary-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .secondary-btn:hover {
+      transform: translateY(-1px);
+      border-color: #bfd0ea;
+      text-decoration: none;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .result-value {
+      font-weight: 800;
+    }
+
+    .formula-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .section-link-list li + li {
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Discount Calculator",
+    "url": "https://smallbusinesscalculators.com/discount-calculator.html",
+    "description": "Free discount calculator to calculate discount amount, final price, and savings."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use the discount calculator",
+    "description": "Enter original price and discount percentage to calculate savings and final sale price.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter original price",
+        "text": "Enter the full original price before the discount."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enter discount percentage",
+        "text": "Enter the discount percentage you want to apply."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate results",
+        "text": "Click Calculate to see the discount amount, final price, and savings percentage."
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate a discount?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A discount is calculated by multiplying the original price by the discount percentage. Final price equals original price minus discount amount."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate sale price after discount?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sale price is calculated as original price multiplied by (1 minus discount percentage)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the discount formula?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Discount Amount = Original Price × Discount Percentage. Final Price = Original Price − Discount Amount."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this calculator for percentage discounts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This calculator is designed to calculate percentage discounts, savings, and final price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is a discount calculator useful?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A discount calculator helps you quickly find savings, compare prices, and avoid mistakes when calculating sale prices."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="calc-wrap">
+
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>Discount Calculator</span>
+      </nav>
+
+      <header class="section">
+        <h1>Discount Calculator</h1>
+
+        <p class="lead">
+          Use this free discount calculator to calculate <strong>discount amount</strong>, <strong>final price</strong>,
+          and <strong>percentage savings</strong>.
+        </p>
+
+        <p>
+          This calculator helps you quickly work out how much money you save during a sale and what the final price will be after a discount is applied.
+        </p>
+
+        <p>
+          Related:
+          <a href="/profit-margin-calculator.html">Profit Margin Calculator</a> •
+          <a href="/markup-calculator.html">Markup Calculator</a> •
+          <a href="/break-even-calculator.html">Break-Even Calculator</a>
+        </p>
+      </header>
+
+      <main>
+
+        <section class="calc-grid" aria-label="Discount calculator">
+          <div class="calc-card">
+            <h2>Enter Your Numbers</h2>
+
+            <label for="originalPrice" class="field-label">Original Price</label>
+            <input type="number" id="originalPrice" inputmode="decimal" placeholder="e.g. 100" />
+            <div class="field-hint">Enter the full price before discount.</div>
+
+            <label for="discountPercent" class="field-label">Discount %</label>
+            <input type="number" id="discountPercent" inputmode="decimal" placeholder="e.g. 25" />
+            <div class="field-hint">Enter the discount percentage.</div>
+
+            <div class="btnrow">
+              <button type="button" onclick="calculateDiscount()">Calculate</button>
+              <button type="button" class="secondary-btn" onclick="resetCalc()">Reset</button>
+            </div>
+
+            <div class="note">
+              Tip: A 25% discount on $100 gives a discount amount of $25 and a final price of $75.
+            </div>
+          </div>
+
+          <div class="calc-card">
+            <h2>Results</h2>
+
+            <div class="result-row">
+              <div class="result-label">Discount Amount</div>
+              <div class="result-value" id="discountAmount">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Final Price</div>
+              <div class="result-value" id="finalPrice">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Savings</div>
+              <div class="result-value" id="savingsPercent">—</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>How to Use This Discount Calculator</h2>
+          <p>
+            Enter the original price and the discount percentage. Then click calculate to see the discount amount and the final price after the discount.
+          </p>
+
+          <ol>
+            <li>Enter the original price.</li>
+            <li>Enter the discount percentage.</li>
+            <li>Click <strong>Calculate</strong>.</li>
+            <li>Review the discount amount and final price.</li>
+          </ol>
+
+          <p>
+            This is useful for shopping, pricing promotions, comparing deals, and checking sale prices quickly.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Discount Formula</h2>
+
+          <div class="formula-box">
+            <strong>Discount Amount</strong> = Original Price × Discount %<br>
+            <strong>Final Price</strong> = Original Price − Discount Amount<br>
+            <strong>Savings %</strong> = (Discount Amount ÷ Original Price) × 100
+          </div>
+
+          <p>
+            The discount amount tells you how much is taken off the original price, and the final price tells you what you actually pay.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Example Discount Calculation</h2>
+          <p>
+            Imagine the original price is $200 and the discount is 15%.
+          </p>
+
+          <ul>
+            <li><strong>Original Price:</strong> $200</li>
+            <li><strong>Discount:</strong> 15%</li>
+            <li><strong>Discount Amount:</strong> $30</li>
+            <li><strong>Final Price:</strong> $170</li>
+          </ul>
+
+          <p>
+            This means you save $30 and pay $170 after the discount.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>What Is a Discount?</h2>
+          <p>
+            A discount is a reduction in the original price of a product or service.
+            It is usually shown as a percentage, such as 10%, 20%, or 50% off.
+          </p>
+
+          <p>
+            Discount calculations are useful for shopping, promotions, pricing strategy, and checking whether a deal is really as good as it looks.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Why a Discount Calculator Is Useful</h2>
+          <ul>
+            <li>It helps you calculate sale prices quickly.</li>
+            <li>It makes it easier to compare deals.</li>
+            <li>It reduces mistakes in percentage calculations.</li>
+            <li>It is useful for shopping, ecommerce, and promotions.</li>
+            <li>It helps businesses plan discounts more clearly.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Common Discount Examples</h2>
+          <ul>
+            <li>10% off $100 = $90 final price</li>
+            <li>20% off $50 = $40 final price</li>
+            <li>25% off $200 = $150 final price</li>
+            <li>50% off $80 = $40 final price</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators and Guides</h2>
+          <ul class="section-link-list">
+            <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+            <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+            <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
+            <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+            <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+            <li><a href="/profitability-guide.html">Profitability Guide</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How do you calculate a discount?</h3>
+            <p>
+              A discount is calculated by multiplying the original price by the discount percentage.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do you calculate sale price after discount?</h3>
+            <p>
+              Sale price is the original price minus the discount amount.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the discount formula?</h3>
+            <p>
+              <strong>Discount Amount = Original Price × Discount %</strong><br>
+              <strong>Final Price = Original Price − Discount Amount</strong>
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I use this calculator for percentage discounts?</h3>
+            <p>
+              Yes. This calculator is made for percentage discount calculations.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why is a discount calculator useful?</h3>
+            <p>
+              It helps you quickly find sale price, savings, and compare different offers.
+            </p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for pricing, profit, and small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/gross-margin-calculator.html" class="sbc-footer__link">Gross Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+          <a href="/discount-calculator.html" class="sbc-footer__link">Discount Calculator</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function fmtMoney(n) {
+      if (!isFinite(n)) return "—";
+      return n.toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
+    }
+
+    function calculateDiscount() {
+      const originalPrice = parseFloat(document.getElementById("originalPrice").value);
+      const discountPercent = parseFloat(document.getElementById("discountPercent").value);
+
+      if (!isFinite(originalPrice) || originalPrice <= 0 || !isFinite(discountPercent) || discountPercent < 0) {
+        document.getElementById("discountAmount").textContent = "—";
+        document.getElementById("finalPrice").textContent = "—";
+        document.getElementById("savingsPercent").textContent = "—";
+        return;
+      }
+
+      const discountAmount = originalPrice * (discountPercent / 100);
+      const finalPrice = originalPrice - discountAmount;
+
+      document.getElementById("discountAmount").textContent = fmtMoney(discountAmount);
+      document.getElementById("finalPrice").textContent = fmtMoney(finalPrice);
+      document.getElementById("savingsPercent").textContent = discountPercent.toFixed(2) + " %";
+    }
+
+    function resetCalc() {
+      document.getElementById("originalPrice").value = "";
+      document.getElementById("discountPercent").value = "";
+      document.getElementById("discountAmount").textContent = "—";
+      document.getElementById("finalPrice").textContent = "—";
+      document.getElementById("savingsPercent").textContent = "—";
+    }
+
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+</body>
+</html>
