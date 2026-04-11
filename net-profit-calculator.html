@@ -4,18 +4,192 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Net Profit Calculator (Net Income & Net Margin %) – Free</title>
-  <meta name="description" content="Free net profit calculator. Calculate net income and net profit margin from revenue and total expenses. Simple, accurate and instant." />
+  <title>Net Profit Calculator (Free) – Calculate Net Income and Net Margin</title>
+  <meta name="description" content="Use this free net profit calculator to calculate net income and net profit margin from revenue and total expenses. Fast, simple, and accurate." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/net-profit-calculator.html" />
 
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Site-wide styles (header/footer + base) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Net Profit Calculator (Free) – Calculate Net Income and Net Margin" />
+  <meta property="og:description" content="Calculate net profit and net profit margin from revenue and total expenses with this free net profit calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/net-profit-calculator.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Net Profit Calculator (Free) – Calculate Net Income and Net Margin" />
+  <meta name="twitter:description" content="Calculate net profit and net profit margin from revenue and total expenses with this free net profit calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- FAQ Schema -->
+  <style>
+    .calc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 800px) {
+      .calc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-card h2,
+    .calc-card h3 {
+      margin-top: 0;
+    }
+
+    .field-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: -8px;
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .secondary-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .secondary-btn:hover {
+      transform: translateY(-1px);
+      border-color: #bfd0ea;
+      text-decoration: none;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .result-value {
+      font-weight: 800;
+    }
+
+    .formula-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .section-link-list li + li {
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Net Profit Calculator",
+    "url": "https://smallbusinesscalculators.com/net-profit-calculator.html",
+    "description": "Free net profit calculator to calculate net income and net profit margin from revenue and total expenses."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use the net profit calculator",
+    "description": "Enter revenue and total expenses to calculate net profit and net profit margin.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter revenue",
+        "text": "Enter your total revenue."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enter total expenses",
+        "text": "Enter all business expenses, including operating costs, overhead, taxes, and other expenses."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate results",
+        "text": "Click Calculate to see net profit and net profit margin."
+      }
+    ]
+  }
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -26,7 +200,7 @@
         "name": "How do you calculate net profit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Net profit is calculated as Revenue minus Total Expenses. Net profit margin is Net Profit divided by Revenue × 100."
+          "text": "Net profit is calculated as Revenue minus Total Expenses. Net profit margin is Net Profit divided by Revenue multiplied by 100."
         }
       },
       {
@@ -34,7 +208,7 @@
         "name": "What is the difference between gross profit and net profit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Gross profit subtracts only cost of goods sold (COGS). Net profit subtracts all expenses including operating costs, taxes, interest, and overhead."
+          "text": "Gross profit subtracts only cost of goods sold. Net profit subtracts all expenses including operating costs, taxes, interest, and overhead."
         }
       },
       {
@@ -42,96 +216,32 @@
         "name": "What is a good net profit margin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A good net profit margin depends on industry. Many small businesses operate between 5% and 20%, while software businesses can be significantly higher."
+          "text": "A good net profit margin depends on industry, business model, and cost structure. Many businesses operate with lower margins, while software and service businesses may have higher margins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can net profit be negative?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If total expenses are higher than revenue, net profit will be negative, which means the business is operating at a loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is net profit important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Net profit shows how much money is left after all expenses. It is one of the most important numbers for measuring overall business profitability."
         }
       }
     ]
   }
   </script>
-
-  <!-- Page-specific styles (keep for now) -->
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #f8f9fb;
-      color: #111;
-    }
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-    }
-    a { text-decoration: none; color: #111; font-weight: 600; }
-    a:hover { text-decoration: underline; }
-
-    h1 { font-size: 36px; margin: 8px 0 8px; }
-    .sub { color: #444; margin-bottom: 30px; line-height: 1.5; }
-
-    .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 800px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 20px;
-      border: 1px solid #e5e5e5;
-    }
-
-    label { display:block; font-weight:600; margin-bottom:6px; }
-    input {
-      width:100%;
-      padding:12px;
-      font-size:16px;
-      border-radius:10px;
-      border:1px solid #ccc;
-      margin-bottom:15px;
-      box-sizing:border-box;
-    }
-
-    .btnrow { display:flex; gap:10px; flex-wrap:wrap; }
-
-    button {
-      padding:10px 16px;
-      font-size:15px;
-      border-radius:10px;
-      border:1px solid #111;
-      background:#111;
-      color:#fff;
-      font-weight:600;
-      cursor:pointer;
-    }
-    button.secondary {
-      background:#fff;
-      color:#111;
-    }
-
-    .result-row {
-      display:flex;
-      justify-content:space-between;
-      padding:10px 0;
-      border-bottom:1px solid #eee;
-    }
-    .result-row:last-child { border-bottom:none; }
-    .value { font-weight:700; }
-
-    hr.sep {
-      margin:40px 0;
-      border:none;
-      border-top:1px solid #eee;
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- HEADER (site-wide) -->
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="brand">SmallBusinessCalculators</a>
@@ -145,97 +255,236 @@
   </header>
 
   <div class="wrap">
+    <div class="calc-wrap">
 
-    <p><a href="/">← Back to Small Business Calculators</a></p>
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
 
-    <nav style="font-size:14px; margin-bottom:10px; color:#666;">
-      <a href="/">Home</a> › Net Profit Calculator
-    </nav>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>Net Profit Calculator</span>
+      </nav>
 
-    <h1>Net Profit Calculator</h1>
+      <header class="section">
+        <h1>Net Profit Calculator</h1>
 
-    <p>
-      <strong>Net profit</strong> is calculated as:<br>
-      <code>Revenue − Total Expenses</code>
-    </p>
+        <p class="lead">
+          Use this free net profit calculator to calculate <strong>net income</strong> and <strong>net profit margin</strong>
+          from total revenue and total expenses.
+        </p>
 
-    <p class="sub">
-      Calculate your net income and net profit margin using total revenue and total expenses.
-    </p>
+        <p>
+          Net profit is one of the most important business metrics because it shows how much money is left after all expenses have been paid.
+          This includes overhead, operating expenses, taxes, interest, and other costs.
+        </p>
 
-    <div class="grid">
+        <p>
+          If you also want to review gross profit, pricing, or break-even performance, see the
+          <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>,
+          <a href="/break-even-calculator.html">Break-Even Calculator</a>, and
+          <a href="/roi-calculator.html">ROI Calculator</a>.
+        </p>
+      </header>
 
-      <div class="card">
-        <label for="revenue">Revenue</label>
-        <input type="number" id="revenue" inputmode="decimal" placeholder="e.g. 10000" />
+      <main>
 
-        <label for="expenses">Total Expenses</label>
-        <input type="number" id="expenses" inputmode="decimal" placeholder="e.g. 8500" />
+        <section class="calc-grid" aria-label="Net profit calculator">
+          <div class="calc-card">
+            <h2>Enter Your Numbers</h2>
 
-        <div class="btnrow">
-          <button type="button" onclick="calculate()">Calculate</button>
-          <button type="button" class="secondary" onclick="resetCalc()">Reset</button>
-        </div>
-      </div>
+            <label for="revenue" class="field-label">Revenue</label>
+            <input type="number" id="revenue" inputmode="decimal" placeholder="e.g. 10000" />
+            <div class="field-hint">Enter your total revenue for the period.</div>
 
-      <div class="card">
-        <h3>Results</h3>
+            <label for="expenses" class="field-label">Total Expenses</label>
+            <input type="number" id="expenses" inputmode="decimal" placeholder="e.g. 8500" />
+            <div class="field-hint">Enter all expenses for the same period, including operating costs, overhead, taxes, and other business expenses.</div>
 
-        <div class="result-row">
-          <div>Net Profit</div>
-          <div class="value" id="profit">—</div>
-        </div>
+            <div class="btnrow">
+              <button type="button" onclick="calculate()">Calculate</button>
+              <button type="button" class="secondary-btn" onclick="resetCalc()">Reset</button>
+            </div>
 
-        <div class="result-row">
-          <div>Net Profit Margin</div>
-          <div class="value" id="margin">—</div>
-        </div>
+            <div class="note">
+              Tip: Make sure revenue and expenses use the same time period, such as monthly, quarterly, or yearly, so the result is accurate.
+            </div>
+          </div>
 
-      </div>
+          <div class="calc-card">
+            <h2>Results</h2>
+
+            <div class="result-row">
+              <div class="result-label">Net Profit</div>
+              <div class="result-value" id="profit">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Net Profit Margin</div>
+              <div class="result-value" id="margin">—</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>How to Use This Net Profit Calculator</h2>
+          <p>
+            Enter your total revenue in the first field and your total expenses in the second field.
+            Then click calculate to instantly see your net profit and net profit margin percentage.
+          </p>
+
+          <ol>
+            <li>Enter your total revenue.</li>
+            <li>Enter your total expenses.</li>
+            <li>Click <strong>Calculate</strong>.</li>
+            <li>Review your net profit and net profit margin.</li>
+          </ol>
+
+          <p>
+            This is useful for checking how profitable the business really is after all costs are included.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Net Profit Formula</h2>
+
+          <div class="formula-box">
+            <strong>Net Profit</strong> = Revenue − Total Expenses<br>
+            <strong>Net Profit Margin %</strong> = (Net Profit ÷ Revenue) × 100
+          </div>
+
+          <p>
+            Net profit shows the money left over after every expense has been subtracted from revenue.
+            Net profit margin shows that result as a percentage of revenue.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Example Net Profit Calculation</h2>
+          <p>
+            Imagine your business generates $10,000 in revenue and has $8,500 in total expenses.
+          </p>
+
+          <ul>
+            <li><strong>Revenue:</strong> $10,000</li>
+            <li><strong>Total Expenses:</strong> $8,500</li>
+            <li><strong>Net Profit:</strong> $1,500</li>
+            <li><strong>Net Profit Margin:</strong> 15%</li>
+          </ul>
+
+          <p>
+            This means the business keeps $1,500 after all expenses, and 15% of revenue remains as net profit.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>What Is Net Profit?</h2>
+          <p>
+            Net profit, also called net income, is the amount left after subtracting all business expenses from total revenue.
+            It is one of the clearest indicators of whether a business is truly profitable.
+          </p>
+
+          <p>
+            Unlike gross profit, which only subtracts direct costs, net profit includes all expenses such as rent, salaries,
+            software, taxes, interest, utilities, and overhead. That makes it a more complete profitability measure.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Gross Profit vs Net Profit</h2>
+          <p>
+            Gross profit subtracts only cost of goods sold or direct costs. Net profit subtracts all expenses.
+          </p>
+
+          <p>
+            That is why a business can have a healthy gross profit but still end up with low net profit if overhead and operating costs are too high.
+            To compare both, use the
+            <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Why Net Profit Matters</h2>
+          <ul>
+            <li>It shows how much money the business actually keeps.</li>
+            <li>It helps measure overall business profitability.</li>
+            <li>It can reveal whether overhead or operating costs are too high.</li>
+            <li>It is important for budgeting, forecasting, and business planning.</li>
+            <li>It helps owners compare performance across different periods.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Tips for Improving Net Profit</h2>
+          <ul>
+            <li>Increase revenue through better pricing, sales volume, or product mix.</li>
+            <li>Reduce unnecessary overhead and operating expenses.</li>
+            <li>Track margins regularly, not just total revenue.</li>
+            <li>Review subscriptions, software, and fixed costs for savings opportunities.</li>
+            <li>Use break-even and ROI analysis together with net profit for better decisions.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators and Guides</h2>
+          <ul class="section-link-list">
+            <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+            <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+            <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+            <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+            <li><a href="/profitability-guide.html">Profitability Guide</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How do you calculate net profit?</h3>
+            <p>
+              Net profit is calculated as <strong>Revenue − Total Expenses</strong>.
+              Net profit margin is calculated as <strong>Net Profit ÷ Revenue × 100</strong>.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the difference between gross profit and net profit?</h3>
+            <p>
+              Gross profit subtracts only direct costs or cost of goods sold.
+              Net profit subtracts all expenses, including overhead, taxes, and operating costs.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is a good net profit margin?</h3>
+            <p>
+              A good net profit margin depends on the industry, business model, and cost structure.
+              Some businesses operate on lower margins, while software and service businesses may have higher margins.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can net profit be negative?</h3>
+            <p>
+              Yes. If total expenses are greater than revenue, net profit will be negative, which means the business made a loss.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why is net profit important?</h3>
+            <p>
+              Net profit shows how much money remains after all expenses. It is one of the most important numbers for measuring overall business performance.
+            </p>
+          </div>
+        </section>
+
+      </main>
     </div>
-
-    <hr class="sep">
-
-    <h2>What Is Net Profit?</h2>
-    <p>
-      Net profit (also called net income) is the amount of money left after subtracting all business expenses from revenue.
-      This includes operating expenses, taxes, interest, and overhead.
-    </p>
-
-    <h3>Net Profit Formula</h3>
-    <p>
-      Net Profit = Revenue − Total Expenses<br>
-      Net Profit Margin = Net Profit ÷ Revenue × 100
-    </p>
-
-    <h3>Gross Profit vs Net Profit</h3>
-    <p>
-      Gross profit subtracts only cost of goods sold.
-      Net profit subtracts all expenses.
-      See also:
-      <a href="/gross-margin-calculator.html">Gross Margin Calculator</a> and
-      <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
-    </p>
-
-    <hr class="sep">
-
-    <h2>Related Calculators</h2>
-    <ul>
-      <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
-      <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-      <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-      <li><a href="/roi-calculator.html">ROI Calculator</a></li>
-    </ul>
-
   </div>
 
-  <!-- FOOTER (site-wide) -->
   <footer class="sbc-footer">
     <div class="sbc-footer__inner">
       <div class="sbc-footer__brand">
         <div class="sbc-footer__logo">SmallBusinessCalculators</div>
         <p class="sbc-footer__tagline">
-          Fast, simple calculators for small business decisions.
+          Fast, simple calculators for pricing, profit, and small business decisions.
         </p>
 
         <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
@@ -254,7 +503,20 @@
         </div>
 
         <div class="sbc-footer__col">
-          <div class="sbc-footer__heading">Legal</div>
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
           <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
           <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
         </div>
@@ -264,7 +526,7 @@
     <div class="sbc-footer__bottom">
       <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
       <div class="sbc-footer__note">
-        Information provided is for educational purposes and does not constitute financial advice.
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
       </div>
     </div>
   </footer>
@@ -272,7 +534,11 @@
   <script>
     function fmtMoney(n) {
       if (!isFinite(n)) return "—";
-      return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+      return n.toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
     }
 
     function calculate() {
