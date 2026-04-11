@@ -1,283 +1,522 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Margin vs Markup: What’s the Difference? + Free Calculator</title>
-<meta name="description" content="Margin vs markup explained simply. Learn the difference, see formulas and examples, and use our free calculator to convert margin to markup or markup to margin." />
-<meta name="robots" content="index,follow" />
-<link rel="canonical" href="https://smallbusinesscalculators.com/margin-vs-markup.html" />
+  <title>Margin vs Markup: What’s the Difference? (With Formula and Examples)</title>
+  <meta name="description" content="Learn the difference between margin and markup with simple formulas, examples, and a free calculator. Understand how to price correctly and avoid underpricing." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/margin-vs-markup.html" />
 
-<link rel="icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-<link rel="stylesheet" href="styles.css" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Margin vs Markup: What’s the Difference? (With Formula and Examples)" />
+  <meta property="og:description" content="Learn the difference between margin and markup with simple formulas, examples, and a free calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/margin-vs-markup.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"Margin vs Markup: What’s the Difference?",
-  "mainEntityOfPage":{"@type":"WebPage","@id":"https://smallbusinesscalculators.com/margin-vs-markup.html"},
-  "publisher":{"@type":"Organization","name":"SmallBusinessCalculators"}
-}
-</script>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Margin vs Markup: What’s the Difference? (With Formula and Examples)" />
+  <meta name="twitter:description" content="Learn the difference between margin and markup with simple formulas, examples, and a free calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is markup the same as margin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Markup is based on cost, while margin is based on revenue (selling price)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What markup equals a 50% margin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A 50% margin equals a 100% markup."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do people confuse margin and markup?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because both are percentages related to profit, but they use different denominators: revenue for margin and cost for markup."
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .article-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 800px) {
+      .kpi-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
-  ]
-}
-</script>
 
-<style>
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f8f9fb;color:#111}
-.wrap{max-width:900px;margin:0 auto;padding:40px 20px 60px}
-a{text-decoration:none;color:#111;font-weight:600}
-a:hover{text-decoration:underline}
-h1{font-size:36px;margin:8px 0 10px}
-.sub{color:#444;margin:0 0 26px;line-height:1.6}
-.card{background:#fff;border-radius:14px;padding:20px;border:1px solid #e5e5e5}
-hr.sep{margin:34px 0;border:none;border-top:1px solid #eee}
-p,li{color:#222;line-height:1.7}
-ul{margin-top:10px}
-.kpi{display:grid;gap:14px;grid-template-columns:1fr}
-@media (min-width:800px){.kpi{grid-template-columns:1fr 1fr}}
-.box{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:14px}
-</style>
+    .kpi-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+
+    .formula-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .article-table-wrap {
+      overflow-x: auto;
+      margin-top: 14px;
+    }
+
+    .section-link-list li + li {
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Margin vs Markup: What’s the Difference?",
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"https://smallbusinesscalculators.com/margin-vs-markup.html"
+    },
+    "publisher":{
+      "@type":"Organization",
+      "name":"SmallBusinessCalculators"
+    },
+    "author":{
+      "@type":"Organization",
+      "name":"SmallBusinessCalculators"
+    },
+    "description":"Learn the difference between margin and markup with simple formulas, examples, and a free calculator."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is markup the same as margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Markup is based on cost, while margin is based on revenue or selling price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What markup equals a 50% margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 50% margin equals a 100% markup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do people confuse margin and markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "People confuse margin and markup because both are profit-related percentages, but they use different starting points. Margin is based on revenue, while markup is based on cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which should I use: margin or markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use margin when measuring profitability from selling price. Use markup when starting from cost and setting a selling price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the difference matter in pricing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The difference matters because using margin when you mean markup, or vice versa, can lead to pricing errors and lower profit than expected."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="brand">SmallBusinessCalculators</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
 
-    <nav class="nav" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<div class="wrap">
-
-<p><a href="/">← Back to Small Business Calculators</a></p>
-
-<nav style="font-size:14px; margin-bottom:10px; color:#666;">
-  <a href="/">Home</a> › Margin vs Markup
-</nav>
-
-<h1>Margin vs Markup: What’s the Difference?</h1>
-
-<p class="sub">
-Margin and markup are not the same. Margin is based on revenue (selling price), while markup is based on cost. This guide explains the difference with formulas and examples so you can price correctly and avoid underpricing.
-</p>
-
-<p>
-Use our <a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a> to convert margin to markup or markup to margin instantly.
-</p>
-
-<p><strong>Margin</strong> is calculated as:<br>
-<code>Profit ÷ Revenue × 100</code></p>
-
-<p><strong>Markup</strong> is calculated as:<br>
-<code>Profit ÷ Cost × 100</code></p>
-
-<p>
-The key difference is simple: margin is based on selling price, while markup is based on cost.
-</p>
-
-<div class="kpi">
-  <div class="box">
-    <strong>Margin</strong><br>
-    Profit ÷ Revenue
-  </div>
-  <div class="box">
-    <strong>Markup</strong><br>
-    Profit ÷ Cost
-  </div>
-</div>
-
-<hr class="sep">
-
-<h2>Quick Definitions</h2>
-<ul>
-  <li><strong>Profit:</strong> Revenue − Cost</li>
-  <li><strong>Margin (%):</strong> Profit ÷ Revenue × 100</li>
-  <li><strong>Markup (%):</strong> Profit ÷ Cost × 100</li>
-</ul>
-
-<hr class="sep">
-
-<h2>Example (Same Numbers, Different Percentages)</h2>
-<p>Let’s say you sell an item for <strong>$100</strong> and it costs you <strong>$60</strong>.</p>
-<ul>
-  <li>Profit = 100 − 60 = <strong>$40</strong></li>
-  <li>Margin = 40 ÷ 100 = <strong>40%</strong></li>
-  <li>Markup = 40 ÷ 60 = <strong>66.67%</strong></li>
-</ul>
-
-<p>
-This is why margin vs markup matters. The same product can have a 40% margin and a 66.67% markup at the same time. Confusing the two often leads to pricing mistakes.
-</p>
-
-<hr class="sep">
-
-<h2>Margin vs Markup Comparison</h2>
-
-<table style="width:100%;border-collapse:collapse;margin-top:15px;">
-<tr style="background:#f5f5f5;">
-<th style="text-align:left;padding:10px;border:1px solid #ddd;">Feature</th>
-<th style="text-align:left;padding:10px;border:1px solid #ddd;">Margin</th>
-<th style="text-align:left;padding:10px;border:1px solid #ddd;">Markup</th>
-</tr>
-<tr>
-<td style="padding:10px;border:1px solid #ddd;">Based On</td>
-<td style="padding:10px;border:1px solid #ddd;">Revenue (Selling Price)</td>
-<td style="padding:10px;border:1px solid #ddd;">Cost</td>
-</tr>
-<tr>
-<td style="padding:10px;border:1px solid #ddd;">Formula</td>
-<td style="padding:10px;border:1px solid #ddd;">Profit ÷ Revenue</td>
-<td style="padding:10px;border:1px solid #ddd;">Profit ÷ Cost</td>
-</tr>
-<tr>
-<td style="padding:10px;border:1px solid #ddd;">Used For</td>
-<td style="padding:10px;border:1px solid #ddd;">Measuring profitability</td>
-<td style="padding:10px;border:1px solid #ddd;">Setting prices</td>
-</tr>
-</table>
-
-<hr class="sep">
-
-<h2>How to Convert Margin to Markup and Markup to Margin</h2>
-
-<p>
-To convert margin to markup, use:
-</p>
-<p>
-<strong>Markup % = (Margin % ÷ (100 − Margin %)) × 100</strong>
-</p>
-
-<p>
-To convert markup to margin, use:
-</p>
-<p>
-<strong>Margin % = (Markup % ÷ (100 + Markup %)) × 100</strong>
-</p>
-
-<p>
-The easiest way to do this is with our <a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a>.
-</p>
-
-<hr class="sep">
-
-<h2>When to Use Margin vs Markup</h2>
-<ul>
-  <li>Use <strong>margin</strong> when you start from selling price or want to measure profitability.</li>
-  <li>Use <strong>markup</strong> when you start from cost and want to set a selling price.</li>
-</ul>
-
-<div class="card">
-  <p>
-    If you know your selling price, use the
-    <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
-    If you know your cost and want a price, use the
-    <a href="/markup-calculator.html">Markup Calculator</a>.
-  </p>
-  <p>
-    Want to quickly convert between margin and markup? Use our
-    <a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a>
-    for instant results.
-  </p>
-</div>
-
-<hr class="sep">
-
-<h2>Related Calculators</h2>
-<ul>
-  <li><a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a></li>
-  <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-  <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-  <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-  <li><a href="/roi-calculator.html">ROI Calculator</a></li>
-</ul>
-
-</div>
-
-<footer class="sbc-footer">
-  <div class="sbc-footer__inner">
-    <div class="sbc-footer__brand">
-      <div class="sbc-footer__logo">SmallBusinessCalculators</div>
-      <p class="sbc-footer__tagline">
-        Fast, simple calculators for small business decisions.
-      </p>
-      <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
-        contact@smallbusinesscalculators.com
-      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <nav class="sbc-footer__nav" aria-label="Footer">
-      <div class="sbc-footer__col">
-        <div class="sbc-footer__heading">Site</div>
-        <a href="/" class="sbc-footer__link">Home</a>
-        <a href="/about.html" class="sbc-footer__link">About</a>
-        <a href="/contact.html" class="sbc-footer__link">Contact</a>
-        <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
-        <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+  <div class="wrap">
+    <div class="article-wrap">
+
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>Margin vs Markup</span>
+      </nav>
+
+      <header class="hero-card">
+        <h1>Margin vs Markup: What’s the Difference?</h1>
+
+        <p class="lead">
+          Margin and markup are not the same. <strong>Margin</strong> is based on revenue or selling price, while
+          <strong>markup</strong> is based on cost.
+        </p>
+
+        <p>
+          This guide explains the difference between margin and markup with simple formulas, examples, and common pricing scenarios.
+          Understanding the difference helps you price correctly, avoid underpricing, and protect profitability.
+        </p>
+
+        <p>
+          Want to convert one to the other instantly? Use our
+          <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.
+        </p>
+
+        <div class="kpi-grid">
+          <div class="kpi-box">
+            <strong>Margin</strong><br>
+            Profit ÷ Revenue
+          </div>
+          <div class="kpi-box">
+            <strong>Markup</strong><br>
+            Profit ÷ Cost
+          </div>
+        </div>
+      </header>
+
+      <main>
+
+        <section class="section">
+          <h2>Quick Definitions</h2>
+          <ul>
+            <li><strong>Profit:</strong> Revenue − Cost</li>
+            <li><strong>Margin %:</strong> Profit ÷ Revenue × 100</li>
+            <li><strong>Markup %:</strong> Profit ÷ Cost × 100</li>
+          </ul>
+
+          <p>
+            The key point is that both numbers describe profit, but they use different denominators.
+            That is why margin and markup can never be treated as interchangeable.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Example: Same Numbers, Different Percentages</h2>
+          <p>
+            Let’s say you sell an item for <strong>$100</strong> and it costs you <strong>$60</strong>.
+          </p>
+
+          <ul>
+            <li><strong>Profit:</strong> $40</li>
+            <li><strong>Margin:</strong> 40 ÷ 100 = 40%</li>
+            <li><strong>Markup:</strong> 40 ÷ 60 = 66.67%</li>
+          </ul>
+
+          <p>
+            This shows why margin vs markup matters. The same product can have a 40% margin and a 66.67% markup at the same time.
+            Confusing the two is one of the most common pricing mistakes in business.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Margin vs Markup Comparison</h2>
+
+          <div class="article-table-wrap">
+            <table>
+              <tr>
+                <th>Feature</th>
+                <th>Margin</th>
+                <th>Markup</th>
+              </tr>
+              <tr>
+                <td>Based On</td>
+                <td>Revenue or Selling Price</td>
+                <td>Cost</td>
+              </tr>
+              <tr>
+                <td>Formula</td>
+                <td>Profit ÷ Revenue</td>
+                <td>Profit ÷ Cost</td>
+              </tr>
+              <tr>
+                <td>Main Use</td>
+                <td>Measuring profitability</td>
+                <td>Setting prices</td>
+              </tr>
+              <tr>
+                <td>Common Mistake</td>
+                <td>Assuming it matches markup</td>
+                <td>Assuming it matches margin</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Margin Formula</h2>
+
+          <div class="formula-box">
+            <strong>Margin %</strong> = (Profit ÷ Revenue) × 100
+          </div>
+
+          <p>
+            Margin tells you what percentage of the selling price remains as profit.
+            It is mainly used when measuring profitability and comparing how profitable a product, job, or business really is.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Markup Formula</h2>
+
+          <div class="formula-box">
+            <strong>Markup %</strong> = (Profit ÷ Cost) × 100
+          </div>
+
+          <p>
+            Markup tells you how much you added on top of cost to arrive at the selling price.
+            It is mainly used when setting prices from cost.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>How to Convert Margin to Markup and Markup to Margin</h2>
+
+          <p>To convert margin to markup, use:</p>
+
+          <div class="formula-box">
+            <strong>Markup % = (Margin % ÷ (100 − Margin %)) × 100</strong>
+          </div>
+
+          <p>To convert markup to margin, use:</p>
+
+          <div class="formula-box">
+            <strong>Margin % = (Markup % ÷ (100 + Markup %)) × 100</strong>
+          </div>
+
+          <p>
+            The easiest way to convert between them is with our
+            <a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a>.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Common Conversions</h2>
+
+          <p>Here are some common margin to markup conversions:</p>
+          <ul>
+            <li>20% margin = 25% markup</li>
+            <li>30% margin = 42.86% markup</li>
+            <li>40% margin = 66.67% markup</li>
+            <li>50% margin = 100% markup</li>
+          </ul>
+
+          <p>And in reverse:</p>
+          <ul>
+            <li>25% markup = 20% margin</li>
+            <li>50% markup = 33.33% margin</li>
+            <li>75% markup = 42.86% margin</li>
+            <li>100% markup = 50% margin</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>When to Use Margin vs Markup</h2>
+          <ul>
+            <li>Use <strong>margin</strong> when measuring profitability from the selling price.</li>
+            <li>Use <strong>markup</strong> when starting from cost and setting a selling price.</li>
+          </ul>
+
+          <p>
+            If you know your selling price and cost, use the
+            <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
+            If you know your cost and want a target price, use the
+            <a href="/markup-calculator.html">Markup Calculator</a>.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Why the Difference Matters in Pricing</h2>
+          <p>
+            If you confuse margin and markup, you can easily underprice your products or services.
+            That means lower profits than expected even if sales look healthy.
+          </p>
+
+          <p>
+            For example, if you want a 50% margin and only apply a 50% markup, you will miss your target.
+            A 50% margin actually requires a 100% markup.
+          </p>
+
+          <p>
+            This is why understanding the relationship between margin and markup is essential for accurate quoting and pricing strategy.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Common Pricing Mistake</h2>
+          <p>
+            One of the most common pricing mistakes is using the word margin when you really mean markup, or vice versa.
+            This usually happens when people work quickly from memory instead of using the actual formulas.
+          </p>
+
+          <p>
+            Even a small misunderstanding can lead to repeated pricing errors across many sales, which can seriously reduce profit over time.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators and Guides</h2>
+          <ul class="section-link-list">
+            <li><a href="/margin-markup-calculator.html">Free Margin vs Markup Calculator</a></li>
+            <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+            <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+            <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+            <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+            <li><a href="/profitability-guide.html">Profitability Guide</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>Is markup the same as margin?</h3>
+            <p>
+              No. Markup is based on cost, while margin is based on revenue or selling price.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What markup equals a 50% margin?</h3>
+            <p>
+              A 50% margin equals a 100% markup.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why do people confuse margin and markup?</h3>
+            <p>
+              People confuse them because both are profit-related percentages, but they use different denominators:
+              revenue for margin and cost for markup.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Which should I use: margin or markup?</h3>
+            <p>
+              Use margin when measuring profitability. Use markup when setting a price from cost.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why does the difference matter in pricing?</h3>
+            <p>
+              The difference matters because using the wrong percentage can lead to underpricing and lower profit than expected.
+            </p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for pricing, profit, and small business decisions.
+        </p>
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
       </div>
 
-      <div class="sbc-footer__col">
-        <div class="sbc-footer__heading">Legal</div>
-        <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
-        <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
-      </div>
-    </nav>
-  </div>
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
 
-  <div class="sbc-footer__bottom">
-    <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
-    <div class="sbc-footer__note">
-      Information provided is for educational purposes and does not constitute financial advice.
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
     </div>
-  </div>
-</footer>
 
-<script>
-(function(){
-  var el = document.getElementById('sbcYear');
-  if(el) el.textContent = new Date().getFullYear();
-})();
-</script>
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
 
 </body>
 </html>
