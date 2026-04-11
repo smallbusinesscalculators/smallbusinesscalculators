@@ -4,18 +4,192 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Contribution Margin Calculator (Per Unit & %) – Free & Instant</title>
-  <meta name="description" content="Free contribution margin calculator. Calculate contribution margin per unit and contribution margin percentage from price and variable cost." />
+  <title>Contribution Margin Calculator (Free) – Calculate Contribution Margin</title>
+  <meta name="description" content="Use this free contribution margin calculator to calculate contribution margin per unit and contribution margin percentage from price and variable cost." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/contribution-margin-calculator.html" />
 
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Site-wide styles (header/footer + base) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contribution Margin Calculator (Free) – Calculate Contribution Margin" />
+  <meta property="og:description" content="Calculate contribution margin per unit and contribution margin percentage from price and variable cost with this free calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/contribution-margin-calculator.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contribution Margin Calculator (Free) – Calculate Contribution Margin" />
+  <meta name="twitter:description" content="Calculate contribution margin per unit and contribution margin percentage from price and variable cost with this free calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- FAQ Schema -->
+  <style>
+    .calc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 800px) {
+      .calc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-card h2,
+    .calc-card h3 {
+      margin-top: 0;
+    }
+
+    .field-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: -8px;
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .secondary-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .secondary-btn:hover {
+      transform: translateY(-1px);
+      border-color: #bfd0ea;
+      text-decoration: none;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .result-value {
+      font-weight: 800;
+    }
+
+    .formula-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .section-link-list li + li {
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Contribution Margin Calculator",
+    "url": "https://smallbusinesscalculators.com/contribution-margin-calculator.html",
+    "description": "Free contribution margin calculator to calculate contribution margin per unit and contribution margin percentage from price and variable cost."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use the contribution margin calculator",
+    "description": "Enter price per unit and variable cost per unit to calculate contribution margin and contribution margin percentage.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter price per unit",
+        "text": "Enter your selling price per unit."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enter variable cost per unit",
+        "text": "Enter the variable cost per unit, such as materials, shipping, or transaction fees."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate results",
+        "text": "Click Calculate to see contribution margin per unit and contribution margin percentage."
+      }
+    ]
+  }
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -26,7 +200,7 @@
         "name": "How do you calculate contribution margin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Contribution margin per unit = Price per Unit − Variable Cost per Unit. Contribution margin percentage = Contribution Margin ÷ Price × 100."
+          "text": "Contribution margin per unit is calculated as Price per Unit minus Variable Cost per Unit. Contribution margin percentage is Contribution Margin divided by Price multiplied by 100."
         }
       },
       {
@@ -34,7 +208,7 @@
         "name": "What is contribution margin used for?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Contribution margin helps determine break-even point and shows how much each sale contributes toward covering fixed costs and profit."
+          "text": "Contribution margin helps determine break-even point and shows how much each sale contributes toward covering fixed costs and generating profit."
         }
       },
       {
@@ -42,93 +216,32 @@
         "name": "What is a good contribution margin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A good contribution margin depends on industry and cost structure. Higher contribution margins allow faster break-even and stronger profitability."
+          "text": "A good contribution margin depends on the industry, business model, pricing, and cost structure. Higher contribution margins generally allow faster break-even and stronger profitability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between contribution margin and profit margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Contribution margin focuses on price minus variable cost. Profit margin looks at profit relative to revenue and can include more than variable costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is contribution margin important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Contribution margin is important because it helps businesses understand unit economics, pricing power, and how quickly sales contribute to covering fixed costs."
         }
       }
     ]
   }
   </script>
-
-  <!-- Page-specific styles (keep for now) -->
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #f8f9fb;
-      color: #111;
-    }
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-    }
-    a {
-      text-decoration: none;
-      color: #111;
-      font-weight: 600;
-    }
-    a:hover { text-decoration: underline; }
-
-    h1 { font-size: 36px; margin: 8px 0 8px; }
-    .sub { color: #444; margin-bottom: 30px; line-height: 1.5; }
-
-    .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 800px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 20px;
-      border: 1px solid #e5e5e5;
-    }
-
-    label { display:block; font-weight: 600; margin-bottom: 6px; }
-    input {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      margin-bottom: 15px;
-      box-sizing: border-box;
-    }
-
-    .btnrow { display:flex; gap:10px; flex-wrap: wrap; }
-    button {
-      padding: 10px 16px;
-      font-size: 15px;
-      border-radius: 10px;
-      border: 1px solid #111;
-      background: #111;
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    button.secondary { background:#fff; color:#111; }
-
-    .result-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-    .result-row:last-child { border-bottom: none; }
-    .value { font-weight: 700; }
-
-    hr.sep { margin: 40px 0; border: none; border-top: 1px solid #eee; }
-  </style>
 </head>
 
 <body>
 
-  <!-- HEADER (site-wide) -->
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="brand">SmallBusinessCalculators</a>
@@ -142,95 +255,241 @@
   </header>
 
   <div class="wrap">
+    <div class="calc-wrap">
 
-    <p><a href="/">← Back to Small Business Calculators</a></p>
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
 
-    <nav style="font-size:14px; margin-bottom:10px; color:#666;">
-      <a href="/">Home</a> › Contribution Margin Calculator
-    </nav>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>Contribution Margin Calculator</span>
+      </nav>
 
-    <h1>Contribution Margin Calculator</h1>
+      <header class="section">
+        <h1>Contribution Margin Calculator</h1>
 
-    <p>
-      <strong>Contribution margin</strong> is calculated as:<br>
-      <code>Price per Unit − Variable Cost per Unit</code>
-    </p>
+        <p class="lead">
+          Use this free contribution margin calculator to calculate <strong>contribution margin per unit</strong>
+          and <strong>contribution margin percentage</strong> from price and variable cost.
+        </p>
 
-    <p class="sub">
-      Calculate contribution margin per unit and contribution margin percentage from price and variable cost.
-    </p>
+        <p>
+          Contribution margin is one of the most useful numbers in pricing and profitability analysis.
+          It shows how much each sale contributes toward covering fixed costs and generating profit after variable costs are paid.
+        </p>
 
-    <div class="grid">
-      <div class="card">
-        <label for="price">Price per Unit</label>
-        <input type="number" id="price" inputmode="decimal" placeholder="e.g. 100" />
+        <p>
+          If you also want to calculate break-even point, pricing margins, or overall profitability, see the
+          <a href="/break-even-calculator.html">Break-Even Calculator</a>,
+          <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>, and
+          <a href="/markup-calculator.html">Markup Calculator</a>.
+        </p>
+      </header>
 
-        <label for="variable">Variable Cost per Unit</label>
-        <input type="number" id="variable" inputmode="decimal" placeholder="e.g. 60" />
+      <main>
 
-        <div class="btnrow">
-          <button type="button" onclick="calc()">Calculate</button>
-          <button type="button" class="secondary" onclick="resetCalc()">Reset</button>
-        </div>
-      </div>
+        <section class="calc-grid" aria-label="Contribution margin calculator">
+          <div class="calc-card">
+            <h2>Enter Your Numbers</h2>
 
-      <div class="card">
-        <h3>Results</h3>
+            <label for="price" class="field-label">Price per Unit</label>
+            <input type="number" id="price" inputmode="decimal" placeholder="e.g. 100" />
+            <div class="field-hint">Enter your selling price per unit.</div>
 
-        <div class="result-row">
-          <div>Contribution Margin (per unit)</div>
-          <div class="value" id="cm">—</div>
-        </div>
+            <label for="variable" class="field-label">Variable Cost per Unit</label>
+            <input type="number" id="variable" inputmode="decimal" placeholder="e.g. 60" />
+            <div class="field-hint">Enter the variable cost per unit, such as materials, shipping, packaging, or transaction fees.</div>
 
-        <div class="result-row">
-          <div>Contribution Margin %</div>
-          <div class="value" id="cmp">—</div>
-        </div>
-      </div>
+            <div class="btnrow">
+              <button type="button" onclick="calc()">Calculate</button>
+              <button type="button" class="secondary-btn" onclick="resetCalc()">Reset</button>
+            </div>
+
+            <div class="note">
+              Tip: Contribution margin is especially useful when combined with
+              <a href="/break-even-calculator.html">break-even analysis</a> to understand how many sales are needed before the business becomes profitable.
+            </div>
+          </div>
+
+          <div class="calc-card">
+            <h2>Results</h2>
+
+            <div class="result-row">
+              <div class="result-label">Contribution Margin (per unit)</div>
+              <div class="result-value" id="cm">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Contribution Margin %</div>
+              <div class="result-value" id="cmp">—</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>How to Use This Contribution Margin Calculator</h2>
+          <p>
+            Enter your price per unit and your variable cost per unit. Then click calculate to see the contribution margin per unit
+            and contribution margin percentage.
+          </p>
+
+          <ol>
+            <li>Enter the price per unit.</li>
+            <li>Enter the variable cost per unit.</li>
+            <li>Click <strong>Calculate</strong>.</li>
+            <li>Review the contribution margin and contribution margin percentage.</li>
+          </ol>
+
+          <p>
+            This helps you understand product profitability and how much each sale contributes toward fixed costs and profit.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Contribution Margin Formula</h2>
+
+          <div class="formula-box">
+            <strong>Contribution Margin (per unit)</strong> = Price per Unit − Variable Cost per Unit<br>
+            <strong>Contribution Margin %</strong> = (Contribution Margin ÷ Price per Unit) × 100
+          </div>
+
+          <p>
+            Contribution margin focuses only on price and variable cost. It does not subtract fixed costs directly.
+            Instead, it shows how much each unit contributes toward covering those fixed costs.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Example Contribution Margin Calculation</h2>
+          <p>
+            Imagine you sell a product for $100 and the variable cost per unit is $60.
+          </p>
+
+          <ul>
+            <li><strong>Price per Unit:</strong> $100</li>
+            <li><strong>Variable Cost per Unit:</strong> $60</li>
+            <li><strong>Contribution Margin:</strong> $40</li>
+            <li><strong>Contribution Margin %:</strong> 40%</li>
+          </ul>
+
+          <p>
+            This means each sale contributes $40 toward fixed costs and profit, and 40% of the selling price remains after variable costs.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>What Is Contribution Margin?</h2>
+          <p>
+            Contribution margin is the amount of revenue left after subtracting variable costs from a sale.
+            It is one of the most important metrics for understanding unit economics and sales profitability.
+          </p>
+
+          <p>
+            Businesses use contribution margin to decide whether prices are high enough, whether products are worth promoting,
+            and how long it will take to break even.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Why Contribution Margin Matters</h2>
+          <ul>
+            <li>It helps determine break-even point.</li>
+            <li>It helps evaluate pricing decisions.</li>
+            <li>It shows how profitable each unit sold really is.</li>
+            <li>It helps compare products, services, or offers.</li>
+            <li>It improves forecasting and financial planning.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Contribution Margin vs Profit Margin</h2>
+          <p>
+            Contribution margin and profit margin are related, but they measure different things.
+            Contribution margin looks only at price minus variable cost. Profit margin looks at profit relative to revenue and may include more costs.
+          </p>
+
+          <p>
+            That means a business can have a strong contribution margin but still low overall profit if fixed costs are high.
+            To compare this more fully, use the
+            <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Tips for Improving Contribution Margin</h2>
+          <ul>
+            <li>Increase your selling price where the market allows it.</li>
+            <li>Reduce variable costs through better sourcing or efficiency.</li>
+            <li>Focus on high-margin products or services.</li>
+            <li>Bundle offers strategically to improve unit economics.</li>
+            <li>Track contribution margin regularly as costs and pricing change.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators and Guides</h2>
+          <ul class="section-link-list">
+            <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+            <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+            <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+            <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+            <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+            <li><a href="/profitability-guide.html">Profitability Guide</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How do you calculate contribution margin?</h3>
+            <p>
+              Contribution margin per unit is calculated as
+              <strong>Price per Unit − Variable Cost per Unit</strong>.
+              Contribution margin percentage is
+              <strong>Contribution Margin ÷ Price × 100</strong>.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is contribution margin used for?</h3>
+            <p>
+              Contribution margin is used to determine break-even point and to show how much each sale contributes toward covering fixed costs and generating profit.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is a good contribution margin?</h3>
+            <p>
+              A good contribution margin depends on the industry, price level, and cost structure.
+              Higher contribution margins generally make it easier to reach break-even faster and improve profitability.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the difference between contribution margin and profit margin?</h3>
+            <p>
+              Contribution margin focuses on price minus variable cost.
+              Profit margin looks at profit relative to revenue and can include more than variable costs.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why is contribution margin important?</h3>
+            <p>
+              Contribution margin is important because it helps businesses understand pricing power, product profitability, and how quickly sales cover fixed costs.
+            </p>
+          </div>
+        </section>
+
+      </main>
     </div>
-
-    <hr class="sep">
-
-    <h2>What Is Contribution Margin?</h2>
-    <p>
-      Contribution margin shows how much each sale contributes toward covering fixed costs and generating profit.
-      It is a key metric used in <a href="/break-even-calculator.html">break-even analysis</a> and pricing decisions.
-    </p>
-
-    <h3>Contribution Margin Formula</h3>
-    <p>
-      Contribution Margin (per unit) = Price − Variable Cost<br>
-      Contribution Margin % = Contribution Margin ÷ Price × 100
-    </p>
-
-    <h3>Why Contribution Margin Matters</h3>
-    <ul>
-      <li>Determines break-even point</li>
-      <li>Helps with pricing strategy</li>
-      <li>Shows product profitability</li>
-      <li>Improves financial planning</li>
-    </ul>
-
-    <hr class="sep">
-
-    <h2>Related Calculators</h2>
-    <ul>
-      <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
-      <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-      <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-      <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-      <li><a href="/roi-calculator.html">ROI Calculator</a></li>
-    </ul>
-
   </div>
 
-  <!-- FOOTER (site-wide) -->
   <footer class="sbc-footer">
     <div class="sbc-footer__inner">
       <div class="sbc-footer__brand">
         <div class="sbc-footer__logo">SmallBusinessCalculators</div>
         <p class="sbc-footer__tagline">
-          Fast, simple calculators for small business decisions.
+          Fast, simple calculators for pricing, profit, and small business decisions.
         </p>
 
         <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
@@ -249,7 +508,20 @@
         </div>
 
         <div class="sbc-footer__col">
-          <div class="sbc-footer__heading">Legal</div>
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
           <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
           <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
         </div>
@@ -259,7 +531,7 @@
     <div class="sbc-footer__bottom">
       <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
       <div class="sbc-footer__note">
-        Information provided is for educational purposes and does not constitute financial advice.
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
       </div>
     </div>
   </footer>
@@ -267,7 +539,11 @@
   <script>
     function fmtMoney(n) {
       if (!isFinite(n)) return "—";
-      return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+      return n.toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
     }
 
     function calc() {
