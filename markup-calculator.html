@@ -4,15 +4,191 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Free Markup Calculator (Markup % & Selling Price)</title>
-  <meta name="description" content="Free markup calculator. Calculate markup %, selling price from cost, and convert markup to margin instantly." />
+  <title>Markup Calculator (Free) – Calculate Markup % and Selling Price</title>
+  <meta name="description" content="Use this free markup calculator to calculate markup percentage, selling price from cost, profit, and margin. Fast, simple, and accurate pricing tool." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/markup-calculator.html" />
 
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Markup Calculator (Free) – Calculate Markup % and Selling Price" />
+  <meta property="og:description" content="Calculate markup percentage, selling price from cost, profit, and margin with this free markup calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/markup-calculator.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Markup Calculator (Free) – Calculate Markup % and Selling Price" />
+  <meta name="twitter:description" content="Calculate markup percentage, selling price from cost, profit, and margin with this free markup calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .calc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 800px) {
+      .calc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-card h2,
+    .calc-card h3 {
+      margin-top: 0;
+    }
+
+    .field-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: -8px;
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .secondary-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .secondary-btn:hover {
+      transform: translateY(-1px);
+      border-color: #bfd0ea;
+      text-decoration: none;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .result-value {
+      font-weight: 800;
+    }
+
+    .formula-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .section-link-list li + li {
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Markup Calculator",
+    "url": "https://smallbusinesscalculators.com/markup-calculator.html",
+    "description": "Free markup calculator to calculate markup percentage, selling price from cost, profit, and margin."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use the markup calculator",
+    "description": "Enter cost and markup percentage to calculate selling price, profit, and margin.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter cost",
+        "text": "Enter your product or service cost."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enter markup percentage",
+        "text": "Enter the markup percentage you want to apply."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate results",
+        "text": "Click Calculate to see selling price, profit, and margin percentage."
+      }
+    ]
+  }
+  </script>
 
   <script type="application/ld+json">
   {
@@ -40,97 +216,381 @@
         "name": "What is the difference between markup and margin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Markup is based on cost: Profit ÷ Cost. Margin is based on revenue: Profit ÷ Selling Price. They are not the same percentage."
+          "text": "Markup is based on cost: Profit ÷ Cost. Margin is based on revenue or selling price: Profit ÷ Selling Price. They are not the same percentage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is markup important in pricing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markup helps businesses set a selling price above cost so they can generate profit and cover overhead expenses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this markup calculator for products and services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This calculator can be used for products, services, and most business pricing situations where you know your cost and target markup percentage."
         }
       }
     ]
   }
   </script>
-
-  <style>
-    body { margin: 0; font-family: system-ui; background: #f8f9fb; color: #111; }
-    .wrap { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
-    a { text-decoration: none; color: #111; font-weight: 600; }
-    a:hover { text-decoration: underline; }
-    h1 { font-size: 36px; margin: 8px 0; }
-    .sub { color: #444; margin-bottom: 30px; line-height: 1.5; }
-    .grid { display: grid; gap: 20px; }
-    @media (min-width:800px){ .grid{grid-template-columns:1fr 1fr;} }
-    .card { background:white; border-radius:14px; padding:20px; border:1px solid #e5e5e5; }
-    label { font-weight:600; }
-    input { width:100%; padding:12px; margin-bottom:15px; }
-    button { padding:10px 16px; background:#111; color:#fff; border-radius:10px; }
-    .result-row { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid #eee; }
-    .value { font-weight:700; }
-  </style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="brand">SmallBusinessCalculators</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="calc-wrap">
+
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>Markup Calculator</span>
+      </nav>
+
+      <header class="section">
+        <h1>Markup Calculator</h1>
+
+        <p class="lead">
+          Use this free markup calculator to calculate <strong>markup percentage</strong>, <strong>selling price</strong>,
+          <strong>profit</strong>, and <strong>margin</strong> from cost.
+        </p>
+
+        <p>
+          This calculator helps small business owners, freelancers, and ecommerce sellers price products and services more accurately.
+          Enter your cost and markup percentage to instantly see the final selling price, the amount of profit, and the resulting margin percentage.
+        </p>
+
+        <p>
+          If you want to compare markup and margin directly, use the
+          <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.
+          If you already know your selling price and cost, use the
+          <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
+        </p>
+      </header>
+
+      <main>
+
+        <section class="calc-grid" aria-label="Markup calculator">
+          <div class="calc-card">
+            <h2>Enter Your Numbers</h2>
+
+            <label for="cost" class="field-label">Cost</label>
+            <input type="number" id="cost" inputmode="decimal" placeholder="e.g. 100" />
+            <div class="field-hint">Enter your cost for the product or service.</div>
+
+            <label for="markupPercent" class="field-label">Markup %</label>
+            <input type="number" id="markupPercent" inputmode="decimal" placeholder="e.g. 50" />
+            <div class="field-hint">Enter the markup percentage you want to add on top of cost.</div>
+
+            <div class="btnrow">
+              <button type="button" onclick="calculateMarkup()">Calculate</button>
+              <button type="button" class="secondary-btn" onclick="resetCalc()">Reset</button>
+            </div>
+
+            <div class="note">
+              Tip: If you want to start from revenue and cost instead, use the
+              <a href="/profit-margin-calculator.html">Profit Margin Calculator</a>.
+            </div>
+          </div>
+
+          <div class="calc-card">
+            <h2>Results</h2>
+
+            <div class="result-row">
+              <div class="result-label">Selling Price</div>
+              <div class="result-value" id="sellingPrice">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Profit</div>
+              <div class="result-value" id="profit">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Margin</div>
+              <div class="result-value" id="margin">—</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>How to Use This Markup Calculator</h2>
+          <p>
+            Enter your cost in the first field and your target markup percentage in the second field.
+            Then click calculate to see the selling price, profit, and resulting margin percentage.
+          </p>
+
+          <ol>
+            <li>Enter the cost of your product or service.</li>
+            <li>Enter your target markup percentage.</li>
+            <li>Click <strong>Calculate</strong>.</li>
+            <li>Review the selling price, profit, and margin.</li>
+          </ol>
+
+          <p>
+            This is useful when you want to set prices consistently and make sure each sale generates enough profit.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Markup Formula</h2>
+
+          <div class="formula-box">
+            <strong>Selling Price</strong> = Cost × (1 + Markup %)<br>
+            <strong>Profit</strong> = Selling Price − Cost<br>
+            <strong>Markup %</strong> = (Profit ÷ Cost) × 100<br>
+            <strong>Margin %</strong> = (Profit ÷ Selling Price) × 100
+          </div>
+
+          <p>
+            Markup tells you how much you add on top of cost. It is a common pricing method because it starts with your known cost
+            and helps you set a target selling price quickly.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Example Markup Calculation</h2>
+          <p>
+            Imagine your cost is $100 and you want a markup of 50%.
+          </p>
+
+          <ul>
+            <li><strong>Cost:</strong> $100</li>
+            <li><strong>Markup:</strong> 50%</li>
+            <li><strong>Selling Price:</strong> $150</li>
+            <li><strong>Profit:</strong> $50</li>
+            <li><strong>Margin:</strong> 33.33%</li>
+          </ul>
+
+          <p>
+            This means you are adding $50 on top of cost and selling the item for $150.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>What Is Markup?</h2>
+          <p>
+            Markup is the percentage added to cost to determine a selling price.
+            It is one of the most common pricing methods used by retailers, wholesalers, freelancers, and service businesses.
+          </p>
+
+          <p>
+            Businesses often use markup because cost is usually easier to know than margin.
+            Once you know your cost, you can apply a target markup percentage to create a selling price that generates profit.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Markup vs Margin</h2>
+          <p>
+            Markup and margin are related, but they are not the same.
+            Markup is based on cost, while margin is based on selling price.
+          </p>
+
+          <p>
+            Because they use different starting points, the percentages will not match.
+            For example, a 50% markup gives a 33.33% margin.
+          </p>
+
+          <p>
+            This difference matters because confusing markup and margin can lead to incorrect pricing.
+            For a side-by-side comparison, use the
+            <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Tips for Using Markup in Pricing</h2>
+          <ul>
+            <li>Always know your true cost before applying markup.</li>
+            <li>Use markup consistently across products or services where it makes sense.</li>
+            <li>Review markup regularly when supplier costs change.</li>
+            <li>Do not confuse markup with margin when setting pricing targets.</li>
+            <li>Check whether your markup also leaves enough room to cover overhead and operating expenses.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Common Markup Examples</h2>
+          <ul>
+            <li>$100 cost with 25% markup = $125 selling price</li>
+            <li>$100 cost with 50% markup = $150 selling price</li>
+            <li>$80 cost with 40% markup = $112 selling price</li>
+            <li>$200 cost with 30% markup = $260 selling price</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators and Guides</h2>
+          <ul class="section-link-list">
+            <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+            <li><a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a></li>
+            <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+            <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+            <li><a href="/profitability-guide.html">Profitability Guide</a></li>
+            <li><a href="/margin-vs-markup.html">Margin vs Markup Explained</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How do you calculate markup?</h3>
+            <p>
+              Markup is calculated as <strong>(Selling Price − Cost) ÷ Cost × 100</strong>.
+              It shows how much you add on top of cost.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do you calculate selling price from cost and markup?</h3>
+            <p>
+              Use this formula: <strong>Selling Price = Cost × (1 + Markup%)</strong>.
+              For example, a cost of $100 with a 50% markup gives a selling price of $150.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the difference between markup and margin?</h3>
+            <p>
+              Markup is based on cost, while margin is based on selling price.
+              They are related but they are not the same percentage.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why is markup important in pricing?</h3>
+            <p>
+              Markup helps businesses set prices above cost so they can make profit and cover overhead, labor, and operating expenses.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I use this markup calculator for products and services?</h3>
+            <p>
+              Yes. This calculator can be used for products, services, and most pricing situations where you know your cost and target markup percentage.
+            </p>
+          </div>
+        </section>
+
+      </main>
+    </div>
   </div>
-</header>
 
-<div class="wrap">
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for pricing, profit, and small business decisions.
+        </p>
 
-  <h1>Free Markup Calculator</h1>
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
 
-  <p>
-    Use this free markup calculator to calculate markup percentage, selling price, and convert markup to margin for accurate pricing and profitability.
-  </p>
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
 
-  <p class="sub">
-    Calculate <strong>markup %</strong>, <strong>selling price</strong>, and understand the relationship between markup and margin.
-  </p>
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+        </div>
 
-  <p>
-    Need to compare the two? Try our <a href="/margin-markup-calculator.html">Margin vs Markup Calculator</a>.
-  </p>
-
-  <div class="grid">
-    <div class="card">
-      <label>Cost</label>
-      <input type="number" id="cost">
-
-      <label>Markup %</label>
-      <input type="number" id="markupPercent">
-
-      <button onclick="calculateMarkup()">Calculate</button>
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
     </div>
 
-    <div class="card">
-      <div class="result-row"><span>Selling Price</span><span id="sellingPrice">—</span></div>
-      <div class="result-row"><span>Profit</span><span id="profit">—</span></div>
-      <div class="result-row"><span>Margin</span><span id="margin">—</span></div>
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
+      </div>
     </div>
-  </div>
+  </footer>
 
-  <h2>Markup vs Margin</h2>
-  <p>
-    Markup is based on cost, while margin is based on selling price. Understanding the difference ensures correct pricing and avoids losing profit.
-  </p>
+  <script>
+    function n(v) {
+      return typeof v === "number" && isFinite(v);
+    }
 
-  <p>
-    Use this calculator together with the <a href="/profit-margin-calculator.html">Profit Margin Calculator</a> to fully understand your pricing.
-  </p>
+    function fmtMoney(x) {
+      if (!isFinite(x)) return "—";
+      return x.toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
+    }
 
-</div>
+    function calculateMarkup() {
+      const cost = parseFloat(document.getElementById("cost").value);
+      const markup = parseFloat(document.getElementById("markupPercent").value);
 
-<script>
-function calculateMarkup(){
-  let cost = parseFloat(document.getElementById("cost").value);
-  let markup = parseFloat(document.getElementById("markupPercent").value);
-  let price = cost * (1 + markup/100);
-  let profit = price - cost;
-  let margin = (profit / price) * 100;
+      if (!n(cost) || cost < 0 || !n(markup)) {
+        alert("Please enter valid numbers (cost ≥ 0 and markup must be a number).");
+        return;
+      }
 
-  document.getElementById("sellingPrice").innerText = price.toFixed(2);
-  document.getElementById("profit").innerText = profit.toFixed(2);
-  document.getElementById("margin").innerText = margin.toFixed(2) + "%";
-}
-</script>
+      const price = cost * (1 + markup / 100);
+      const profit = price - cost;
+      const margin = price === 0 ? 0 : (profit / price) * 100;
+
+      document.getElementById("sellingPrice").innerText = fmtMoney(price);
+      document.getElementById("profit").innerText = fmtMoney(profit);
+      document.getElementById("margin").innerText = margin.toFixed(2) + " %";
+    }
+
+    function resetCalc() {
+      document.getElementById("cost").value = "";
+      document.getElementById("markupPercent").value = "";
+      document.getElementById("sellingPrice").innerText = "—";
+      document.getElementById("profit").innerText = "—";
+      document.getElementById("margin").innerText = "—";
+    }
+
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
 
 </body>
 </html>
