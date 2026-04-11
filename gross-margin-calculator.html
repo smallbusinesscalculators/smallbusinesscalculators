@@ -25,135 +25,6 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <style>
-    .calc-wrap {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .breadcrumb {
-      font-size: 14px;
-      margin-bottom: 10px;
-      color: var(--muted);
-    }
-
-    .breadcrumb a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .breadcrumb a:hover {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 14px;
-      font-weight: 700;
-    }
-
-    .calc-grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: 1fr;
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: 800px) {
-      .calc-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .calc-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .calc-card h2,
-    .calc-card h3 {
-      margin-top: 0;
-    }
-
-    .field-label {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .field-hint {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: -8px;
-      margin-bottom: 14px;
-      line-height: 1.45;
-    }
-
-    .btnrow {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .secondary-btn {
-      display: inline-block;
-      background: #fff;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 18px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.18s ease, border-color 0.18s ease;
-    }
-
-    .secondary-btn:hover {
-      transform: translateY(-1px);
-      border-color: #bfd0ea;
-      text-decoration: none;
-    }
-
-    .result-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .result-row:last-child {
-      border-bottom: none;
-    }
-
-    .result-label {
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .result-value {
-      font-weight: 800;
-    }
-
-    .formula-box {
-      background: #f8fbff;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px 18px;
-      margin: 14px 0;
-      line-height: 1.8;
-    }
-
-    .section-link-list li + li {
-      margin-top: 8px;
-    }
-  </style>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -200,7 +71,7 @@
         "name": "How do you calculate gross margin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Gross margin percentage is calculated as (Revenue minus Cost of Goods Sold) divided by Revenue, multiplied by 100."
+          "text": "Gross margin is calculated as (Revenue minus Cost of Goods Sold) divided by Revenue, multiplied by 100."
         }
       },
       {
@@ -255,12 +126,12 @@
   </header>
 
   <div class="wrap">
-    <div class="calc-wrap">
+    <div style="max-width: 900px; margin: 0 auto;">
 
-      <a href="/" class="back-link">← Back to Small Business Calculators</a>
+      <a href="/" style="display:inline-block; margin-bottom:14px; font-weight:700;">← Back to Small Business Calculators</a>
 
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> › <span>Gross Margin Calculator</span>
+      <nav aria-label="Breadcrumb" style="font-size:14px; margin-bottom:10px; color: var(--muted);">
+        <a href="/" style="color: var(--muted); text-decoration: none;">Home</a> › <span>Gross Margin Calculator</span>
       </nav>
 
       <header class="section">
@@ -286,21 +157,23 @@
 
       <main>
 
-        <section class="calc-grid" aria-label="Gross margin calculator">
-          <div class="calc-card">
+        <section aria-label="Gross margin calculator" style="display:grid; gap:20px; grid-template-columns:1fr; margin-bottom:24px;">
+          <div class="calc-two-col" style="display:contents;"></div>
+
+          <div class="section" style="margin-bottom:0;">
             <h2>Enter Your Numbers</h2>
 
-            <label for="revenue" class="field-label">Revenue (Sales)</label>
+            <label for="revenue" style="display:block; font-weight:700; margin-bottom:6px;">Revenue (Sales)</label>
             <input id="revenue" type="number" inputmode="decimal" min="0" step="0.01" placeholder="e.g. 10000" />
-            <div class="field-hint">Enter your total revenue or sales.</div>
+            <div class="note" style="margin-top:10px; margin-bottom:14px;">Enter your total revenue or sales.</div>
 
-            <label for="cogs" class="field-label">COGS (Cost of Goods Sold)</label>
+            <label for="cogs" style="display:block; font-weight:700; margin-bottom:6px;">COGS (Cost of Goods Sold)</label>
             <input id="cogs" type="number" inputmode="decimal" min="0" step="0.01" placeholder="e.g. 6500" />
-            <div class="field-hint">Enter your total direct cost of goods sold.</div>
+            <div class="note" style="margin-top:10px; margin-bottom:14px;">Enter your total direct cost of goods sold.</div>
 
-            <div class="btnrow">
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
               <button id="btnCalc" type="button">Calculate</button>
-              <button id="btnReset" type="button" class="secondary-btn">Reset</button>
+              <button id="btnReset" type="button">Reset</button>
             </div>
 
             <div class="note">
@@ -308,17 +181,17 @@
             </div>
           </div>
 
-          <div class="calc-card">
+          <div class="section" style="margin-bottom:0;">
             <h2>Results</h2>
 
-            <div class="result-row">
-              <div class="result-label">Gross Profit</div>
-              <div class="result-value" id="grossProfit">—</div>
+            <div style="display:flex; justify-content:space-between; gap:12px; padding:12px 0; border-bottom:1px solid var(--border);">
+              <div style="color: var(--muted); font-weight:600;">Gross Profit</div>
+              <div id="grossProfit" style="font-weight:800;">—</div>
             </div>
 
-            <div class="result-row">
-              <div class="result-label">Gross Margin</div>
-              <div class="result-value" id="grossMargin">—</div>
+            <div style="display:flex; justify-content:space-between; gap:12px; padding:12px 0;">
+              <div style="color: var(--muted); font-weight:600;">Gross Margin</div>
+              <div id="grossMargin" style="font-weight:800;">—</div>
             </div>
           </div>
         </section>
@@ -345,7 +218,7 @@
         <section class="section">
           <h2>Gross Margin Formula</h2>
 
-          <div class="formula-box">
+          <div class="note" style="background:#f8fbff;">
             <strong>Gross Profit</strong> = Revenue − Cost of Goods Sold<br>
             <strong>Gross Margin %</strong> = (Gross Profit ÷ Revenue) × 100
           </div>
@@ -428,7 +301,7 @@
 
         <section class="section">
           <h2>Related Calculators and Guides</h2>
-          <ul class="section-link-list">
+          <ul>
             <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
             <li><a href="/markup-calculator.html">Markup Calculator</a></li>
             <li><a href="/contribution-margin-calculator.html">Contribution Margin Calculator</a></li>
@@ -510,11 +383,11 @@
         <div class="sbc-footer__col">
           <div class="sbc-footer__heading">Calculators</div>
           <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/gross-margin-calculator.html" class="sbc-footer__link">Gross Margin Calculator</a>
           <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
           <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
           <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
           <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
-          <a href="/gross-margin-calculator.html" class="sbc-footer__link">Gross Margin Calculator</a>
           <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
           <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
         </div>
@@ -578,8 +451,6 @@
 
     document.getElementById("btnCalc").addEventListener("click", calculate);
     document.getElementById("btnReset").addEventListener("click", resetCalc);
-    document.getElementById("revenue").addEventListener("input", calculate);
-    document.getElementById("cogs").addEventListener("input", calculate);
 
     (function () {
       var el = document.getElementById("sbcYear");
