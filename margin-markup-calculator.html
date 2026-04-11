@@ -4,15 +4,160 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Free Margin vs Markup Calculator (Convert Margin to Markup & Markup to Margin)</title>
-  <meta name="description" content="Free margin vs markup calculator. Convert margin to markup or markup to margin instantly. Example: 40% margin = 66.67% markup. Fast, simple, and accurate." />
+  <title>Margin vs Markup Calculator (Free) – Convert Margin and Markup</title>
+  <meta name="description" content="Use this free margin vs markup calculator to convert margin to markup or markup to margin instantly. Fast, simple, and accurate pricing tool." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://smallbusinesscalculators.com/margin-markup-calculator.html" />
 
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Margin vs Markup Calculator (Free) – Convert Margin and Markup" />
+  <meta property="og:description" content="Convert margin to markup or markup to margin instantly with this free calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/margin-markup-calculator.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Margin vs Markup Calculator (Free) – Convert Margin and Markup" />
+  <meta name="twitter:description" content="Convert margin to markup or markup to margin instantly with this free calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .calc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 800px) {
+      .calc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-card h2,
+    .calc-card h3 {
+      margin-top: 0;
+    }
+
+    .field-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 8px;
+      margin-bottom: 0;
+      line-height: 1.45;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fafafa;
+      line-height: 1.7;
+    }
+
+    .formula-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .section-link-list li + li {
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Margin vs Markup Calculator",
+    "url": "https://smallbusinesscalculators.com/margin-markup-calculator.html",
+    "description": "Free margin vs markup calculator to convert margin to markup and markup to margin."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use the margin vs markup calculator",
+    "description": "Choose a conversion type, enter a percentage, and calculate the equivalent margin or markup.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Choose a conversion type",
+        "text": "Select whether you want to convert margin to markup or markup to margin."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enter your percentage",
+        "text": "Enter the margin percentage or markup percentage."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate results",
+        "text": "Click Calculate to see the equivalent converted percentage."
+      }
+    ]
+  }
+  </script>
 
   <script type="application/ld+json">
   {
@@ -32,7 +177,7 @@
         "name": "How do you convert margin to markup?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "To convert margin to markup, use: markup = margin / (1 - margin). If using percentages: markup % = (margin % / (100 - margin %)) × 100."
+          "text": "To convert margin to markup, use: markup = margin divided by (1 minus margin). If using percentages: markup percentage = (margin percentage divided by (100 minus margin percentage)) multiplied by 100."
         }
       },
       {
@@ -40,96 +185,36 @@
         "name": "How do you convert markup to margin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "To convert markup to margin, use: margin = markup / (1 + markup). If using percentages: margin % = (markup % / (100 + markup %)) × 100."
+          "text": "To convert markup to margin, use: margin = markup divided by (1 plus markup). If using percentages: margin percentage = (markup percentage divided by (100 plus markup percentage)) multiplied by 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do businesses confuse margin and markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Businesses often confuse margin and markup because both relate to pricing and profit, but one is based on revenue and the other is based on cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the difference matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The difference matters because confusing margin and markup can lead to underpricing, lower profit than expected, and pricing errors."
         }
       }
     ]
   }
   </script>
-
-  <style>
-    .page-hero {
-      margin-bottom: 32px;
-    }
-
-    .calc-card {
-      background: #fff;
-      border: 1px solid #dcdcdc;
-      border-radius: 16px;
-      padding: 24px;
-      max-width: 760px;
-      margin-bottom: 32px;
-    }
-
-    .calc-grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .calc-card label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .calc-card input,
-    .calc-card select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #cfcfcf;
-      border-radius: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-
-    .calc-card button {
-      display: inline-block;
-      padding: 12px 18px;
-      border: 0;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      background: #111;
-      color: #fff;
-    }
-
-    .calc-card button:hover {
-      opacity: 0.92;
-    }
-
-    .result-box {
-      margin-top: 20px;
-      padding: 18px;
-      border: 1px solid #dcdcdc;
-      border-radius: 12px;
-      background: #fafafa;
-    }
-
-    .result-box p {
-      margin: 0 0 8px;
-    }
-
-    .result-box p:last-child {
-      margin-bottom: 0;
-    }
-
-    .formula-box {
-      border-left: 4px solid #111;
-      padding-left: 16px;
-      margin: 20px 0;
-    }
-
-    .related-links ul {
-      padding-left: 20px;
-    }
-  </style>
 </head>
 <body>
+
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="/">SmallBusinessCalculators</a>
-      <nav class="main-nav">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
+
+      <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
@@ -138,158 +223,307 @@
   </header>
 
   <div class="wrap">
-    <section class="page-hero">
-      <p><a href="/">← Back to Small Business Calculators</a></p>
-      <h1>Free Margin vs Markup Calculator</h1>
-      <p>
-        Use this free margin vs markup calculator to convert margin to markup, markup to margin, and understand the difference between margin and markup. Example: 40% margin equals 66.67% markup.
-      </p>
-    </section>
+    <div class="calc-wrap">
 
-    <section class="calc-card">
-      <div class="calc-grid">
-        <div>
-          <label for="conversionType">Choose conversion</label>
-          <select id="conversionType">
-            <option value="marginToMarkup">Margin % → Markup %</option>
-            <option value="markupToMargin">Markup % → Margin %</option>
-          </select>
-        </div>
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
 
-        <div>
-          <label for="percentInput">Enter percentage</label>
-          <input type="number" id="percentInput" placeholder="e.g. 44" step="0.01" />
-        </div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>Margin vs Markup Calculator</span>
+      </nav>
 
-        <div>
-          <button type="button" id="calculateBtn">Calculate</button>
-        </div>
-      </div>
+      <header class="section">
+        <h1>Margin vs Markup Calculator</h1>
 
-      <div id="result" class="result-box" aria-live="polite">
-        <p>Enter a value and click Calculate.</p>
-      </div>
-    </section>
+        <p class="lead">
+          Use this free margin vs markup calculator to convert <strong>margin to markup</strong> or <strong>markup to margin</strong> instantly.
+        </p>
 
-    <section>
-      <h2>Margin vs Markup: How to Convert Margin to Markup and Markup to Margin</h2>
-      <p>
-        Margin and markup are related, but they are not the same.
-        Margin is based on selling price. Markup is based on cost.
-      </p>
+        <p>
+          Margin and markup are closely related, but they are not the same. This calculator helps you convert one into the other
+          and avoid one of the most common pricing mistakes in business.
+        </p>
 
-      <div class="formula-box">
-        <p><strong>Margin to markup:</strong></p>
-        <p>Markup % = (Margin % / (100 - Margin %)) × 100</p>
-      </div>
+        <p>
+          If you also want to calculate prices or profits directly, see the
+          <a href="/profit-margin-calculator.html">Profit Margin Calculator</a> and
+          <a href="/markup-calculator.html">Markup Calculator</a>.
+        </p>
+      </header>
 
-      <div class="formula-box">
-        <p><strong>Markup to margin:</strong></p>
-        <p>Margin % = (Markup % / (100 + Markup %)) × 100</p>
-      </div>
+      <main>
 
-      <p>
-        Example: a 44% margin equals a 78.57% markup.
-      </p>
+        <section class="calc-grid" aria-label="Margin vs markup calculator">
+          <div class="calc-card">
+            <h2>Convert Your Percentage</h2>
 
-      <p>
-        The difference between margin and markup is one of the most common pricing mistakes in business.
-        Margin is based on selling price, while markup is based on cost.
-        Understanding this ensures accurate pricing and protects your profit.
-      </p>
+            <label for="conversionType" class="field-label">Choose Conversion</label>
+            <select id="conversionType">
+              <option value="marginToMarkup">Margin % → Markup %</option>
+              <option value="markupToMargin">Markup % → Margin %</option>
+            </select>
 
-      <p>
-        You can also calculate pricing using our <a href="/profit-margin-calculator.html">Profit Margin Calculator</a> or set prices with the <a href="/markup-calculator.html">Markup Calculator</a>.
-      </p>
-    </section>
+            <label for="percentInput" class="field-label" style="margin-top: 16px;">Enter Percentage</label>
+            <input type="number" id="percentInput" placeholder="e.g. 40" step="0.01" inputmode="decimal" />
+            <p class="field-hint">Enter the margin percentage or markup percentage you want to convert.</p>
 
-    <section>
-      <h2>Why this matters</h2>
-      <p>
-        Many small business owners mix up margin and markup when setting prices.
-        This can lead to lower profits than expected. Using the correct percentage
-        helps you quote accurately and protect profitability.
-      </p>
-    </section>
+            <div class="btnrow">
+              <button type="button" id="calculateBtn">Calculate</button>
+            </div>
 
-    <section>
-      <h2>Common Margin to Markup and Markup to Margin Conversions</h2>
+            <div id="result" class="result-box" aria-live="polite">
+              <p>Enter a value and click Calculate.</p>
+            </div>
+          </div>
 
-      <p>
-        Here are some common conversions between margin and markup percentages:
-      </p>
+          <div class="calc-card">
+            <h2>Why This Matters</h2>
+            <p>
+              Many small business owners mix up margin and markup when setting prices.
+              That can lead to lower profits than expected.
+            </p>
 
-      <ul>
-        <li>20% margin = 25% markup</li>
-        <li>30% margin = 42.86% markup</li>
-        <li>40% margin = 66.67% markup</li>
-        <li>50% margin = 100% markup</li>
-      </ul>
+            <p>
+              For example, a <strong>40% margin</strong> is not the same as a <strong>40% markup</strong>.
+              A 40% margin actually equals a 66.67% markup.
+            </p>
 
-      <p>
-        And the reverse:
-      </p>
+            <p>
+              Understanding the difference helps you quote correctly, protect profitability, and avoid pricing errors.
+            </p>
+          </div>
+        </section>
 
-      <ul>
-        <li>25% markup = 20% margin</li>
-        <li>50% markup = 33.33% margin</li>
-        <li>75% markup = 42.86% margin</li>
-        <li>100% markup = 50% margin</li>
-      </ul>
-    </section>
+        <section class="section">
+          <h2>How to Use This Margin vs Markup Calculator</h2>
+          <p>
+            Choose whether you want to convert margin to markup or markup to margin. Then enter the percentage and click calculate.
+            The calculator will instantly show the equivalent result.
+          </p>
 
-    <section>
-      <h2>Margin to Markup Conversion Table</h2>
+          <ol>
+            <li>Select a conversion type.</li>
+            <li>Enter your percentage.</li>
+            <li>Click <strong>Calculate</strong>.</li>
+            <li>Review the converted percentage.</li>
+          </ol>
 
-      <p>
-        Here are common margin to markup conversions used in pricing:
-      </p>
+          <p>
+            This is useful when you know your target margin but need the right markup, or when you already use markup and want to understand the real margin.
+          </p>
+        </section>
 
-      <ul>
-        <li>10% margin = 11.11% markup</li>
-        <li>20% margin = 25% markup</li>
-        <li>30% margin = 42.86% markup</li>
-        <li>40% margin = 66.67% markup</li>
-        <li>50% margin = 100% markup</li>
-      </ul>
+        <section class="section">
+          <h2>Margin vs Markup Formula</h2>
 
-      <p>
-        This helps you quickly estimate markup without using the calculator.
-      </p>
-    </section>
+          <div class="formula-box">
+            <strong>Margin to Markup:</strong><br>
+            Markup % = (Margin % ÷ (100 − Margin %)) × 100
+          </div>
 
-    <section class="related-links">
-      <h2>Related calculators</h2>
-      <ul>
-        <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-        <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-        <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
-        <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
-      </ul>
-    </section>
+          <div class="formula-box">
+            <strong>Markup to Margin:</strong><br>
+            Margin % = (Markup % ÷ (100 + Markup %)) × 100
+          </div>
+
+          <p>
+            Margin is based on selling price, while markup is based on cost.
+            That is why the numbers are related but never equal.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Example Conversions</h2>
+          <p>
+            Here are some common conversions between margin and markup:
+          </p>
+
+          <ul>
+            <li>20% margin = 25% markup</li>
+            <li>30% margin = 42.86% markup</li>
+            <li>40% margin = 66.67% markup</li>
+            <li>50% margin = 100% markup</li>
+          </ul>
+
+          <p>
+            And in reverse:
+          </p>
+
+          <ul>
+            <li>25% markup = 20% margin</li>
+            <li>50% markup = 33.33% margin</li>
+            <li>75% markup = 42.86% margin</li>
+            <li>100% markup = 50% margin</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>What Is the Difference Between Margin and Markup?</h2>
+          <p>
+            Margin is the percentage of revenue that remains as profit after costs are subtracted.
+            Markup is the percentage added on top of cost to reach a selling price.
+          </p>
+
+          <p>
+            Because margin starts from revenue and markup starts from cost, they produce different percentages.
+            This is why understanding the distinction is so important in pricing.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Why Margin vs Markup Matters in Pricing</h2>
+          <ul>
+            <li>It helps prevent underpricing.</li>
+            <li>It improves quoting accuracy.</li>
+            <li>It helps you set the correct selling price for a target margin.</li>
+            <li>It gives a clearer understanding of true profitability.</li>
+            <li>It improves financial planning and pricing consistency.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Common Pricing Mistake</h2>
+          <p>
+            One of the most common pricing mistakes is assuming that margin and markup are interchangeable.
+            They are not.
+          </p>
+
+          <p>
+            For example, if you want a 50% margin and only apply a 50% markup, you will not achieve the result you expected.
+            A 50% margin actually requires a 100% markup.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators and Guides</h2>
+          <ul class="section-link-list">
+            <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+            <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+            <li><a href="/break-even-calculator.html">Break-Even Calculator</a></li>
+            <li><a href="/net-profit-calculator.html">Net Profit Calculator</a></li>
+            <li><a href="/profitability-guide.html">Profitability Guide</a></li>
+            <li><a href="/margin-vs-markup.html">Margin vs Markup Explained</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>What is the difference between margin and markup?</h3>
+            <p>
+              Margin is the percentage of revenue that remains as profit.
+              Markup is the percentage added to cost to reach a selling price.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do you convert margin to markup?</h3>
+            <p>
+              Use this formula:
+              <strong>Markup % = (Margin % ÷ (100 − Margin %)) × 100</strong>.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do you convert markup to margin?</h3>
+            <p>
+              Use this formula:
+              <strong>Margin % = (Markup % ÷ (100 + Markup %)) × 100</strong>.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why do businesses confuse margin and markup?</h3>
+            <p>
+              They are often confused because both relate to pricing and profit, but one is based on revenue and the other is based on cost.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why does the difference matter?</h3>
+            <p>
+              The difference matters because using the wrong percentage can lead to incorrect prices and lower profit than expected.
+            </p>
+          </div>
+        </section>
+
+      </main>
+    </div>
   </div>
 
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for pricing, profit, and small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
+      </div>
+    </div>
+  </footer>
+
   <script>
-    const conversionType = document.getElementById('conversionType');
-    const percentInput = document.getElementById('percentInput');
-    const calculateBtn = document.getElementById('calculateBtn');
-    const result = document.getElementById('result');
+    const conversionType = document.getElementById("conversionType");
+    const percentInput = document.getElementById("percentInput");
+    const calculateBtn = document.getElementById("calculateBtn");
+    const result = document.getElementById("result");
 
     function formatPercent(value) {
-      return Number(value).toFixed(2).replace(/\.00$/, '') + '%';
+      return Number(value).toFixed(2).replace(/\.00$/, "") + "%";
     }
 
     function calculateConversion() {
       const input = parseFloat(percentInput.value);
 
       if (isNaN(input)) {
-        result.innerHTML = '<p>Please enter a valid percentage.</p>';
+        result.innerHTML = "<p>Please enter a valid percentage.</p>";
         return;
       }
 
-      if (conversionType.value === 'marginToMarkup') {
+      if (conversionType.value === "marginToMarkup") {
         if (input < 0 || input >= 100) {
-          result.innerHTML = '<p>Margin must be between 0 and less than 100%.</p>';
+          result.innerHTML = "<p>Margin must be between 0 and less than 100%.</p>";
           return;
         }
 
@@ -301,7 +535,7 @@
         `;
       } else {
         if (input < 0) {
-          result.innerHTML = '<p>Markup cannot be negative.</p>';
+          result.innerHTML = "<p>Markup cannot be negative.</p>";
           return;
         }
 
@@ -314,13 +548,18 @@
       }
     }
 
-    calculateBtn.addEventListener('click', calculateConversion);
+    calculateBtn.addEventListener("click", calculateConversion);
 
-    percentInput.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
+    percentInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
         calculateConversion();
       }
     });
+
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
