@@ -52,8 +52,10 @@ a:hover {
 
 /* HEADER */
 .site-header {
-  background: #ffffff;
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 251, 255, 0.96) 100%);
+  border-bottom: 1px solid #cfd8e6;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(4px);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -62,19 +64,21 @@ a:hover {
 .header-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 16px 20px;
+  padding: 20px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
 }
 
 .brand {
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: clamp(1.16rem, 1.9vw, 1.38rem);
+  font-weight: 900;
   color: var(--text);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .brand:hover {
@@ -85,18 +89,69 @@ a:hover {
 .nav {
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: flex-end;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .nav a {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 8px 13px;
+  border-radius: 999px;
+  border: 1px solid transparent;
   color: var(--muted);
   font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
   text-decoration: none;
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--primary);
+  transform: scaleX(0.3);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .nav a:hover {
   color: var(--primary);
+  background: #eff6ff;
+  border-color: #dbe8ff;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+  opacity: 0.9;
+}
+
+.nav a:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 1px;
+  color: var(--primary);
+  background: #eff6ff;
+  border-color: #dbe8ff;
+}
+
+.nav a:is([aria-current="page"], .is-active) {
+  color: var(--primary-dark);
+  background: #eaf2ff;
+  border-color: #c9dcff;
+}
+
+.nav a:is([aria-current="page"], .is-active)::after {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 /* HERO / INTRO */
@@ -552,12 +607,17 @@ button:hover,
 
   .header-inner {
     padding: 14px 16px;
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
   }
 
   .nav {
-    gap: 14px;
+    margin-left: auto;
+    gap: 6px;
+  }
+
+  .nav a {
+    padding: 7px 10px;
+    font-size: 0.92rem;
   }
 
   .wrap > header {
