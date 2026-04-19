@@ -1,91 +1,201 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Sales Tax Calculator (Free) – Calculate Price with Tax</title>
-<meta name="description" content="Free sales tax calculator. Add or remove tax from a price instantly. Calculate total price including tax or find tax amount." />
-<meta name="robots" content="index,follow" />
-<link rel="canonical" href="https://smallbusinesscalculators.com/sales-tax-calculator.html" />
+  <title>Sales Tax Calculator (Free) – Calculate Price with Tax</title>
+  <meta name="description" content="Free sales tax calculator. Add tax to a price instantly and see both total price and tax amount." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://smallbusinesscalculators.com/sales-tax-calculator.html" />
 
-<link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sales Tax Calculator (Free) – Calculate Price with Tax" />
+  <meta property="og:description" content="Add tax to a price instantly and calculate total price and tax amount with this free sales tax calculator." />
+  <meta property="og:url" content="https://smallbusinesscalculators.com/sales-tax-calculator.html" />
+  <meta property="og:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sales Tax Calculator (Free) – Calculate Price with Tax" />
+  <meta name="twitter:description" content="Add tax to a price instantly and calculate total price and tax amount with this free sales tax calculator." />
+  <meta name="twitter:image" content="https://smallbusinesscalculators.com/og.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Sales Tax Calculator",
+    "url": "https://smallbusinesscalculators.com/sales-tax-calculator.html",
+    "description": "Free sales tax calculator to add tax to a price and calculate total price and tax amount."
+  }
+  </script>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="brand">SmallBusinessCalculators</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">SmallBusinessCalculators</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="calc-wrap">
+      <a href="/" class="back-link">← Back to Small Business Calculators</a>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <span>Sales Tax Calculator</span>
+      </nav>
+
+      <header class="section">
+        <h1>Sales Tax Calculator</h1>
+        <p class="lead">Add tax to a base amount and instantly see your total price and tax amount.</p>
+        <p>Use this calculator to quickly estimate tax-inclusive prices for invoices, quotes, and customer receipts.</p>
+      </header>
+
+      <main>
+        <section class="calc-grid" aria-label="Sales tax calculator">
+          <div class="calc-card">
+            <h2>Enter Your Numbers</h2>
+
+            <label for="amount" class="field-label">Amount (Before Tax)</label>
+            <input type="number" id="amount" min="0" step="0.01" placeholder="e.g. 100" />
+            <p class="field-hint">Enter your pre-tax amount.</p>
+
+            <label for="tax" class="field-label">Tax Rate (%)</label>
+            <input type="number" id="tax" min="0" step="0.01" placeholder="e.g. 8.25" />
+            <p class="field-hint">Enter your sales tax percentage.</p>
+
+            <div class="btnrow">
+              <button type="button" onclick="calc()">Calculate</button>
+              <button type="button" class="secondary-btn" onclick="resetCalc()">Reset</button>
+            </div>
+          </div>
+
+          <div class="calc-card">
+            <h2>Results</h2>
+
+            <div class="result-row">
+              <div class="result-label">Total Price (With Tax)</div>
+              <div id="total" class="result-value">—</div>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Tax Amount</div>
+              <div id="taxAmount" class="result-value">—</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Related Calculators</h2>
+          <ul class="section-link-list">
+            <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
+            <li><a href="/markup-calculator.html">Markup Calculator</a></li>
+            <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
+            <li><a href="/discount-calculator.html">Discount Calculator</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
   </div>
-</header>
 
-<div class="wrap">
-<h1>Sales Tax Calculator</h1>
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Practical calculator tools, formulas, and guides to help small businesses make better pricing and profit decisions.
+        </p>
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">contact@smallbusinesscalculators.com</a>
+      </div>
 
-<p>Calculate total price including tax or extract tax from a price.</p>
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
 
-<div class="calc-card">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+        </div>
 
-<label>Amount</label>
-<input type="number" id="amount" placeholder="e.g. 100" />
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
+      </nav>
+    </div>
 
-<label>Tax %</label>
-<input type="number" id="tax" placeholder="e.g. 25" />
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">Information provided is for educational purposes and does not constitute financial, tax, or legal advice.</div>
+    </div>
+  </footer>
 
-<div class="btnrow">
-<button onclick="calc()">Calculate</button>
-<button onclick="resetCalc()">Reset</button>
-</div>
+  <script>
+    function fmtMoney(x) {
+      if (!isFinite(x)) return "—";
+      return x.toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
+    }
 
-</div>
+    function calc() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const tax = parseFloat(document.getElementById("tax").value);
 
-<div class="calc-card">
-<h2>Results</h2>
+      if (!isFinite(amount) || amount < 0 || !isFinite(tax) || tax < 0) {
+        alert("Please enter valid numbers (amount ≥ 0 and tax ≥ 0).");
+        return;
+      }
 
-<div class="result-row">
-<div>Total Price</div>
-<div id="total">—</div>
-</div>
+      const taxAmount = amount * (tax / 100);
+      const total = amount + taxAmount;
 
-<div class="result-row">
-<div>Tax Amount</div>
-<div id="taxAmount">—</div>
-</div>
+      document.getElementById("total").innerText = fmtMoney(total);
+      document.getElementById("taxAmount").innerText = fmtMoney(taxAmount);
+    }
 
-</div>
+    function resetCalc() {
+      document.getElementById("amount").value = "";
+      document.getElementById("tax").value = "";
+      document.getElementById("total").innerText = "—";
+      document.getElementById("taxAmount").innerText = "—";
+    }
 
-<h2>Related Calculators</h2>
-<ul>
-  <li><a href="/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-  <li><a href="/markup-calculator.html">Markup Calculator</a></li>
-  <li><a href="/gross-margin-calculator.html">Gross Margin Calculator</a></li>
-  <li><a href="/discount-calculator.html">Discount Calculator</a></li>
-</ul>
-
-</div>
-
-<script>
-function calc() {
-  const amount = parseFloat(document.getElementById("amount").value);
-  const tax = parseFloat(document.getElementById("tax").value);
-
-  if (isNaN(amount) || isNaN(tax)) return;
-
-  const taxAmount = amount * (tax / 100);
-  const total = amount + taxAmount;
-
-  document.getElementById("total").innerText = total.toFixed(2);
-  document.getElementById("taxAmount").innerText = taxAmount.toFixed(2);
-}
-
-function resetCalc() {
-  document.getElementById("amount").value = "";
-  document.getElementById("tax").value = "";
-  document.getElementById("total").innerText = "—";
-  document.getElementById("taxAmount").innerText = "—";
-}
-</script>
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
 
 </body>
 </html>
