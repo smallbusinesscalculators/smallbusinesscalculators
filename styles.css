@@ -52,8 +52,9 @@ a:hover {
 
 /* HEADER */
 .site-header {
-  background: #ffffff;
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 252, 255, 0.97) 100%);
+  border-bottom: 1px solid #d5deea;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -66,15 +67,17 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
 }
 
 .brand {
-  font-size: 1.15rem;
+  font-size: clamp(1.1rem, 1.6vw, 1.26rem);
   font-weight: 800;
   color: var(--text);
   letter-spacing: -0.02em;
+  line-height: 1.2;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .brand:hover {
@@ -85,18 +88,61 @@ a:hover {
 .nav {
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: flex-end;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .nav a {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 8px;
   color: var(--muted);
   font-weight: 600;
+  font-size: 0.94rem;
+  line-height: 1;
   text-decoration: none;
+  transition: color 0.16s ease, background-color 0.16s ease;
+}
+
+.nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  margin-top: 4px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 0.16s ease, transform 0.16s ease;
 }
 
 .nav a:hover {
   color: var(--primary);
+  background: #eff6ff;
+}
+
+.nav a:hover::after {
+  opacity: 0.5;
+  transform: scaleX(1);
+}
+
+.nav a:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 2px;
+  color: var(--primary);
+  background: #eff6ff;
+}
+
+.nav a:is([aria-current="page"], .is-active) {
+  color: var(--primary-dark);
+  background: #e8f1ff;
+  font-weight: 700;
+}
+
+.nav a:is([aria-current="page"], .is-active)::after {
+  opacity: 0.75;
+  transform: scaleX(1);
 }
 
 /* HERO / INTRO */
@@ -552,12 +598,17 @@ button:hover,
 
   .header-inner {
     padding: 14px 16px;
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 12px;
   }
 
   .nav {
-    gap: 14px;
+    margin-left: auto;
+    gap: 5px;
+  }
+
+  .nav a {
+    padding: 6px 9px;
+    font-size: 0.92rem;
   }
 
   .wrap > header {
