@@ -55,6 +55,9 @@ a:hover {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 251, 255, 0.96) 100%);
   border-bottom: 1px solid #cfd8e6;
   box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
   backdrop-filter: blur(4px);
   position: sticky;
   top: 0;
@@ -65,6 +68,7 @@ a:hover {
   max-width: var(--max);
   margin: 0 auto;
   padding: 20px 20px;
+  padding: 18px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,6 +80,10 @@ a:hover {
   font-weight: 900;
   color: var(--text);
   letter-spacing: -0.04em;
+  font-size: clamp(1.1rem, 1.8vw, 1.28rem);
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.03em;
   line-height: 1.2;
   text-decoration: none;
   flex-shrink: 0;
@@ -91,6 +99,7 @@ a:hover {
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
@@ -101,6 +110,8 @@ a:hover {
   padding: 8px 13px;
   border-radius: 999px;
   border: 1px solid transparent;
+  padding: 8px 12px;
+  border-radius: 999px;
   color: var(--muted);
   font-weight: 600;
   font-size: 0.95rem;
@@ -122,6 +133,7 @@ a:hover {
   transform-origin: center;
   opacity: 0;
   transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: color 0.18s ease, background-color 0.18s ease;
 }
 
 .nav a:hover {
@@ -613,6 +625,7 @@ button:hover,
   .nav {
     margin-left: auto;
     gap: 6px;
+    gap: 4px;
   }
 
   .nav a {
