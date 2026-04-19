@@ -52,8 +52,10 @@ a:hover {
 
 /* HEADER */
 .site-header {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(4px);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -62,19 +64,21 @@ a:hover {
 .header-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 16px 20px;
+  padding: 18px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
 }
 
 .brand {
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: clamp(1.1rem, 1.8vw, 1.28rem);
+  font-weight: 900;
   color: var(--text);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .brand:hover {
@@ -85,18 +89,34 @@ a:hover {
 .nav {
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: flex-end;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
   color: var(--muted);
   font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
   text-decoration: none;
+  transition: color 0.18s ease, background-color 0.18s ease;
 }
 
 .nav a:hover {
   color: var(--primary);
+  background: #eff6ff;
+}
+
+.nav a:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 1px;
+  color: var(--primary);
+  background: #eff6ff;
 }
 
 /* HERO / INTRO */
@@ -552,12 +572,17 @@ button:hover,
 
   .header-inner {
     padding: 14px 16px;
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
   }
 
   .nav {
-    gap: 14px;
+    margin-left: auto;
+    gap: 4px;
+  }
+
+  .nav a {
+    padding: 7px 10px;
+    font-size: 0.92rem;
   }
 
   .wrap > header {
