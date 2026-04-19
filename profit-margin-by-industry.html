@@ -282,21 +282,67 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/privacy-policy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
+  <footer class="sbc-footer">
+    <div class="sbc-footer__inner">
+      <div class="sbc-footer__brand">
+        <div class="sbc-footer__logo">SmallBusinessCalculators</div>
+        <p class="sbc-footer__tagline">
+          Fast, simple calculators for pricing, profit, and small business decisions.
+        </p>
+
+        <a class="sbc-footer__email" href="mailto:contact@smallbusinesscalculators.com">
+          contact@smallbusinesscalculators.com
+        </a>
+      </div>
+
+      <nav class="sbc-footer__nav" aria-label="Footer">
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Site</div>
+          <a href="/" class="sbc-footer__link">Home</a>
+          <a href="/about.html" class="sbc-footer__link">About</a>
+          <a href="/contact.html" class="sbc-footer__link">Contact</a>
+          <a href="/sitemap.xml" class="sbc-footer__link">Sitemap</a>
+          <a href="/robots.txt" class="sbc-footer__link">Robots</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Calculators</div>
+          <a href="/profit-margin-calculator.html" class="sbc-footer__link">Profit Margin Calculator</a>
+          <a href="/gross-margin-calculator.html" class="sbc-footer__link">Gross Margin Calculator</a>
+          <a href="/markup-calculator.html" class="sbc-footer__link">Markup Calculator</a>
+          <a href="/break-even-calculator.html" class="sbc-footer__link">Break-Even Calculator</a>
+          <a href="/roi-calculator.html" class="sbc-footer__link">ROI Calculator</a>
+          <a href="/contribution-margin-calculator.html" class="sbc-footer__link">Contribution Margin Calculator</a>
+          <a href="/net-profit-calculator.html" class="sbc-footer__link">Net Profit Calculator</a>
+          <a href="/margin-markup-calculator.html" class="sbc-footer__link">Margin vs Markup Calculator</a>
+          <a href="/discount-calculator.html" class="sbc-footer__link">Discount Calculator</a>
+          <a href="/sales-tax-calculator.html" class="sbc-footer__link">Sales Tax Calculator</a>
+        </div>
+
+        <div class="sbc-footer__col">
+          <div class="sbc-footer__heading">Guides</div>
+          <a href="/profitability-guide.html" class="sbc-footer__link">Profitability Guide</a>
+          <a href="/margin-vs-markup.html" class="sbc-footer__link">Margin vs Markup</a>
+          <a href="/how-to-calculate-profit-margin.html" class="sbc-footer__link">How to Calculate Profit Margin</a>
+          <a href="/privacy-policy.html" class="sbc-footer__link">Privacy Policy</a>
+          <a href="/terms.html" class="sbc-footer__link">Terms of Use</a>
+        </div>
       </nav>
-      <p class="small">© <span id="year"></span> SmallBusinessCalculators.com</p>
+    </div>
+
+    <div class="sbc-footer__bottom">
+      <div>© <span id="sbcYear"></span> SmallBusinessCalculators.com</div>
+      <div class="sbc-footer__note">
+        Information provided is for educational purposes and does not constitute financial, tax, or legal advice.
+      </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      var el = document.getElementById("sbcYear");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
