@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "https://www.smallbusinesscalculators.com/:path*",
+      "destination": "https://smallbusinesscalculators.com/:path*",
+      "permanent": true
+    }
+  ]
+}
