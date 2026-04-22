@@ -1,17 +1,15 @@
 {
-  "routes": [
+  "redirects": [
     {
-      "src": "^/(.*)",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.smallbusinesscalculators.com"
         }
       ],
-      "status": 301,
-      "headers": {
-        "Location": "https://smallbusinesscalculators.com/$1"
-      }
+      "destination": "https://smallbusinesscalculators.com/$1",
+      "permanent": true
     }
   ]
 }
