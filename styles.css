@@ -177,7 +177,8 @@ a:hover {
 
 .nav .dropdown-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
+  margin-top: 0;
   left: 0;
   min-width: 260px;
   background: var(--surface);
@@ -201,8 +202,8 @@ a:hover {
   display: none;
 }
 
-.nav .nav-dropdown:hover .dropdown-menu,
-.nav .nav-dropdown:focus-within .dropdown-menu {
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
   display: block;
 }
 
