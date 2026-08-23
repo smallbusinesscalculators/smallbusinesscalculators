@@ -105,6 +105,12 @@
   </url>
 
   <url>
+    <loc>https://smallbusinesscalculators.com/john-oldenburg.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
     <loc>https://smallbusinesscalculators.com/contact.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
